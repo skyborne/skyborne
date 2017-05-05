@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ProfileViewController.swift
 //  Skyborne
 //
 //  Created by Dominic Philip on 5/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

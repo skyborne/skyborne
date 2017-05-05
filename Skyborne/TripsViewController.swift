@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  TripsViewController.swift
 //  Skyborne
 //
 //  Created by Dominic Philip on 5/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class TripsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
