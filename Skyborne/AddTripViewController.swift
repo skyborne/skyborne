@@ -1,14 +1,19 @@
 //
-//  ItineraryViewController.swift
+//  AddTripViewController.swift
 //  Skyborne
 //
-//  Created by Dominic Philip on 5/5/17.
+//  Created by Dominic Philip on 5/6/17.
 //  Copyright © 2017 Skyborne Inc. All rights reserved.
 //
 
 import UIKit
 
-class ItineraryViewController: UIViewController {
+class AddTripViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    @IBOutlet var cancelAddTrip: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +25,9 @@ class ItineraryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
     
+    @IBAction func cancelAddTrip(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }
-
-

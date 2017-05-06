@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A7421EBE42C1006812C2 /* AddTripViewController.swift */; };
 		B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C701EBD442C004961E1 /* AppDelegate.swift */; };
 		B6F41C731EBD442C004961E1 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsViewController.swift */; };
 		B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C741EBD442C004961E1 /* ProfileViewController.swift */; };
 		B6F41C781EBD442C004961E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F41C761EBD442C004961E1 /* Main.storyboard */; };
 		B6F41C7A1EBD442C004961E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F41C791EBD442C004961E1 /* Assets.xcassets */; };
 		B6F41C7D1EBD442C004961E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F41C7B1EBD442C004961E1 /* LaunchScreen.storyboard */; };
-		B6F41C851EBD52D0004961E1 /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C841EBD52D0004961E1 /* ItineraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B683A7421EBE42C1006812C2 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		B6F41C6D1EBD442C004961E1 /* Skyborne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyborne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F41C701EBD442C004961E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F41C721EBD442C004961E1 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		B6F41C791EBD442C004961E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6F41C7C1EBD442C004961E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6F41C7E1EBD442C004961E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6F41C841EBD52D0004961E1 /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				B6F41C791EBD442C004961E1 /* Assets.xcassets */,
 				B6F41C7B1EBD442C004961E1 /* LaunchScreen.storyboard */,
 				B6F41C7E1EBD442C004961E1 /* Info.plist */,
-				B6F41C841EBD52D0004961E1 /* ItineraryViewController.swift */,
+				B683A7421EBE42C1006812C2 /* AddTripViewController.swift */,
 			);
 			path = Skyborne;
 			sourceTree = "<group>";
@@ -143,8 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */,
+				B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */,
 				B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */,
-				B6F41C851EBD52D0004961E1 /* ItineraryViewController.swift in Sources */,
 				B6F41C731EBD442C004961E1 /* TripsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +309,7 @@
 				B6F41C831EBD442C004961E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

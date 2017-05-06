@@ -23,12 +23,6 @@ class TripsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: Actions
-
-    @IBAction func addTrip(_ sender: UIBarButtonItem) {
-        // TODO: Add functionality
-    }
     
 }
 
