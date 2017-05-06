@@ -13,8 +13,7 @@ class AddTripViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet var cancelAddTrip: UIBarButtonItem!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,10 +23,10 @@ class AddTripViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: Actions
     
     @IBAction func cancelAddTrip(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
