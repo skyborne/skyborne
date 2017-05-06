@@ -39,7 +39,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Trips" id="c0h-1f-dhr">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YjX-OX-CIP"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YjX-OX-CIP">
+                                            <connections>
+                                                <action selector="addTrip:" destination="9pv-A4-QxB" id="obG-mZ-G3p"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -53,6 +57,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trips" image="Trips" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="addTripButton" destination="YjX-OX-CIP" id="AYE-Zn-5BT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

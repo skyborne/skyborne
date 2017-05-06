@@ -9,6 +9,10 @@
 import UIKit
 
 class TripsViewController: UIViewController {
+    
+    // MARK: Properties
+
+    @IBOutlet var addTripButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,11 @@ class TripsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Actions
 
+    @IBAction func addTrip(_ sender: UIBarButtonItem) {
+        // TODO: Add functionality
+    }
+    
 }
 
