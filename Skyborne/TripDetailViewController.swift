@@ -15,13 +15,8 @@ class TripDetailViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionActivity))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // MARK: Navigation Bar Button Methods
+    // MARK: Navigation Bar Actions
     
     func actionActivity() -> Void {
         // TODO: Implement Action Feature (Such As Sharing Trip) & Add Available Social Media Apps To The Menu

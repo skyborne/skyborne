@@ -11,7 +11,10 @@ import UIKit
 class TripsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         tableView.tableFooterView = UIView()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
     }
     
     // MARK: Table View Data Sources
@@ -37,6 +40,12 @@ class TripsTableViewController: UITableViewController {
         if let cell = sender as? UITableViewCell {
             detailViewController.navigationItem.title = cell.textLabel?.text
         }
+    }
+    
+    // MARK: Navigation Bar Actions
+    
+    func edit() {
+        // TODO: Implement Edit Trip
     }
 
 }

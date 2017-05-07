@@ -55,7 +55,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Trips" id="fcu-d4-miS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="xBT-de-OZX"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aZr-gy-bnx">
                             <connections>
                                 <segue destination="MmV-oO-AR1" kind="popoverPresentation" popoverAnchorBarButtonItem="aZr-gy-bnx" id="Syc-oS-a5y">
@@ -118,17 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Trip" id="RNj-1w-16C">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dST-1j-AaB">
-                            <connections>
-                                <action selector="cancelAddTrip:" destination="aKq-yO-X53" id="e34-wj-K27"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="wBH-ho-giQ"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelAddTrip" destination="dST-1j-AaB" id="Kpe-la-dRL"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="New Trip" id="RNj-1w-16C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yos-VZ-N8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

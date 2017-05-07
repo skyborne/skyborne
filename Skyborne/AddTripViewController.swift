@@ -9,24 +9,21 @@
 import UIKit
 
 class AddTripViewController: UIViewController {
-    
-    // MARK: Properties
-    
-    @IBOutlet var cancelAddTrip: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(add))
     }
 
-    // MARK: Actions
+    // MARK: Navigation Bar Actions
     
-    @IBAction func cancelAddTrip(_ sender: UIBarButtonItem) {
+    func add() {
+        // TODO: Implement Add Trip
+    }
+    
+    func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
 }
