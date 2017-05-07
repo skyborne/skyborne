@@ -24,9 +24,14 @@ class TripDetailViewController: UIViewController {
     // MARK: Navigation Bar Button Methods
     
     func actionActivity() -> Void {
-        let activityViewController = UIActivityViewController(activityItems: ["Share"], applicationActivities: nil)
-
-        present(activityViewController, animated: true, completion: nil)
+        // TODO: Implement Action Feature (Such As Sharing Trip) & Add Available Social Media Apps To The Menu
+        
+        if let title = self.navigationItem.title {
+            let shareItem = "My trip to \(String(describing: title)) managed by Skyborne!"
+            let activityViewController = UIActivityViewController(activityItems: [shareItem], applicationActivities: nil)
+            
+            present(activityViewController, animated: true, completion: nil)
+        }
     }
 
 }
