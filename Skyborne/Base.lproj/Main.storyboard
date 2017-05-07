@@ -45,7 +45,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="A2L-oL-aNk" kind="show" id="cd0-BS-7k5"/>
+                                    <segue destination="A2L-oL-aNk" kind="show" identifier="Trip Detail Segue" id="cd0-BS-7k5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

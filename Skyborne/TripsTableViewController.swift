@@ -32,4 +32,10 @@ class TripsTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailViewController = segue.destination as UIViewController
+        let cell = sender as! UITableViewCell
+        
+        detailViewController.navigationItem.title = cell.textLabel?.text
+    }
 }
