@@ -14,6 +14,10 @@ class TripsTableViewController: UITableViewController {
 
     @IBOutlet var addTripButton: UIBarButtonItem!
     
+    override func viewDidLoad() {
+        tableView.tableFooterView = UIView()
+    }
+    
     // MARK: Table View Data Sources
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,7 +30,6 @@ class TripsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trip Cell", for: indexPath)
-        
         cell.textLabel?.text = "New York City" // TODO: Remove Stub
         
         return cell
