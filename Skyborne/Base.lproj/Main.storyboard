@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Trip Cell" id="ZCE-tc-lPa" customClass="TripTableViewCell" customModule="Skyborne" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Trip Cell" id="ZCE-tc-lPa" customClass="TripsTableViewCell" customModule="Skyborne" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCE-tc-lPa" id="9aO-qr-PUt">
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="2142" y="-466"/>
         </scene>
-        <!--View Controller-->
+        <!--Trip Detail View Controller-->
         <scene sceneID="kTa-zq-OAg">
             <objects>
-                <viewController id="A2L-oL-aNk" sceneMemberID="viewController">
+                <viewController id="A2L-oL-aNk" customClass="TripDetailViewController" customModule="Skyborne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LJg-V6-w8E"/>
                         <viewControllerLayoutGuide type="bottom" id="JiX-CE-6hJ"/>
@@ -82,10 +82,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Rk-T7-i5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3190" y="-466"/>
+            <point key="canvasLocation" x="3189.5999999999999" y="-466.41679160419795"/>
         </scene>
         <!--Add Trip Navigation Controller-->
         <scene sceneID="bh9-ZH-WTM">

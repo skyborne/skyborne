@@ -39,4 +39,8 @@ class TripsTableViewController: UITableViewController {
             detailViewController.navigationItem.title = cell.textLabel?.text
         }
     }
+    
+    func action() -> Void {
+        // TODO: Implement Action Feature (Such As Sharing Trip)
+    }
 }
