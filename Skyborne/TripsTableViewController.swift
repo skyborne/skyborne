@@ -9,11 +9,7 @@
 import UIKit
 
 class TripsTableViewController: UITableViewController {
-    
-    // MARK: Properties
 
-    @IBOutlet var addTripButton: UIBarButtonItem!
-    
     override func viewDidLoad() {
         tableView.tableFooterView = UIView()
     }
