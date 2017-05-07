@@ -31,7 +31,7 @@
         <!--Trips Root View Controller-->
         <scene sceneID="gsk-PD-K6y">
             <objects>
-                <tableViewController title="Trips Root View Controller" id="WGg-uk-XGx" sceneMemberID="viewController">
+                <tableViewController title="Trips Root View Controller" id="WGg-uk-XGx" customClass="TripsTableViewController" customModule="Skyborne" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QRa-8K-dQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,13 +45,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rvE-9n-CCR" kind="showDetail" id="W0A-sw-rdZ"/>
+                                    <segue destination="A2L-oL-aNk" kind="show" id="cd0-BS-7k5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="WGg-uk-XGx" id="MaK-oe-eoB"/>
-                            <outlet property="delegate" destination="WGg-uk-XGx" id="3Ch-gX-Lkf"/>
+                            <outlet property="dataSource" destination="WGg-uk-XGx" id="JiE-KK-QTH"/>
+                            <outlet property="delegate" destination="WGg-uk-XGx" id="1mV-2w-dTC"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Trips" id="fcu-d4-miS">
@@ -68,6 +68,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="237-Zg-ZOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2142" y="-466"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kTa-zq-OAg">
+            <objects>
+                <viewController id="A2L-oL-aNk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LJg-V6-w8E"/>
+                        <viewControllerLayoutGuide type="bottom" id="JiX-CE-6hJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2RN-7y-an1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rk-T7-i5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="-466"/>
         </scene>
         <!--Add Trip Navigation Controller-->
         <scene sceneID="bh9-ZH-WTM">
@@ -113,41 +131,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yos-VZ-N8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="-1180"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="seb-U7-VU6">
-            <objects>
-                <navigationController id="rvE-9n-CCR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B7O-4s-ibx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="tiO-Kw-lXN" kind="relationship" relationship="rootViewController" id="KJ0-yw-9Nh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zx6-wA-WYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3190" y="-466"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Vdc-It-dAP">
-            <objects>
-                <viewController id="tiO-Kw-lXN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2zK-gz-T2m"/>
-                        <viewControllerLayoutGuide type="bottom" id="hqz-x1-RpX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yXd-pU-Zss">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="YS5-Xe-LZ3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bad-Vf-9gQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4286" y="-466"/>
         </scene>
         <!--Trips View Controller-->
         <scene sceneID="Rg9-rH-rkf">

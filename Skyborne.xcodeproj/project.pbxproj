@@ -10,7 +10,7 @@
 		B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A7421EBE42C1006812C2 /* AddTripViewController.swift */; };
 		B6CC4AC11EBE9E5E00E8D92F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */; };
 		B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C701EBD442C004961E1 /* AppDelegate.swift */; };
-		B6F41C731EBD442C004961E1 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsViewController.swift */; };
+		B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */; };
 		B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C741EBD442C004961E1 /* ProfileViewController.swift */; };
 		B6F41C781EBD442C004961E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F41C761EBD442C004961E1 /* Main.storyboard */; };
 		B6F41C7A1EBD442C004961E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F41C791EBD442C004961E1 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 		B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		B6F41C6D1EBD442C004961E1 /* Skyborne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyborne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F41C701EBD442C004961E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6F41C721EBD442C004961E1 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewController.swift; sourceTree = "<group>"; };
 		B6F41C741EBD442C004961E1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B6F41C771EBD442C004961E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6F41C791EBD442C004961E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F41C701EBD442C004961E1 /* AppDelegate.swift */,
-				B6F41C721EBD442C004961E1 /* TripsViewController.swift */,
+				B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */,
 				B6F41C741EBD442C004961E1 /* ProfileViewController.swift */,
 				B6F41C761EBD442C004961E1 /* Main.storyboard */,
 				B6F41C791EBD442C004961E1 /* Assets.xcassets */,
@@ -149,7 +149,7 @@
 				B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */,
 				B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */,
 				B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */,
-				B6F41C731EBD442C004961E1 /* TripsViewController.swift in Sources */,
+				B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
