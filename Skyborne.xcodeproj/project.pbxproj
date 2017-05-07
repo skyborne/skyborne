@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A7421EBE42C1006812C2 /* AddTripViewController.swift */; };
+		B6CC4AC11EBE9E5E00E8D92F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */; };
 		B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C701EBD442C004961E1 /* AppDelegate.swift */; };
 		B6F41C731EBD442C004961E1 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsViewController.swift */; };
 		B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C741EBD442C004961E1 /* ProfileViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B683A7421EBE42C1006812C2 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		B6F41C6D1EBD442C004961E1 /* Skyborne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyborne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F41C701EBD442C004961E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F41C721EBD442C004961E1 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B6F41C7B1EBD442C004961E1 /* LaunchScreen.storyboard */,
 				B6F41C7E1EBD442C004961E1 /* Info.plist */,
 				B683A7421EBE42C1006812C2 /* AddTripViewController.swift */,
+				B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */,
 			);
 			path = Skyborne;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CC4AC11EBE9E5E00E8D92F /* Trip.swift in Sources */,
 				B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */,
 				B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */,
 				B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */,
