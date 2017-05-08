@@ -27,7 +27,7 @@ class TripsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips.count
+        return 1 // trips.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,12 +49,14 @@ class TripsTableViewController: UITableViewController {
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
             self.edit(indexPath: indexPath)
         }
-        editAction.backgroundColor = UIColor(red: 0.7804, green: 0.7804, blue: 0.80, alpha: 1)
+        let gray = UIColor(red: 0.7804, green: 0.7804, blue: 0.80, alpha: 1)
+        editAction.backgroundColor = gray
 
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
             self.deleteAlert(indexPath: indexPath)
         }
-        deleteAction.backgroundColor = UIColor(red: 0.9882, green: 0.2392, blue: 0.2235, alpha: 1)
+        let red = UIColor(red: 0.9882, green: 0.2392, blue: 0.2235, alpha: 1)
+        deleteAction.backgroundColor = red
         
         return [deleteAction, editAction]
     }
