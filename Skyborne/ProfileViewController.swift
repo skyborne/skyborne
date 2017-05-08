@@ -3,7 +3,7 @@
 //  Skyborne
 //
 //  Created by Dominic Philip on 5/5/17.
-//  Copyright © 2017 Skyborne Inc. All rights reserved.
+//  Copyright © 2017 Skyborne Co. All rights reserved.
 //
 
 import UIKit

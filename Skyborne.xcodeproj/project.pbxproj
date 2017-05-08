@@ -110,7 +110,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Skyborne Inc.";
+				ORGANIZATIONNAME = "Skyborne Co.";
 				TargetAttributes = {
 					B6F41C6C1EBD442C004961E1 = {
 						CreatedOnToolsVersion = 8.3.2;
