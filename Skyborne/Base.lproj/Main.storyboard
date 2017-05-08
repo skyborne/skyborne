@@ -88,6 +88,25 @@
             </objects>
             <point key="canvasLocation" x="3189.5999999999999" y="-466.41679160419795"/>
         </scene>
+        <!--Edit Trip View Controller-->
+        <scene sceneID="wNs-bt-gAN">
+            <objects>
+                <viewController storyboardIdentifier="Edit Trip View Controller" id="g11-W9-xXl" customClass="EditTripViewController" customModule="Skyborne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="deZ-vd-4Sl"/>
+                        <viewControllerLayoutGuide type="bottom" id="C0w-2r-XsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qlX-ly-Bak">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nnX-xp-KqD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xtr-tq-a9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="-1934"/>
+        </scene>
         <!--Add Trip Navigation Controller-->
         <scene sceneID="bh9-ZH-WTM">
             <objects>
@@ -186,6 +205,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Huu-xq-Mdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1014" y="438"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fGL-jm-eYq">
+            <objects>
+                <navigationController storyboardIdentifier="Edit Trip Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="KLr-xe-xQ6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mOb-HG-bLp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g11-W9-xXl" kind="relationship" relationship="rootViewController" id="Q7U-xU-EYA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzL-PY-ryb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2141.5999999999999" y="-1934.4827586206898"/>
         </scene>
     </scenes>
     <resources>

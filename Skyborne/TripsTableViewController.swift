@@ -62,10 +62,16 @@ class TripsTableViewController: UITableViewController {
     // MARK: Table View Row Actions
     
     func edit(indexPath: IndexPath) {
-        // TODO: Implement Edit Trip
+        // TODO: Pass Information To View Controller
+
+        let editTripViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Edit Trip View Controller") as! EditTripViewController
+        let ediTripViewControllerNavigator = UINavigationController(rootViewController: editTripViewController)
+        self.present(ediTripViewControllerNavigator, animated: true, completion: nil)
     }
     
     func delete(indexPath: IndexPath) {
+        // TODO: Alert User With Confirmation
+
         trips.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
