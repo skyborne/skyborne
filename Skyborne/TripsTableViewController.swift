@@ -64,7 +64,10 @@ class TripsTableViewController: UITableViewController {
     func edit(indexPath: IndexPath) {
         let editTripViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Edit Trip View Controller") as! EditTripViewController
         let ediTripViewControllerNavigator = UINavigationController(rootViewController: editTripViewController)
+        
         self.present(ediTripViewControllerNavigator, animated: true, completion: nil)
+        
+        self.tableView.isEditing = false
         
         // TODO: Pass Information To View Controller
     }
@@ -88,6 +91,8 @@ class TripsTableViewController: UITableViewController {
         alert.addAction(cancel)
 
         self.present(alert, animated: true, completion: nil)
+        
+        self.tableView.isEditing = false
     }
 
 }
