@@ -9,22 +9,25 @@
 import UIKit
 
 class TripsTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    
+    var trips = [Trip]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
     }
     
     // MARK: Table View Data Sources
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1; // TODO: Remove Stub
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1; // TODO: Remove Stub
+        return trips.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,10 +45,29 @@ class TripsTableViewController: UITableViewController {
         }
     }
     
-    // MARK: Navigation Bar Actions
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+            self.edit(indexPath: indexPath)
+        }
+        editAction.backgroundColor = UIColor(red: 0.7804, green: 0.7804, blue: 0.80, alpha: 1)
+
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
+            self.delete(indexPath: indexPath)
+        }
+        deleteAction.backgroundColor = UIColor(red: 0.9882, green: 0.2392, blue: 0.2235, alpha: 1)
+        
+        return [deleteAction, editAction]
+    }
     
-    func edit() {
+    // MARK: Table View Row Actions
+    
+    func edit(indexPath: IndexPath) {
         // TODO: Implement Edit Trip
+    }
+    
+    func delete(indexPath: IndexPath) {
+        trips.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
 }
