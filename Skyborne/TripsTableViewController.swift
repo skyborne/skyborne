@@ -52,7 +52,7 @@ class TripsTableViewController: UITableViewController {
         editAction.backgroundColor = UIColor(red: 0.7804, green: 0.7804, blue: 0.80, alpha: 1)
 
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
-            self.delete(indexPath: indexPath)
+            self.deleteAlert(indexPath: indexPath)
         }
         deleteAction.backgroundColor = UIColor(red: 0.9882, green: 0.2392, blue: 0.2235, alpha: 1)
         
@@ -62,18 +62,32 @@ class TripsTableViewController: UITableViewController {
     // MARK: Table View Row Actions
     
     func edit(indexPath: IndexPath) {
-        // TODO: Pass Information To View Controller
-
         let editTripViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Edit Trip View Controller") as! EditTripViewController
         let ediTripViewControllerNavigator = UINavigationController(rootViewController: editTripViewController)
         self.present(ediTripViewControllerNavigator, animated: true, completion: nil)
+        
+        // TODO: Pass Information To View Controller
     }
     
-    func delete(indexPath: IndexPath) {
-        // TODO: Alert User With Confirmation
+    func deleteAlert(indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
+        
+        let delete = UIAlertAction(title: "Delete", style: .destructive) {
+            (result : UIAlertAction) -> Void in
 
-        trips.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+            self.trips.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        alert.addAction(delete)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
+            (result : UIAlertAction) -> Void in
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
