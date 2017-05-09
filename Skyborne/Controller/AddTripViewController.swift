@@ -26,4 +26,5 @@ class AddTripViewController: UIViewController {
     func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
+
 }
