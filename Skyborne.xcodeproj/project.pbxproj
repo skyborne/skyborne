@@ -52,22 +52,24 @@
 		B6E341321EC2306F006A17F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */,
-				B6444BD91EBF606E0050197A /* TripDetailViewController.swift */,
-				B6F41C741EBD442C004961E1 /* ProfileViewController.swift */,
-				B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */,
 				B683A7421EBE42C1006812C2 /* AddTripViewController.swift */,
+				B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */,
+				B6F41C741EBD442C004961E1 /* ProfileViewController.swift */,
+				B6444BD91EBF606E0050197A /* TripDetailViewController.swift */,
+				B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */,
 			);
 			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B6E341331EC230BD006A17F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B6EF39D91EC264B700390CF4 /* Trip.xcdatamodeld */,
 				B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */,
+				B6EF39D91EC264B700390CF4 /* Trip.xcdatamodeld */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B6E341341EC230CD006A17F7 /* View */ = {
@@ -76,15 +78,17 @@
 				B638F5141EBEBF39002435A3 /* TripsTableViewCell.swift */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B6E341351EC23128006A17F7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B6F41C761EBD442C004961E1 /* Main.storyboard */,
 				B6F41C7B1EBD442C004961E1 /* LaunchScreen.storyboard */,
+				B6F41C761EBD442C004961E1 /* Main.storyboard */,
 			);
 			name = Storyboard;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B6E341361EC23155006A17F7 /* Delegate */ = {
@@ -93,6 +97,7 @@
 				B6F41C701EBD442C004961E1 /* AppDelegate.swift */,
 			);
 			name = Delegate;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		B6E341371EC2327A006A17F7 /* Assets */ = {
@@ -101,13 +106,14 @@
 				B6F41C791EBD442C004961E1 /* Assets.xcassets */,
 			);
 			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		B6F41C641EBD442C004961E1 = {
 			isa = PBXGroup;
 			children = (
-				B6F41C6F1EBD442C004961E1 /* Skyborne */,
 				B6F41C6E1EBD442C004961E1 /* Products */,
+				B6F41C6F1EBD442C004961E1 /* Skyborne */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,11 +129,11 @@
 			isa = PBXGroup;
 			children = (
 				B6E341371EC2327A006A17F7 /* Assets */,
+				B6E341321EC2306F006A17F7 /* Controller */,
 				B6E341361EC23155006A17F7 /* Delegate */,
+				B6E341331EC230BD006A17F7 /* Model */,
 				B6E341351EC23128006A17F7 /* Storyboard */,
 				B6E341341EC230CD006A17F7 /* View */,
-				B6E341331EC230BD006A17F7 /* Model */,
-				B6E341321EC2306F006A17F7 /* Controller */,
 				B6F41C7E1EBD442C004961E1 /* Info.plist */,
 			);
 			path = Skyborne;
@@ -226,6 +232,7 @@
 				B6F41C771EBD442C004961E1 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B6F41C7B1EBD442C004961E1 /* LaunchScreen.storyboard */ = {
@@ -234,6 +241,7 @@
 				B6F41C7C1EBD442C004961E1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
