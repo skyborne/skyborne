@@ -27,7 +27,7 @@ class TripsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // trips.count
+        return trips.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +80,8 @@ class TripsTableViewController: UITableViewController {
         let delete = UIAlertAction(title: "Delete", style: .destructive) {
             (result : UIAlertAction) -> Void in
 
+            self.tableView.isEditing = false
+            
             self.trips.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -89,12 +91,11 @@ class TripsTableViewController: UITableViewController {
             (result : UIAlertAction) -> Void in
             
             self.dismiss(animated: true, completion: nil)
+            self.tableView.isEditing = false
         }
         alert.addAction(cancel)
 
         self.present(alert, animated: true, completion: nil)
-        
-        self.tableView.isEditing = false
     }
 
 }
