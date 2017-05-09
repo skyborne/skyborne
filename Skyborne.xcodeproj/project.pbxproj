@@ -12,6 +12,7 @@
 		B65712C31EBFF6BA00F576A7 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */; };
 		B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A7421EBE42C1006812C2 /* AddTripViewController.swift */; };
 		B6CC4AC11EBE9E5E00E8D92F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */; };
+		B6EF39DC1EC264C100390CF4 /* Trip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6EF39D91EC264B700390CF4 /* Trip.xcdatamodeld */; };
 		B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C701EBD442C004961E1 /* AppDelegate.swift */; };
 		B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */; };
 		B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C741EBD442C004961E1 /* ProfileViewController.swift */; };
@@ -26,6 +27,7 @@
 		B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 		B683A7421EBE42C1006812C2 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		B6EF39DA1EC264B700390CF4 /* Trip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trip.xcdatamodel; sourceTree = "<group>"; };
 		B6F41C6D1EBD442C004961E1 /* Skyborne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyborne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F41C701EBD442C004961E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		B6E341331EC230BD006A17F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6EF39D91EC264B700390CF4 /* Trip.xcdatamodeld */,
 				B6CC4AC01EBE9E5E00E8D92F /* Trip.swift */,
 			);
 			name = Model;
@@ -207,6 +210,7 @@
 				B6CC4AC11EBE9E5E00E8D92F /* Trip.swift in Sources */,
 				B65712C31EBFF6BA00F576A7 /* EditTripViewController.swift in Sources */,
 				B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */,
+				B6EF39DC1EC264C100390CF4 /* Trip.xcdatamodeld in Sources */,
 				B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */,
 				B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */,
 				B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */,
@@ -376,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B6EF39D91EC264B700390CF4 /* Trip.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B6EF39DA1EC264B700390CF4 /* Trip.xcdatamodel */,
+			);
+			currentVersion = B6EF39DA1EC264B700390CF4 /* Trip.xcdatamodel */;
+			path = Trip.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B6F41C651EBD442C004961E1 /* Project object */;
 }
