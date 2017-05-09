@@ -92,11 +92,12 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		B6E341371EC2327A006A17F7 /* Assets */ = {
+		B6E341371EC2327A006A17F7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				B6F41C791EBD442C004961E1 /* Assets.xcassets */,
 			);
+			name = Library;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -119,7 +120,7 @@
 		B6F41C6F1EBD442C004961E1 /* Skyborne */ = {
 			isa = PBXGroup;
 			children = (
-				B6E341371EC2327A006A17F7 /* Assets */,
+				B6E341371EC2327A006A17F7 /* Library */,
 				B6E341321EC2306F006A17F7 /* Controller */,
 				B6E341361EC23155006A17F7 /* Delegate */,
 				B6E341331EC230BD006A17F7 /* Model */,
