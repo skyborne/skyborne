@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-// MARK: - Core Data stack
+// MARK: - Core Data Stack
 
 var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "DataModel")
@@ -21,7 +21,7 @@ var persistentContainer: NSPersistentContainer = {
     return container
 }()
 
-// MARK: - Core Data Saving support
+// MARK: - Core Data Saving Support
 
 func saveContext () {
     let context = persistentContainer.viewContext
