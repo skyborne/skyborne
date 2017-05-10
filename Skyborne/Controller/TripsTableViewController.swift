@@ -21,9 +21,9 @@ class TripsTableViewController: UITableViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.tableView.reloadData()
+        self.tableView.isEditing = false
     }
-    
+
     // MARK: Table View Data Sources
 
     override func numberOfSections(in tableView: UITableView) -> Int {
