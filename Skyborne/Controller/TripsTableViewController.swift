@@ -17,7 +17,11 @@ class TripsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.tableFooterView = UIView()
+        self.tableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     // MARK: Table View Data Sources
@@ -27,11 +31,11 @@ class TripsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips.count
+        return 1 // trips.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Trip Cell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Trip Cell", for: indexPath)
         cell.textLabel?.text = "New York City" // TODO: Remove Stub
         
         return cell
@@ -66,10 +70,8 @@ class TripsTableViewController: UITableViewController {
     func edit(indexPath: IndexPath) {
         let editTripViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Edit Trip View Controller") as! EditTripViewController
         let editTripViewControllerNavigator = UINavigationController(rootViewController: editTripViewController)
-        
+
         self.present(editTripViewControllerNavigator, animated: true, completion: nil)
-        
-        self.tableView.isEditing = false
         
         // TODO: Pass Information To View Controller
     }
