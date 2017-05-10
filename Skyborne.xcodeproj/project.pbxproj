@@ -13,7 +13,7 @@
 		B65712C31EBFF6BA00F576A7 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */; };
 		B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A7421EBE42C1006812C2 /* AddTripViewController.swift */; };
 		B6E89BBF1EC286C000C21B48 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E89BBE1EC286C000C21B48 /* CoreDataStack.swift */; };
-		B6EF39DC1EC264C100390CF4 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6EF39D91EC264B700390CF4 /* DataModel.xcdatamodeld */; };
+		B6EF39DC1EC264C100390CF4 /* Skyborne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6EF39D91EC264B700390CF4 /* Skyborne.xcdatamodeld */; };
 		B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C701EBD442C004961E1 /* AppDelegate.swift */; };
 		B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */; };
 		B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F41C741EBD442C004961E1 /* ProfileViewController.swift */; };
@@ -29,7 +29,7 @@
 		B65712C21EBFF6BA00F576A7 /* EditTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 		B683A7421EBE42C1006812C2 /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		B6E89BBE1EC286C000C21B48 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		B6EF39DA1EC264B700390CF4 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		B6EF39DA1EC264B700390CF4 /* Skyborne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skyborne.xcdatamodel; sourceTree = "<group>"; };
 		B6F41C6D1EBD442C004961E1 /* Skyborne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyborne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F41C701EBD442C004961E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F41C721EBD442C004961E1 /* TripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		B63FA6461EC3B4360074FC58 /* Structure */ = {
 			isa = PBXGroup;
 			children = (
-				B6EF39D91EC264B700390CF4 /* DataModel.xcdatamodeld */,
+				B6EF39D91EC264B700390CF4 /* Skyborne.xcdatamodeld */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				B65712C31EBFF6BA00F576A7 /* EditTripViewController.swift in Sources */,
 				B6E89BBF1EC286C000C21B48 /* CoreDataStack.swift in Sources */,
 				B6F41C751EBD442C004961E1 /* ProfileViewController.swift in Sources */,
-				B6EF39DC1EC264C100390CF4 /* DataModel.xcdatamodeld in Sources */,
+				B6EF39DC1EC264C100390CF4 /* Skyborne.xcdatamodeld in Sources */,
 				B683A7431EBE42C1006812C2 /* AddTripViewController.swift in Sources */,
 				B6F41C711EBD442C004961E1 /* AppDelegate.swift in Sources */,
 				B6F41C731EBD442C004961E1 /* TripsTableViewController.swift in Sources */,
@@ -404,13 +404,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B6EF39D91EC264B700390CF4 /* DataModel.xcdatamodeld */ = {
+		B6EF39D91EC264B700390CF4 /* Skyborne.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B6EF39DA1EC264B700390CF4 /* DataModel.xcdatamodel */,
+				B6EF39DA1EC264B700390CF4 /* Skyborne.xcdatamodel */,
 			);
-			currentVersion = B6EF39DA1EC264B700390CF4 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
+			currentVersion = B6EF39DA1EC264B700390CF4 /* Skyborne.xcdatamodel */;
+			path = Skyborne.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

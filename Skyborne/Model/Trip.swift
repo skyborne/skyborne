@@ -8,6 +8,7 @@
 
 import CoreData
 
+@objc(Trip)
 class Trip: NSManagedObject {
 
 }

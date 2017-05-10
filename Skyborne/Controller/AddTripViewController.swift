@@ -15,6 +15,8 @@ class AddTripViewController: UIViewController {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(add))
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     // MARK: Navigation Bar Actions

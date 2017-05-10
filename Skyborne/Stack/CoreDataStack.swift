@@ -13,7 +13,7 @@ class CoreDataStack {
     // MARK: - Core Data Stack
     
     static var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataModel")
+        let container = NSPersistentContainer(name: "Skyborne")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
