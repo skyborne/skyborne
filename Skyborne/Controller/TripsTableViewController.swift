@@ -77,7 +77,14 @@ class TripsTableViewController: UITableViewController {
     }
     
     func deleteAlert(indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
+        var alertTitle: String?
+        if let label = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            alertTitle = "Remove “\(label)”?"
+        }
+        
+        let alertMessage = "Deleting this trip will also delete its data."
+
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
         let delete = UIAlertAction(title: "Delete", style: .destructive) {
             (result : UIAlertAction) -> Void in
