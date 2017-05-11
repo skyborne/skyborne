@@ -18,10 +18,12 @@ class TripsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.tableFooterView = UIView()
+
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.tableView.isEditing = false
+        self.isEditing = false
     }
 
     // MARK: Table View Data Sources
@@ -73,6 +75,7 @@ class TripsTableViewController: UITableViewController {
 
         self.present(editTripViewControllerNavigator, animated: true, completion: nil)
         
+        
         // TODO: Pass Information To View Controller
     }
     
@@ -81,7 +84,6 @@ class TripsTableViewController: UITableViewController {
         if let label = tableView.cellForRow(at: indexPath)?.textLabel?.text {
             alertTitle = "Remove “\(label)”?"
         }
-        
         let alertMessage = "Deleting this trip will also delete its data."
 
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
