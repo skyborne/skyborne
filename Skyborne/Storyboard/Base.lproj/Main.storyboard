@@ -127,15 +127,11 @@
         <scene sceneID="uJ2-ry-T46">
             <objects>
                 <viewController title="Add Trip View Controller" id="aKq-yO-X53" customClass="AddTripViewController" customModule="Skyborne" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N8p-2V-0j5"/>
-                        <viewControllerLayoutGuide type="bottom" id="V6R-6E-cr2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gcB-zT-YEk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdG-cH-Eg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </tableView>
                     <navigationItem key="navigationItem" title="New Trip" id="RNj-1w-16C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yos-VZ-N8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
