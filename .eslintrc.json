@@ -1,0 +1,20 @@
+{
+    "extends": [
+        "plugin:react-native/all",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "rules": {
+        "react/prop-types": 0
+    }
+}
