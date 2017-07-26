@@ -11,7 +11,9 @@ const styles = {
    ViewStyle: {
        height: 125,
        justifyContent: 'flex-end',
-       alignItems: 'flex-end'
+       alignItems: 'flex-end',
+       borderColor: '#000',
+       borderBottomWidth: 1,
    },
 
    TextStyle: {
@@ -22,4 +24,4 @@ const styles = {
    }
 }
 
-export default Header;
+export { Header };

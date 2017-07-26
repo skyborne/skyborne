@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, AppRegistry } from 'react-native';
 
-import Header from './src/components/header'
+import { Header } from './src/components';
 
 const Skyborne = () => (
    <View>
