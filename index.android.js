@@ -1,8 +1,11 @@
-import React from 'react';
-import { AppRegistry, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, AppRegistry } from 'react-native';
+
+import { Header } from './src/components';
+import { Tabs } from './src/config/router';
 
 const Skyborne = () => (
-  <Text>Welcome to Skyborne!</Text>
+   <Tabs />
 );
 
 AppRegistry.registerComponent('Skyborne', () => Skyborne);
