@@ -2,38 +2,31 @@ import React from 'react';
 import { View, Button } from 'react-native';
 import { Header } from '../components';
 
-const ActiveTrip = () => (
-
-    <View>
-        <Header>Active Trip</Header>
-        <View style={ styles.buttonStyle }>
-            <Button
-                onPress={ onPress }
-                title='Button'
-                color='#007aff'
-            />
-        </View>
+const ActiveTrip = () =>
+  <View>
+    <Header>Active Trip</Header>
+    <View style={styles.buttonStyle}>
+      <Button onPress={onPress} title="Button" color="#007aff" />
     </View>
-
-);
+  </View>;
 
 const onPress = () => {
   return fetch('http://localhost:8000/v1/keygen')
-      .then((response) => response.text())
-      .then((text) => text.length ? JSON.parse(text) : {})
-      .then((responseJson) => {
-        console.log(responseJson.id);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    .then(response => response.text())
+    .then(text => (text.length ? JSON.parse(text) : {}))
+    .then(responseJson => {
+      console.log(responseJson.id);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 };
 
 const styles = {
-    buttonStyle: {
-        borderWidth: 1,
-        padding: 5
-    }
+  buttonStyle: {
+    borderWidth: 1,
+    padding: 5,
+  },
 };
 
 export default ActiveTrip;

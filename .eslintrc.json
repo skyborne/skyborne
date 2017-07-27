@@ -12,10 +12,21 @@
     },
     "plugins": [
         "react",
-        "react-native"
+        "react-native",
+        "prettier"
     ],
     "rules": {
-        "react/prop-types": 0,
-        "react/display-name": 0
+        "prettier/prettier": [
+            "error",
+            {
+                "bracketSpacing": true,
+                "jsxBracketSameLine": true,
+                "parser": "flow",
+                "singleQuote": true,
+                "trailingComma": "all"
+            }
+        ],
+        "react/display-name": 0,
+        "react/prop-types": 0
     }
 }
