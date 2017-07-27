@@ -18,7 +18,14 @@ const ActiveTrip = () => (
 );
 
 const onPress = () => {
-    console.log(fetch('http://localhost:8000/v1/keygen').then((response) => response.json()));
+  return fetch('http://localhost:8000/v1/keygen')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return responseJson.id;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 };
 
 const styles = {

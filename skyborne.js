@@ -5,7 +5,7 @@ import { Header } from './src/components';
 import { Tabs } from './src/config/router';
 
 const Skyborne = () => (
-   <Tabs />
+    <Tabs />
 );
 
 AppRegistry.registerComponent('Skyborne', () => Skyborne);
