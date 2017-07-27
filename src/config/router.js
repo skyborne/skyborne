@@ -4,7 +4,7 @@ import { TabNavigator } from 'react-navigation';
 import ActiveTrip from '../screens/active-trip';
 import PastTrips from '../screens/past-trips';
 
-import {createIconSetFromFontello} from 'react-native-vector-icons';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../../assets/fonts/edge-icon/config.json';
 
 const Icon = createIconSetFromFontello(fontelloConfig);
