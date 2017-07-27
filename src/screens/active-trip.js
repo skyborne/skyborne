@@ -21,7 +21,7 @@ const onPress = () => {
   return fetch('http://localhost:8000/v1/keygen')
       .then((response) => response.json())
       .then((responseJson) => {
-        return responseJson.id;
+        console.log(responseJson.id);
       })
       .catch((error) => {
         console.error(error);
