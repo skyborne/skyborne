@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
+
 import { Header } from '../components';
 
 const ActiveTrip = () =>
@@ -14,8 +15,8 @@ const onPress = () => {
   return fetch('http://localhost:8000/v1/keygen')
     .then(response => response.text())
     .then(text => (text.length ? JSON.parse(text) : {}))
-    .then(responseJson => {
-      console.log(responseJson.id);
+    .then(results =>
+      console.log(results.id);
     })
     .catch(error => {
       console.error(error);
