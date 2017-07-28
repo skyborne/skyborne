@@ -20,7 +20,8 @@ class ActiveTrip extends Component {
         this.setState({ id: responseJSON.id });
       })
       .catch(error => {
-        console.error(error);
+        console.log(error);
+        return '';
       });
   };
 
