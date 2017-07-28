@@ -23,7 +23,7 @@ class ActiveTrip extends Component {
         console.log(error);
         return '';
       });
-  };
+
 
   render() {
     return (
