@@ -21,7 +21,17 @@ class ActiveTrip extends Component {
       })
       .catch(error => {
         console.log(error);
-        return '';
+        return;
+      });
+  };
+
+  onPressMail = () => {
+    fetch('http://localhost:8000/v1/results?id=' + this.state.id)
+      .then(response => response.text())
+      .then(text => (text.length ? JSON.parse(text) : {}))
+      .catch(error => {
+        console.log(error);
+        return;
       });
   };
 
@@ -38,6 +48,7 @@ class ActiveTrip extends Component {
             title="Generate ID"
             color={this.state.id == 0 ? '#007aff' : '#' + this.state.id}
           />
+          <Button onPress={this.onPressMail} title="Get Mail" color="#007aff" />
         </View>
       </View>
     );
