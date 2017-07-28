@@ -4,7 +4,7 @@ import { Button, Text, View } from 'react-native';
 import { Header } from '../components';
 
 class ActiveTrip extends Component {
-  state = { id: 0 };
+  state = { id: 0, results: {} };
 
   constructor(props) {
     super(props);
@@ -20,8 +20,7 @@ class ActiveTrip extends Component {
         this.setState({ id: responseJSON.id });
       })
       .catch(error => {
-        console.log(error);
-        return;
+        this.setState({ id: 0 });
       });
   };
 
@@ -29,9 +28,11 @@ class ActiveTrip extends Component {
     fetch('http://localhost:8000/v1/results?id=' + this.state.id)
       .then(response => response.text())
       .then(text => (text.length ? JSON.parse(text) : {}))
+      .then(responseJSON => {
+        this.setState({ results: responseJSON });
+      })
       .catch(error => {
-        console.log(error);
-        return;
+        this.setState({ response: {} });
       });
   };
 
@@ -40,15 +41,18 @@ class ActiveTrip extends Component {
       <View>
         <Header>Active Trip</Header>
         <Text>
-          {this.state.id == 0 ? '' : this.state.id}
+          {this.state.id === 0 ? '' : this.state.id}
         </Text>
         <View style={styles.buttonStyle}>
           <Button
             onPress={this.onPress}
             title="Generate ID"
-            color={this.state.id == 0 ? '#007aff' : '#' + this.state.id}
+            color={this.state.id === 0 ? '#007aff' : '#' + this.state.id}
           />
-          <Button onPress={this.onPressMail} title="Get Mail" color="#007aff" />
+          <Button onPress={this.onPressMail} title="Done" color="#007aff" />
+          <Text>
+            {' '}{JSON.stringify(this.state.results)}{' '}
+          </Text>
         </View>
       </View>
     );
