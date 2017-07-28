@@ -32,7 +32,11 @@ class ActiveTrip extends Component {
           {this.state.id == 0 ? '' : this.state.id}
         </Text>
         <View style={styles.buttonStyle}>
-          <Button onPress={this.onPress} title="Button" color="#007aff" />
+          <Button
+            onPress={this.onPress}
+            title="Generate ID"
+            color={this.state.id == 0 ? '#007aff' : '#' + this.state.id}
+          />
         </View>
       </View>
     );
