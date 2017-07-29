@@ -20,7 +20,7 @@ class ActiveTrip extends Component {
         this.setState({ id: responseJSON.id });
       })
       .catch(error => {
-        this.setState({ id: 0 });
+        console.log('Failed to fetch response.', error);
       });
   };
 
@@ -32,7 +32,7 @@ class ActiveTrip extends Component {
         this.setState({ results: responseJSON });
       })
       .catch(error => {
-        this.setState({ response: {} });
+        console.log('Failed to fetch response.', error);
       });
   };
 
