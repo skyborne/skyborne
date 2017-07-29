@@ -9,10 +9,10 @@ class ActiveTrip extends Component {
   constructor(props) {
     super(props);
 
-    this.onPress = this.onPress.bind(this);
+    this.fetchID = this.fetchID.bind(this);
   }
 
-  onPress = () => {
+  fetchID = () => {
     fetch('http://localhost:8000/v1/keygen')
       .then(response => response.text())
       .then(text => (text.length ? JSON.parse(text) : {}))
@@ -24,7 +24,7 @@ class ActiveTrip extends Component {
       });
   };
 
-  onPressMail = () => {
+  fetchResults = () => {
     fetch('http://localhost:8000/v1/results?id=' + this.state.id)
       .then(response => response.text())
       .then(text => (text.length ? JSON.parse(text) : {}))
@@ -45,14 +45,15 @@ class ActiveTrip extends Component {
         </Text>
         <View style={styles.buttonStyle}>
           <Button
-            onPress={this.onPress}
+            onPress={this.fetchID}
             title="Generate ID"
             color={this.state.id === 0 ? '#007aff' : '#' + this.state.id}
           />
-          <Button onPress={this.onPressMail} title="Done" color="#007aff" />
+          <Button onPress={this.fetchResults} title="Done" color="#007aff" />
           <Text>
             {' '}{JSON.stringify(this.state.results)}{' '}
           </Text>
+          <Text> Head on over to your mail app </Text>
         </View>
       </View>
     );
