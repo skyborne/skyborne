@@ -23,7 +23,7 @@ class ActiveTrip extends Component {
 
   fetchResults = () => {
     fetch('http://localhost:8000/v1/results?id=' + this.state.id)
-      .then(response => response.text())
+      .then(response => response.json())
       .then(responseJSON => {
         this.setState({ results: responseJSON });
       })
