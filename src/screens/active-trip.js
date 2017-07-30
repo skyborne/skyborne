@@ -12,8 +12,7 @@ class ActiveTrip extends Component {
 
   fetchID = () => {
     fetch('http://localhost:8000/v1/keygen')
-      .then(response => response.text())
-      .then(text => (text.length ? JSON.parse(text) : {}))
+      .then(response => response.json())
       .then(responseJSON => {
         this.setState({ id: responseJSON.id });
       })
@@ -25,7 +24,6 @@ class ActiveTrip extends Component {
   fetchResults = () => {
     fetch('http://localhost:8000/v1/results?id=' + this.state.id)
       .then(response => response.text())
-      .then(text => (text.length ? JSON.parse(text) : {}))
       .then(responseJSON => {
         this.setState({ results: responseJSON });
       })
