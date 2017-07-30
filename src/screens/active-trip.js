@@ -8,8 +8,6 @@ class ActiveTrip extends Component {
 
   constructor(props) {
     super(props);
-
-    this.fetchID = this.fetchID.bind(this);
   }
 
   fetchID = () => {
