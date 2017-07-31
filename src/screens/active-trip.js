@@ -41,13 +41,13 @@ class ActiveTrip extends Component {
       <View>
         <Header>Active Trip</Header>
         <Text>
-          {this.state.id}
+          {this.state.id === 0 ? '' : this.state.id}
         </Text>
         <View style={styles.buttonStyle}>
           <Button
             onPress={this.fetchID}
             title="Generate ID"
-            color={this.state.id}
+            color={this.state.id == 0 ? '#007aff' : '#' + this.state.id}
           />
           <Button onPress={this.fetchResults} title="Done" color="#007aff" />
           <Text>
