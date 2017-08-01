@@ -49,7 +49,7 @@ class ActiveTrip extends Component {
         </Text>
         <View style={styles.buttonStyle}>
           <Button
-            onPress={this.copyID(this.state.id)}
+            onPress={() => this.copyID(this.state.id)}
             title="Copy"
             color="#007aff"
           />
