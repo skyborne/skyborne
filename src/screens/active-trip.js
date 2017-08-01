@@ -16,7 +16,7 @@ class ActiveTrip extends Component {
 
   copyID = id => {
     Clipboard.setString(id);
-    Alert.alert('Copied ID!');
+    Alert.alert('Copied ID!'); // Debatable
   };
 
   fetchID = () => {
@@ -51,7 +51,14 @@ class ActiveTrip extends Component {
             title={this.state.id}
             color="#007aff"
           />
+          <Text> Tap that to copy. </Text>
+          <Text> Head on over to your inbox. </Text>
+          <Text>
+            Forward your ticket to reservations@skyborne.co with the copied ID
+            as the subject line.
+          </Text>
           <Button onPress={this.fetchResults} title="Done" color="#007aff" />
+          <Text> Hit done when done! </Text>
         </View>
       </View>
     );
