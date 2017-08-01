@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Clipboard, Text, View } from 'react-native';
+import { Alert, Button, Clipboard, Text, View } from 'react-native';
 
 import { Header } from '../components';
 
@@ -16,6 +16,7 @@ class ActiveTrip extends Component {
 
   copyID = id => {
     Clipboard.setString(id);
+    Alert.alert('Copied ID!');
   };
 
   fetchID = () => {
@@ -44,20 +45,13 @@ class ActiveTrip extends Component {
     return (
       <View>
         <Header>Active Trip</Header>
-        <Text>
-          {this.state.id}
-        </Text>
         <View style={styles.buttonStyle}>
           <Button
             onPress={() => this.copyID(this.state.id)}
-            title="Copy"
+            title={this.state.id}
             color="#007aff"
           />
           <Button onPress={this.fetchResults} title="Done" color="#007aff" />
-          <Text>
-            {' '}{JSON.stringify(this.state.results)}{' '}
-          </Text>
-          <Text> Head on over to your mail app </Text>
         </View>
       </View>
     );
