@@ -3,6 +3,7 @@ import { TabNavigator } from 'react-navigation';
 
 import ActiveTrip from '../screens/active-trip';
 import PastTrips from '../screens/past-trips';
+import Profile from '../screens/profile';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../../assets/fonts/edge-icon/config.json';
@@ -24,6 +25,14 @@ export const Tabs = TabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
           <Icon name="anchor" size={30} color={tintColor} />,
+      },
+    },
+
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+          <Icon name="home" size={30} color={tintColor} />,
       },
     },
   },

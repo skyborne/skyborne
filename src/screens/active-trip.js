@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Button, Clipboard, Text, View } from 'react-native';
+import { Button, Clipboard, Text, View } from 'react-native';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
@@ -16,7 +16,6 @@ class ActiveTrip extends Component {
 
   copyID = id => {
     Clipboard.setString(id);
-    Alert.alert('Copied ID!'); // Debatable
   };
 
   fetchID = () => {
@@ -44,7 +43,7 @@ class ActiveTrip extends Component {
   render() {
     return (
       <View>
-        <FluidHeader>Active Trip</FluidHeader>
+        <FluidHeader>New Trip</FluidHeader>
         <FluidCard style={styles.buttonStyle}>
           <FluidButton
             alignSelf="stretch"
@@ -53,7 +52,6 @@ class ActiveTrip extends Component {
             onPress={() => this.copyID(this.state.id)}>
             {this.state.id}
           </FluidButton>
-          <Text style={styles.textStyle}>^</Text>
           <Text style={styles.textStyle}>Tap that to copy.</Text>
           <Text style={styles.textStyle}>Head on over to your inbox.</Text>
           <Text style={styles.textStyle}>
@@ -81,6 +79,7 @@ const styles = {
     fontWeight: '400',
     textAlign: 'center',
     marginBottom: 10,
+    marginTop: 15,
   },
 };
 
