@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Clipboard, Text, View } from 'react-native';
+import { Button, Clipboard, Text, TouchableOpacity, View } from 'react-native';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
@@ -41,12 +41,15 @@ class ActiveTrip extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View>
         <FluidHeader>Active Trip</FluidHeader>
-        <FluidCard style={styles.cardStyle}>
-          <Text style={styles.textStyle}>Tap to add a new trip.</Text>
-        </FluidCard>
+        <TouchableOpacity>
+          <FluidCard style={styles.cardStyle}>
+            <Text style={styles.textStyle}>Tap to add a new trip.</Text>
+          </FluidCard>
+        </TouchableOpacity>
       </View>
     );
   }
