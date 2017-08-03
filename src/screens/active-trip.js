@@ -53,9 +53,10 @@ class ActiveTrip extends Component {
             onPress={() => this.copyID(this.state.id)}>
             {this.state.id}
           </FluidButton>
-          <Text>Tap that to copy.</Text>
-          <Text>Head on over to your inbox.</Text>
-          <Text>
+          <Text style={styles.textStyle}>^</Text>
+          <Text style={styles.textStyle}>Tap that to copy.</Text>
+          <Text style={styles.textStyle}>Head on over to your inbox.</Text>
+          <Text style={styles.textStyle}>
             Forward your ticket to reservations@skyborne.co with the copied ID
             as the subject line.
           </Text>
@@ -66,7 +67,7 @@ class ActiveTrip extends Component {
             onPress={this.fetchResults}>
             Done
           </FluidButton>
-          <Text>Hit done when done!</Text>
+          <Text style={styles.textStyle}>Hit done when done!</Text>
         </FluidCard>
       </View>
     );
@@ -74,9 +75,12 @@ class ActiveTrip extends Component {
 }
 
 const styles = {
-  buttonStyle: {
-    borderWidth: 1,
-    padding: 5,
+  textStyle: {
+    fontFamily: 'Rubik',
+    fontSize: 18,
+    fontWeight: '400',
+    textAlign: 'center',
+    marginBottom: 10,
   },
 };
 
