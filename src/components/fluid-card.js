@@ -1,10 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Button, TouchableOpacity, Text } from 'react-native';
 
-const FluidCard = () => {
-  return <View />;
+const FluidCard = props => {
+  return (
+    <View>
+      {props.children}
+    </View>
+  );
 };
 
-const styles = {};
+const styles = {
+  height: 350,
+  width: 300,
+};
 
-export default FluidCard;
+export { FluidCard };

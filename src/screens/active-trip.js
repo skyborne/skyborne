@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, Button, Clipboard, Text, View } from 'react-native';
 
-import { FluidHeader, FluidButton } from '../components';
+import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
@@ -45,7 +45,7 @@ class ActiveTrip extends Component {
     return (
       <View>
         <FluidHeader>Active Trip</FluidHeader>
-        <View style={styles.buttonStyle}>
+        <FluidCard style={styles.buttonStyle}>
           <FluidButton
             alignSelf="stretch"
             backgroundColor="#DFDFDF"
@@ -67,7 +67,7 @@ class ActiveTrip extends Component {
             Done
           </FluidButton>
           <Text>Hit done when done!</Text>
-        </View>
+        </FluidCard>
       </View>
     );
   }
