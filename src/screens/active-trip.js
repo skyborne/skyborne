@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, Button, Clipboard, Text, View } from 'react-native';
 
-import { Header, FluidButton } from '../components';
+import { FluidHeader, FluidButton } from '../components';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
@@ -44,7 +44,7 @@ class ActiveTrip extends Component {
   render() {
     return (
       <View>
-        <Header>Active Trip</Header>
+        <FluidHeader>Active Trip</FluidHeader>
         <View style={styles.buttonStyle}>
           <FluidButton
             alignSelf="stretch"

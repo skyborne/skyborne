@@ -21,6 +21,10 @@ export const Tabs = TabNavigator(
 
     ActiveTrip: {
       screen: ActiveTrip,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+          <Icon name="anchor" size={30} color={tintColor} />,
+      },
     },
   },
   {

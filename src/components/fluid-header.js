@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Header = props =>
+const FluidHeader = props =>
   <View style={styles.ViewStyle}>
     <Text style={styles.TextStyle}>
       {props.children}
@@ -24,4 +24,4 @@ const styles = {
   },
 };
 
-export { Header };
+export { FluidHeader };

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Header } from '../components';
+import { FluidHeader } from '../components';
 
-const PastTrips = () => <Header>Past Trips</Header>;
+const PastTrips = () => <FluidHeader>Past Trips</FluidHeader>;
 
 export default PastTrips;

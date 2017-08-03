@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Card = () => {
+const FluidCard = () => {
   return <View />;
 };
 
 const styles = {};
 
-export default Card;
+export default FluidCard;

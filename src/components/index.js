@@ -1,3 +1,3 @@
-export * from './header';
+export * from './fluid-header';
 export * from './fluid-button';
-export * from './card';
+export * from './fluid-card';
