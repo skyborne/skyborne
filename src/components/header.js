@@ -14,7 +14,6 @@ const styles = {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     borderColor: '#000',
-    borderBottomWidth: 1,
   },
 
   TextStyle: {

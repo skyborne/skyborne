@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, Button, Clipboard, Text, View } from 'react-native';
 
-import { Header } from '../components';
+import { Header, FluidButton } from '../components';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
@@ -46,19 +46,27 @@ class ActiveTrip extends Component {
       <View>
         <Header>Active Trip</Header>
         <View style={styles.buttonStyle}>
-          <Button
-            onPress={() => this.copyID(this.state.id)}
-            title={this.state.id}
-            color="#007aff"
-          />
-          <Text> Tap that to copy. </Text>
-          <Text> Head on over to your inbox. </Text>
+          <FluidButton
+            alignSelf="stretch"
+            backgroundColor="#DFDFDF"
+            color="#000"
+            onPress={() => this.copyID(this.state.id)}>
+            {this.state.id}
+          </FluidButton>
+          <Text>Tap that to copy.</Text>
+          <Text>Head on over to your inbox.</Text>
           <Text>
             Forward your ticket to reservations@skyborne.co with the copied ID
             as the subject line.
           </Text>
-          <Button onPress={this.fetchResults} title="Done" color="#007aff" />
-          <Text> Hit done when done! </Text>
+          <FluidButton
+            alignSelf="center"
+            backgroundColor="#4BDE8B"
+            color="#fff"
+            onPress={this.fetchResults}>
+            Done
+          </FluidButton>
+          <Text>Hit done when done!</Text>
         </View>
       </View>
     );
