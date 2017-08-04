@@ -8,6 +8,8 @@ import Profile from '../screens/profile';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import icoMoonConfig from '../../assets/fonts/edge-icon/config.json';
 
+import { height, width } from '../components';
+
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 export const Tabs = TabNavigator(
@@ -41,8 +43,8 @@ export const Tabs = TabNavigator(
       showLabel: false,
       activeTintColor: '#000',
       style: {
-        paddingTop: 30,
-        paddingBottom: 30,
+        paddingTop: height * 0.04,
+        paddingBottom: height * 0.04,
         borderTopWidth: 0.5,
         backgroundColor: '#fff',
       },

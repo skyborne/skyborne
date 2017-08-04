@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Clipboard, Text, TouchableOpacity, View } from 'react-native';
 
-import { FluidCard, FluidHeader, FluidButton } from '../components';
+import {
+  FluidCard,
+  FluidHeader,
+  FluidButton,
+  height,
+  width,
+} from '../components';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
@@ -12,6 +18,7 @@ class ActiveTrip extends Component {
 
   componentWillMount() {
     this.fetchID();
+    console.log('height: ' + height + ' width: ' + width);
   }
 
   copyID = id => {
@@ -45,7 +52,7 @@ class ActiveTrip extends Component {
       <View>
         <FluidHeader>Ongoing</FluidHeader>
         <TouchableOpacity>
-          <FluidCard height={350}>
+          <FluidCard height={height * 0.52}>
             <Text style={styles.textStyle}>Tap to add a new trip.</Text>
           </FluidCard>
         </TouchableOpacity>

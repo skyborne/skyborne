@@ -1,26 +1,30 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export const FluidHeader = props =>
-  <View style={styles.ViewStyle}>
-    <Text style={styles.TextStyle}>
-      {props.children}
-    </Text>
-  </View>;
+import { height, width } from './';
 
-const styles = {
-  ViewStyle: {
-    height: 120,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    borderColor: '#000',
-    marginBottom: 50,
-  },
+export const FluidHeader = props => {
+  const styles = {
+    ViewStyle: {
+      height: height * 0.18,
+      justifyContent: 'flex-end',
+      alignItems: 'flex-end',
+      borderColor: '#000',
+      marginBottom: height * 0.07,
+    },
 
-  TextStyle: {
-    fontFamily: 'Rubik',
-    fontSize: 40,
-    paddingRight: 30,
-    fontWeight: '500',
-  },
+    TextStyle: {
+      fontFamily: 'Rubik',
+      fontSize: 40,
+      paddingRight: width * 0.08,
+      fontWeight: '500',
+    },
+  };
+  return (
+    <View style={styles.ViewStyle}>
+      <Text style={styles.TextStyle}>
+        {props.children}
+      </Text>
+    </View>
+  );
 };
