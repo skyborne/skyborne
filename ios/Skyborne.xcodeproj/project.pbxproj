@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		006D3AFE9E6C40F7B0759B3D /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BE704D91C490A98F5BF4D /* libLottieReactNative.a */; };
 		00BA560E1A55449B9631E234 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7CAC3C47E4A168502F7BC /* MaterialIcons.ttf */; };
@@ -39,7 +38,6 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* SkyborneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SkyborneTests.m */; };
-		420EEDDF2EF54E8F9BC22659 /* edge.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13B93E8AEDEB497E9E9B2C21 /* edge.ttf */; };
 		4F42AA7541524AA29660D210 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A36A117A6FF48F2A5F70906 /* libRNVectorIcons.a */; };
 		5CFBDB537A4B410F9CB14A8A /* Rubik Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F99C90311049969C2B4C5A /* Rubik Regular.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -60,6 +58,7 @@
 		D427E903E4D7473EA3528E64 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CF747A78D8D44B5B1E3FE21 /* Zocial.ttf */; };
 		F772132DF00847BDA7F356E5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AB31AC11494423B812F4777 /* Entypo.ttf */; };
 		FF60DC859C534D5799A1D972 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A57566551646E5BB33759D /* Ionicons.ttf */; };
+		D7FA65BF0459422092181217 /* iOS Edge Line.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -376,6 +375,7 @@
 		E63CD0AF42764754A9976356 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		F53518A4C961459BB829AFEC /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		FFD3D3B40F3048B68DBA9E8A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */ = {isa = PBXFileReference; name = "iOS Edge Line.ttf"; path = "../assets/fonts/edge-icon/font/iOS Edge Line.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,6 +567,7 @@
 				C51B1599C28E4BB38E81EDD6 /* Rubik Medium.ttf */,
 				29E2A58617B14CCDAE003F27 /* Rubik MediumItalic.ttf */,
 				30F99C90311049969C2B4C5A /* Rubik Regular.ttf */,
+				213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1113,7 +1114,6 @@
 				197C9CEE90624AECA2153DE8 /* Octicons.ttf in Resources */,
 				1A3E3806C1C544A49EF7A82F /* SimpleLineIcons.ttf in Resources */,
 				D427E903E4D7473EA3528E64 /* Zocial.ttf in Resources */,
-				420EEDDF2EF54E8F9BC22659 /* edge.ttf in Resources */,
 				62B84920C2464C0F9BA38D70 /* Rubik Black.ttf in Resources */,
 				9E5AED1378A5428FBAA8EF22 /* Rubik BlackItalic.ttf in Resources */,
 				6FA1FC1B79B64C618537DA8E /* Rubik Bold.ttf in Resources */,
@@ -1124,6 +1124,7 @@
 				A1D410DB46324ABB86615485 /* Rubik Medium.ttf in Resources */,
 				8C9CBACBE531448FB4FB598F /* Rubik MediumItalic.ttf in Resources */,
 				5CFBDB537A4B410F9CB14A8A /* Rubik Regular.ttf in Resources */,
+				D7FA65BF0459422092181217 /* iOS Edge Line.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,7 +63,6 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>edge.ttf</string>
 		<string>Rubik Black.ttf</string>
 		<string>Rubik BlackItalic.ttf</string>
 		<string>Rubik Bold.ttf</string>
@@ -74,6 +73,7 @@
 		<string>Rubik Medium.ttf</string>
 		<string>Rubik MediumItalic.ttf</string>
 		<string>Rubik Regular.ttf</string>
+		<string>iOS Edge Line.ttf</string>
 	</array>
 </dict>
 </plist>

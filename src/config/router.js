@@ -5,10 +5,10 @@ import ActiveTrip from '../screens/active-trip';
 import PastTrips from '../screens/past-trips';
 import Profile from '../screens/profile';
 
-import { createIconSetFromFontello } from 'react-native-vector-icons';
-import fontelloConfig from '../../assets/fonts/edge-icon/config.json';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import icoMoonConfig from '../../assets/fonts/edge-icon/config.json';
 
-const Icon = createIconSetFromFontello(fontelloConfig);
+const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 export const Tabs = TabNavigator(
   {
@@ -16,7 +16,7 @@ export const Tabs = TabNavigator(
       screen: PastTrips,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
-          <Icon name="compass" size={30} color={tintColor} />,
+          <Icon name="List-2" size={30} color={tintColor} />,
       },
     },
 
@@ -24,7 +24,7 @@ export const Tabs = TabNavigator(
       screen: ActiveTrip,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
-          <Icon name="anchor" size={30} color={tintColor} />,
+          <Icon name="Hot-Air-Balloon" size={30} color={tintColor} />,
       },
     },
 
@@ -32,7 +32,7 @@ export const Tabs = TabNavigator(
       screen: Profile,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
-          <Icon name="home" size={30} color={tintColor} />,
+          <Icon name="User" size={30} color={tintColor} />,
       },
     },
   },

@@ -20,7 +20,7 @@
     "rnpm": {
         "assets": [
             "assets/fonts/rubik",
-            "assets/fonts/edge-icon/font/edge"
+            "assets/fonts/edge-icon/font"
         ]
     },
     "scripts": {
