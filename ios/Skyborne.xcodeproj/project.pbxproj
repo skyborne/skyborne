@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		006D3AFE9E6C40F7B0759B3D /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BE704D91C490A98F5BF4D /* libLottieReactNative.a */; };
 		00BA560E1A55449B9631E234 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7CAC3C47E4A168502F7BC /* MaterialIcons.ttf */; };
