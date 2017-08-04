@@ -47,6 +47,10 @@ class ActiveTrip extends Component {
       });
   };
 
+  // TODO: Disable card button, until animation is complete.
+  // TODO: Flip card into the new trip view.
+  // TODO: Figure out 'edit-trip'
+
   render() {
     return (
       <View>
