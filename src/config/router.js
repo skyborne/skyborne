@@ -41,7 +41,8 @@ export const Tabs = TabNavigator(
       showLabel: false,
       activeTintColor: '#000',
       style: {
-        height: 60,
+        paddingTop: 30,
+        paddingBottom: 30,
         borderTopWidth: 0.5,
         backgroundColor: '#fff',
       },
