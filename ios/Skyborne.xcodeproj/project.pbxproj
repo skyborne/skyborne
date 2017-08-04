@@ -56,9 +56,9 @@
 		B4BAD9299DBC4187BBA42F62 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C1ABE8B492F4DD6B957D5EF /* MaterialCommunityIcons.ttf */; };
 		BB9563AB89FB4C32A57BB068 /* Rubik Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBBB2259BACA43189AD8AFBF /* Rubik Italic.ttf */; };
 		D427E903E4D7473EA3528E64 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CF747A78D8D44B5B1E3FE21 /* Zocial.ttf */; };
+		D7FA65BF0459422092181217 /* iOS Edge Line.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */; };
 		F772132DF00847BDA7F356E5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AB31AC11494423B812F4777 /* Entypo.ttf */; };
 		FF60DC859C534D5799A1D972 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A57566551646E5BB33759D /* Ionicons.ttf */; };
-		D7FA65BF0459422092181217 /* iOS Edge Line.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,9 +345,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Skyborne/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Skyborne/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Skyborne/main.m; sourceTree = "<group>"; };
-		13B93E8AEDEB497E9E9B2C21 /* edge.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = edge.ttf; path = "../assets/fonts/edge-icon/font/edge.ttf"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		151901821ED3450C949241E3 /* Rubik Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik Bold.ttf"; path = "../assets/fonts/rubik/Rubik Bold.ttf"; sourceTree = "<group>"; };
+		213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "iOS Edge Line.ttf"; path = "../assets/fonts/edge-icon/font/iOS Edge Line.ttf"; sourceTree = "<group>"; };
 		29E2A58617B14CCDAE003F27 /* Rubik MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik MediumItalic.ttf"; path = "../assets/fonts/rubik/Rubik MediumItalic.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Skyborne-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Skyborne-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Skyborne-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Skyborne-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,7 +375,6 @@
 		E63CD0AF42764754A9976356 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		F53518A4C961459BB829AFEC /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		FFD3D3B40F3048B68DBA9E8A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */ = {isa = PBXFileReference; name = "iOS Edge Line.ttf"; path = "../assets/fonts/edge-icon/font/iOS Edge Line.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,7 +555,6 @@
 				00DD918AE5D74EBA9059EBD6 /* Octicons.ttf */,
 				75537C4E6BCF4EC98CCCB1FD /* SimpleLineIcons.ttf */,
 				0CF747A78D8D44B5B1E3FE21 /* Zocial.ttf */,
-				13B93E8AEDEB497E9E9B2C21 /* edge.ttf */,
 				C5182E163AFD48BB8414DA3D /* Rubik Black.ttf */,
 				805B2CB9C5D9491291D7FED5 /* Rubik BlackItalic.ttf */,
 				151901821ED3450C949241E3 /* Rubik Bold.ttf */,
@@ -757,7 +755,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = S9NRX8EY6J;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = S9NRX8EY6J;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1248,6 +1250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S9NRX8EY6J;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1281,6 +1284,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = S9NRX8EY6J;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1311,6 +1315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = S9NRX8EY6J;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1334,6 +1339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S9NRX8EY6J;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
