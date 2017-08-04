@@ -27,6 +27,7 @@ export class FluidCard extends React.Component {
 
   style = {
     // height: 350,
+    top: height * 0.08,
     width: width * 0.8,
     shadowOffset: { width: 0, height: 0 },
     shadowRadius: 15,
