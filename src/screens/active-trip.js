@@ -41,12 +41,11 @@ class ActiveTrip extends Component {
   };
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View>
         <FluidHeader>Ongoing</FluidHeader>
         <TouchableOpacity>
-          <FluidCard style={styles.cardStyle}>
+          <FluidCard height={350}>
             <Text style={styles.textStyle}>Tap to add a new trip.</Text>
           </FluidCard>
         </TouchableOpacity>
@@ -61,20 +60,6 @@ const styles = {
     fontSize: 18,
     fontWeight: '200',
     textAlign: 'center',
-  },
-  cardStyle: {
-    height: 350,
-    width: 300,
-    shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 15,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    padding: 15,
-    alignSelf: 'center',
-    borderRadius: 15,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 };
 
