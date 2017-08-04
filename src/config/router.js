@@ -46,5 +46,6 @@ export const Tabs = TabNavigator(
         backgroundColor: '#fff',
       },
     },
+    initialRouteName: 'ActiveTrip',
   },
 );

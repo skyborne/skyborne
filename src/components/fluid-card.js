@@ -9,7 +9,7 @@ export class FluidCard extends React.Component {
   componentWillMount() {
     Animated.timing(this.state.fade, {
       toValue: 1,
-      duration: 5000,
+      duration: 2000,
     }).start();
   }
 

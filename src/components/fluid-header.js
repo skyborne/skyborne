@@ -10,7 +10,7 @@ const FluidHeader = props =>
 
 const styles = {
   ViewStyle: {
-    height: 125,
+    height: 120,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     borderColor: '#000',
@@ -19,7 +19,7 @@ const styles = {
 
   TextStyle: {
     fontFamily: 'Rubik',
-    fontSize: 48,
+    fontSize: 40,
     paddingRight: 30,
     fontWeight: '500',
   },
