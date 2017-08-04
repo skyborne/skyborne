@@ -1330,6 +1330,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.skyborne.skyborne;
 				PRODUCT_NAME = Skyborne;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1354,6 +1355,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.skyborne.skyborne;
 				PRODUCT_NAME = Skyborne;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
