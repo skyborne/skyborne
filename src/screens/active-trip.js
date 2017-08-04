@@ -44,7 +44,7 @@ class ActiveTrip extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <FluidHeader>Active Trip</FluidHeader>
+        <FluidHeader>Ongoing</FluidHeader>
         <TouchableOpacity>
           <FluidCard style={styles.cardStyle}>
             <Text style={styles.textStyle}>Tap to add a new trip.</Text>
