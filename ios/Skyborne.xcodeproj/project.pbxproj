@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		006D3AFE9E6C40F7B0759B3D /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BE704D91C490A98F5BF4D /* libLottieReactNative.a */; };
 		00BA560E1A55449B9631E234 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7CAC3C47E4A168502F7BC /* MaterialIcons.ttf */; };
@@ -755,11 +756,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = S9NRX8EY6J;
+						DevelopmentTeam = 8RQRT7CQBX;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = S9NRX8EY6J;
+						DevelopmentTeam = 8RQRT7CQBX;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1250,7 +1251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = S9NRX8EY6J;
+				DEVELOPMENT_TEAM = 8RQRT7CQBX;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1284,7 +1285,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = S9NRX8EY6J;
+				DEVELOPMENT_TEAM = 8RQRT7CQBX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1315,7 +1316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = S9NRX8EY6J;
+				DEVELOPMENT_TEAM = 8RQRT7CQBX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1329,7 +1330,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.skyborne.skyborne;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.skyborne.skyborne-10191999";
 				PRODUCT_NAME = Skyborne;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1340,7 +1341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S9NRX8EY6J;
+				DEVELOPMENT_TEAM = 8RQRT7CQBX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1354,7 +1355,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.skyborne.skyborne;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.skyborne.skyborne-10191999";
 				PRODUCT_NAME = Skyborne;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
