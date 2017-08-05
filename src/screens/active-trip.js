@@ -14,7 +14,6 @@ class ActiveTrip extends Component {
 
   componentWillMount() {
     this.fetchID();
-    console.log('height: ' + height + ' width: ' + width);
   }
 
   copyID = id => {
