@@ -52,4 +52,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
+.keys/
+
 assets/fonts/edge-icon/*
