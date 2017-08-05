@@ -8,7 +8,7 @@ import Profile from '../screens/profile';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import icoMoonConfig from '../../assets/fonts/edge-icon/config.json';
 
-import { height, width } from '../components';
+import { height, width } from '../global';
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 

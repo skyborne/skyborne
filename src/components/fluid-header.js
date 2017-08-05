@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { height, width } from './';
+import { height, width } from '../global';
 
 export const FluidHeader = props => {
   const styles = {

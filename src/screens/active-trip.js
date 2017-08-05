@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Clipboard, Text, TouchableOpacity, View } from 'react-native';
 
-import {
-  FluidCard,
-  FluidHeader,
-  FluidButton,
-  height,
-  width,
-} from '../components';
+import { FluidCard, FluidHeader, FluidButton } from '../components';
+
+import { height, width } from '../global';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
