@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Linking,
 } from 'react-native';
 
 import { BlurView } from 'react-native-blur';
@@ -76,6 +77,19 @@ class ActiveTrip extends Component {
     });
   }
 
+  openMailApp() {
+    const url = 'message://';
+    Linking.canOpenURL(url)
+      .then(supported => {
+        if (!supported) {
+          console.log("Can't handle url: " + url);
+        } else {
+          return Linking.openURL(url);
+        }
+      })
+      .catch(err => console.log('An error occured', err));
+  }
+
   newTrip() {
     fadeInNewTrip = () => {
       Animated.timing(this.state.test_fade, {
@@ -100,8 +114,33 @@ class ActiveTrip extends Component {
         style={[styles.centerView, { opacity: this.state.test_fade }]}>
         <FluidCard height={height * 0.7}>
           <Text style={styles.textStyle}>New trip view.</Text>
+          <TouchableOpacity onPress={this.openMailApp}>
+            <Text
+              style={[
+                styles.textStyle,
+                {
+                  borderWidth: 1,
+                  borderColor: '#0076FF',
+                  color: '#0076FF',
+                  padding: 5,
+                },
+              ]}>
+              Open Mail.
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={fadeOutNewTrip}>
-            <Text style={styles.textStyle}>Close.</Text>
+            <Text
+              style={[
+                styles.textStyle,
+                {
+                  borderWidth: 1,
+                  borderColor: '#0076FF',
+                  color: '#0076FF',
+                  padding: 5,
+                },
+              ]}>
+              Close.
+            </Text>
           </TouchableOpacity>
         </FluidCard>
       </Animated.View>
