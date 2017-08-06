@@ -16,7 +16,7 @@ export const FluidHeader = props => {
     TextStyle: {
       fontFamily: 'Rubik',
       fontSize: 40,
-      paddingRight: width * 0.08,
+      marginRight: width * 0.1,
       fontWeight: '500',
     },
   };
