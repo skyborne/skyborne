@@ -45,7 +45,6 @@ export const Tabs = TabNavigator(
       style: {
         paddingTop: height * 0.04,
         paddingBottom: height * 0.04,
-        // borderTopWidth: 1,
         backgroundColor: '#fff',
       },
     },
