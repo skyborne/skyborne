@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import { Button, Clipboard, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Animated,
+  Button,
+  Clipboard,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import { height, width } from '../global';
 
 class ActiveTrip extends Component {
-  state = { id: '', results: {} };
+  state = {
+    id: '',
+    results: {},
+    fade: new Animated.Value(0),
+    test_fade: new Animated.Value(0),
+    displayNewTripView: false,
+  };
 
   constructor(props) {
     super(props);
@@ -14,6 +27,7 @@ class ActiveTrip extends Component {
 
   componentWillMount() {
     this.fetchID();
+    this.fadeInit();
   }
 
   copyID = id => {
@@ -49,21 +63,74 @@ class ActiveTrip extends Component {
   // TODO: Figure out 'edit-trip'
   // TODO: Save trip, figure out how to display if round trip
 
+  fadeInit() {
+    Animated.timing(this.state.fade, {
+      toValue: 1,
+      duration: 2000,
+    }).start();
+  }
+
+  newTrip() {
+    fadeInNewTrip = () => {
+      Animated.timing(this.state.test_fade, {
+        toValue: 1,
+        duration: 250,
+      }).start();
+    };
+    fadeOutNewTrip = () => {
+      Animated.timing(this.state.test_fade, {
+        toValue: 0,
+        duration: 250,
+      }).start(() => {
+        this.setState({ displayNewTripView: false });
+      });
+    };
+    fadeInNewTrip();
+    return (
+      <Animated.View
+        style={[styles.centerView, { opacity: this.state.test_fade }]}>
+        <FluidCard height={height * 0.7}>
+          <Text style={styles.textStyle}>New trip view.</Text>
+          <TouchableOpacity onPress={fadeOutNewTrip}>
+            <Text style={styles.textStyle}>Close.</Text>
+          </TouchableOpacity>
+        </FluidCard>
+      </Animated.View>
+    );
+  }
+
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <FluidHeader>Ongoing</FluidHeader>
-        <TouchableOpacity>
-          <FluidCard height={height * 0.52}>
-            <Text style={styles.textStyle}>Tap to add a new trip.</Text>
-          </FluidCard>
-        </TouchableOpacity>
+        <Animated.View style={{ opacity: this.state.fade }}>
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({ displayNewTripView: true });
+            }}>
+            <FluidCard height={height * 0.52}>
+              <Text style={styles.textStyle}>Tap to add a new trip.</Text>
+            </FluidCard>
+          </TouchableOpacity>
+        </Animated.View>
+        {this.state.displayNewTripView ? this.newTrip() : null}
       </View>
     );
   }
 }
 
 const styles = {
+  centerView: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+
   textStyle: {
     fontFamily: 'Rubik',
     fontSize: 18,
