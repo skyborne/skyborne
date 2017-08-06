@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, View, Button, TouchableOpacity, Text } from 'react-native';
 
-import { height, width } from './';
+import { height, width } from '../global';
 
 export class FluidCard extends React.Component {
   state = {
@@ -26,7 +26,6 @@ export class FluidCard extends React.Component {
   }
 
   style = {
-    // height: 350,
     top: height * 0.08,
     width: width * 0.8,
     shadowOffset: { width: 0, height: 0 },

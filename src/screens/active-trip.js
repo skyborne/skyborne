@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Clipboard, Text, TouchableOpacity, View } from 'react-native';
 
-import {
-  FluidCard,
-  FluidHeader,
-  FluidButton,
-  height,
-  width,
-} from '../components';
+import { FluidCard, FluidHeader, FluidButton } from '../components';
+
+import { height, width } from '../global';
 
 class ActiveTrip extends Component {
   state = { id: '', results: {} };
@@ -18,7 +14,6 @@ class ActiveTrip extends Component {
 
   componentWillMount() {
     this.fetchID();
-    console.log('height: ' + height + ' width: ' + width);
   }
 
   copyID = id => {
@@ -47,9 +42,12 @@ class ActiveTrip extends Component {
       });
   };
 
+  // TODO: Blur Background, if at new trip stage
   // TODO: Disable card button, until animation is complete.
+  // TODO: Ask for Transaction Info
   // TODO: Flip card into the new trip view.
   // TODO: Figure out 'edit-trip'
+  // TODO: Save trip, figure out how to display if round trip
 
   render() {
     return (
