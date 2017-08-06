@@ -10,6 +10,7 @@ export const FluidHeader = props => {
       justifyContent: 'flex-end',
       alignItems: 'flex-end',
       borderColor: '#000',
+      marginBottom: height * 0.08,
     },
 
     TextStyle: {
