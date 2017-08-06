@@ -60,8 +60,6 @@ class ActiveTrip extends Component {
       });
   };
 
-  // TODO: Blur Background, if at new trip stage
-  // TODO: Disable card button, until animation is complete.
   // TODO: Ask for Transaction Info
   // TODO: Flip card into the new trip view.
   // TODO: Figure out 'edit-trip'
