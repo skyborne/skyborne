@@ -22,6 +22,7 @@ class ActiveTrip extends Component {
     test_fade: new Animated.Value(0),
     displayNewTripView: false,
     blur: false,
+    disabled: true,
   };
 
   constructor(props) {
@@ -70,7 +71,11 @@ class ActiveTrip extends Component {
     Animated.timing(this.state.fade, {
       toValue: 1,
       duration: 2000,
-    }).start();
+    }).start(animation => {
+      if (animation.finished) {
+        this.setState({ disabled: false });
+      }
+    });
   }
 
   newTrip() {
@@ -80,6 +85,7 @@ class ActiveTrip extends Component {
         duration: 250,
       }).start();
     };
+
     fadeOutNewTrip = () => {
       Animated.timing(this.state.test_fade, {
         toValue: 0,
@@ -88,7 +94,9 @@ class ActiveTrip extends Component {
         this.setState({ displayNewTripView: false, blur: false });
       });
     };
+
     fadeInNewTrip();
+
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.test_fade }]}>
@@ -108,6 +116,7 @@ class ActiveTrip extends Component {
         <FluidHeader>Ongoing</FluidHeader>
         <Animated.View style={{ opacity: this.state.fade }}>
           <TouchableOpacity
+            disabled={this.state.disabled}
             onPress={() => {
               this.setState({ displayNewTripView: true, blur: true });
             }}>
