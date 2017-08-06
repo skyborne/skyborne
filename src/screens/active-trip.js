@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native';
 
+import { BlurView } from 'react-native-blur';
+
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import { height, width } from '../global';
@@ -19,6 +21,7 @@ class ActiveTrip extends Component {
     fade: new Animated.Value(0),
     test_fade: new Animated.Value(0),
     displayNewTripView: false,
+    blur: false,
   };
 
   constructor(props) {
@@ -82,7 +85,7 @@ class ActiveTrip extends Component {
         toValue: 0,
         duration: 250,
       }).start(() => {
-        this.setState({ displayNewTripView: false });
+        this.setState({ displayNewTripView: false, blur: false });
       });
     };
     fadeInNewTrip();
@@ -106,13 +109,16 @@ class ActiveTrip extends Component {
         <Animated.View style={{ opacity: this.state.fade }}>
           <TouchableOpacity
             onPress={() => {
-              this.setState({ displayNewTripView: true });
+              this.setState({ displayNewTripView: true, blur: true });
             }}>
             <FluidCard height={height * 0.52}>
               <Text style={styles.textStyle}>Tap to add a new trip.</Text>
             </FluidCard>
           </TouchableOpacity>
         </Animated.View>
+        {this.state.blur
+          ? <BlurView blurType="light" style={styles.absolute} />
+          : null}
         {this.state.displayNewTripView ? this.newTrip() : null}
       </View>
     );
@@ -120,6 +126,14 @@ class ActiveTrip extends Component {
 }
 
 const styles = {
+  absolute: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+
   centerView: {
     position: 'absolute',
     top: 0,

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		006D3AFE9E6C40F7B0759B3D /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8BE704D91C490A98F5BF4D /* libLottieReactNative.a */; };
 		00BA560E1A55449B9631E234 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7CAC3C47E4A168502F7BC /* MaterialIcons.ttf */; };
@@ -60,6 +59,7 @@
 		D7FA65BF0459422092181217 /* iOS Edge Line.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213D289D67254E6DBDE78D3E /* iOS Edge Line.ttf */; };
 		F772132DF00847BDA7F356E5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AB31AC11494423B812F4777 /* Entypo.ttf */; };
 		FF60DC859C534D5799A1D972 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51A57566551646E5BB33759D /* Ionicons.ttf */; };
+		0A06C0FE30714438BD1CB471 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E82E8B290F4C669DA9139F /* libRNBlur.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -376,6 +376,8 @@
 		E63CD0AF42764754A9976356 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		F53518A4C961459BB829AFEC /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		FFD3D3B40F3048B68DBA9E8A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		FB93655D1C184D12892A8EEF /* RNBlur.xcodeproj */ = {isa = PBXFileReference; name = "RNBlur.xcodeproj"; path = "../node_modules/react-native-blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		D8E82E8B290F4C669DA9139F /* libRNBlur.a */ = {isa = PBXFileReference; name = "libRNBlur.a"; path = "libRNBlur.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 				4F42AA7541524AA29660D210 /* libRNVectorIcons.a in Frameworks */,
 				6FA92E153E05497FA00C43E5 /* libLottie.a in Frameworks */,
 				006D3AFE9E6C40F7B0759B3D /* libLottieReactNative.a in Frameworks */,
+				0A06C0FE30714438BD1CB471 /* libRNBlur.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +609,7 @@
 				E63CD0AF42764754A9976356 /* RNVectorIcons.xcodeproj */,
 				B237538ECB0D44B390AAB9C7 /* Lottie.xcodeproj */,
 				750F88DB6DEE4E03B3DCDA41 /* LottieReactNative.xcodeproj */,
+				FB93655D1C184D12892A8EEF /* RNBlur.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1261,12 +1265,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = SkyborneTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1291,12 +1297,14 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = SkyborneTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1322,6 +1330,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = Skyborne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1347,6 +1356,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = Skyborne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1378,11 +1388,13 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = "Skyborne-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1416,11 +1428,13 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/lottie-ios/Lottie-Screenshot/**",
 					"$(SRCROOT)/../node_modules/lottie-react-native/lib/ios/LottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 				);
 				INFOPLIST_FILE = "Skyborne-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1455,6 +1469,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Skyborne-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1479,6 +1494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
