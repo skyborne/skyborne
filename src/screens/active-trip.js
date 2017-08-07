@@ -13,6 +13,8 @@ import { BlurView } from 'react-native-blur';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
+import Icon from '../resources/icon';
+
 import NewTrip from './new-trip';
 
 import { height, width } from '../global';
@@ -79,18 +81,9 @@ class ActiveTrip extends Component {
     });
   }
 
-  openMailApp() {
-    const url = 'message://';
-    Linking.canOpenURL(url)
-      .then(supported => {
-        if (!supported) {
-          console.log("Can't handle url: " + url);
-        } else {
-          return Linking.openURL(url);
-        }
-      })
-      .catch(err => console.log('An error occured', err));
-  }
+  /*-------------*
+        CARDS
+  *--------------*/
 
   newTrip() {
     fadeInNewTrip = () => {
@@ -114,20 +107,44 @@ class ActiveTrip extends Component {
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.test_fade }]}>
-        <FluidCard height={height * 0.7}>
-          <NewTrip>
-            <FluidButton
-              alignSelf="center"
-              backgroundColor="#4BDE8B"
-              color="#fff"
-              onPress={fadeOutNewTrip}>
-              Close
-            </FluidButton>
-          </NewTrip>
+        <FluidCard
+          height={height * 0.7}
+          style={{
+            alignItems: 'center',
+          }}>
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({ displayNewTripView: false, blur: false });
+            }}
+            style={{
+              alignSelf: 'flex-start',
+            }}>
+            <Icon
+              name="X"
+              size={15}
+              color="#2B2B2B"
+              style={{
+                marginLeft: height * 0.7 * 0.04,
+                marginTop: height * 0.7 * 0.04,
+                marginBottom: height * 0.7 * 0.04,
+              }}
+            />
+          </TouchableOpacity>
+          <NewTrip />
         </FluidCard>
       </Animated.View>
     );
   }
+
+  editTrip() {
+    return;
+  }
+
+  itinerary() {
+    return;
+  }
+
+  // RENDER
 
   render() {
     return (
@@ -139,7 +156,12 @@ class ActiveTrip extends Component {
             onPress={() => {
               this.setState({ displayNewTripView: true, blur: true });
             }}>
-            <FluidCard height={height * 0.52}>
+            <FluidCard
+              height={height * 0.52}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <Text style={styles.textStyle}>Tap to add a new trip.</Text>
             </FluidCard>
           </TouchableOpacity>
