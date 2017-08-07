@@ -43,30 +43,28 @@ class NewTrip extends Component {
   render() {
     return (
       <View>
-        <FluidHeader>New Trip</FluidHeader>
-        <FluidCard style={styles.buttonStyle}>
-          <FluidButton
-            alignSelf="stretch"
-            backgroundColor="#DFDFDF"
-            color="#000"
-            onPress={() => this.copyID(this.state.id)}>
-            {this.state.id}
-          </FluidButton>
-          <Text style={styles.textStyle}>Tap that to copy.</Text>
-          <Text style={styles.textStyle}>Head on over to your inbox.</Text>
-          <Text style={styles.textStyle}>
-            Forward your ticket to reservations@skyborne.co with the copied ID
-            as the subject line.
-          </Text>
-          <FluidButton
-            alignSelf="center"
-            backgroundColor="#4BDE8B"
-            color="#fff"
-            onPress={this.fetchResults}>
-            Done
-          </FluidButton>
-          <Text style={styles.textStyle}>Hit done when done!</Text>
-        </FluidCard>
+        <FluidButton
+          alignSelf="stretch"
+          backgroundColor="#DFDFDF"
+          color="#000"
+          onPress={() => this.copyID(this.state.id)}>
+          {this.state.id}
+        </FluidButton>
+        <Text style={styles.textStyle}>Tap that to copy.</Text>
+        <Text style={styles.textStyle}>Head on over to your inbox.</Text>
+        <Text style={styles.textStyle}>
+          Forward your ticket to reservations@skyborne.co with the copied ID as
+          the subject line.
+        </Text>
+        <FluidButton
+          alignSelf="center"
+          backgroundColor="#4BDE8B"
+          color="#fff"
+          onPress={this.fetchResults}>
+          Done
+        </FluidButton>
+        <Text style={styles.textStyle}>Hit done when done!</Text>
+        {this.props.children}
       </View>
     );
   }

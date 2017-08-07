@@ -13,6 +13,8 @@ import { BlurView } from 'react-native-blur';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
+import NewTrip from './new-trip';
+
 import { height, width } from '../global';
 
 class ActiveTrip extends Component {
@@ -113,31 +115,15 @@ class ActiveTrip extends Component {
       <Animated.View
         style={[styles.centerView, { opacity: this.state.test_fade }]}>
         <FluidCard height={height * 0.7}>
-          <Text style={styles.textStyle}>New trip view.</Text>
-          <TouchableOpacity onPress={this.openMailApp}>
-            <Text
-              style={[
-                styles.textStyle,
-                {
-                  borderWidth: 1,
-                  padding: 5,
-                },
-              ]}>
-              Open Mail.
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={fadeOutNewTrip}>
-            <Text
-              style={[
-                styles.textStyle,
-                {
-                  borderWidth: 1,
-                  padding: 5,
-                },
-              ]}>
-              Close.
-            </Text>
-          </TouchableOpacity>
+          <NewTrip>
+            <FluidButton
+              alignSelf="center"
+              backgroundColor="#4BDE8B"
+              color="#fff"
+              onPress={fadeOutNewTrip}>
+              Close
+            </FluidButton>
+          </NewTrip>
         </FluidCard>
       </Animated.View>
     );
