@@ -120,8 +120,6 @@ class ActiveTrip extends Component {
                 styles.textStyle,
                 {
                   borderWidth: 1,
-                  borderColor: '#0076FF',
-                  color: '#0076FF',
                   padding: 5,
                 },
               ]}>
@@ -134,8 +132,6 @@ class ActiveTrip extends Component {
                 styles.textStyle,
                 {
                   borderWidth: 1,
-                  borderColor: '#0076FF',
-                  color: '#0076FF',
                   padding: 5,
                 },
               ]}>
