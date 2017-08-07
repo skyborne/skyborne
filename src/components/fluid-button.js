@@ -14,7 +14,7 @@ export const FluidButton = props => {
 
   return (
     <TouchableOpacity onPress={props.onPress}>
-      <View style={style}>
+      <View style={[style, props.style]}>
         <Text
           style={{
             fontWeight: props.fontWeight,
