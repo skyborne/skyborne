@@ -19,11 +19,8 @@ export class FluidCard extends React.Component {
     shadowRadius: 15,
     shadowColor: '#000',
     shadowOpacity: 0.1,
-    padding: width * 0.04,
     alignSelf: 'center',
     borderRadius: 15,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
   };
 }
