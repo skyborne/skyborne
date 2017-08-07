@@ -5,12 +5,9 @@ import ActiveTrip from '../screens/active-trip';
 import PastTrips from '../screens/past-trips';
 import Profile from '../screens/profile';
 
-import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-import icoMoonConfig from '../../assets/fonts/edge-icon/config.json';
-
 import { height, width } from '../global';
 
-const Icon = createIconSetFromIcoMoon(icoMoonConfig);
+import Icon from '../resources/icon';
 
 export const Tabs = TabNavigator(
   {
