@@ -3,24 +3,21 @@ import { Animated, View, Button, TouchableOpacity, Text } from 'react-native';
 
 import { height, width } from '../global';
 
-export class FluidCard extends React.Component {
-  render() {
-    this.style.height = this.props.height;
-    return (
-      <Animated.View style={[this.style, this.props.style]}>
-        {this.props.children}
-      </Animated.View>
-    );
-  }
+export const FluidCard = props =>
+  <Animated.View style={[styles.cardStyle, { height: props.height }]}>
+    <View style={[{ flex: 1 }, props.style]}>
+      {props.children}
+    </View>
+  </Animated.View>;
 
-  style = {
+const styles = {
+  cardStyle: {
     width: width * 0.8,
     shadowOffset: { width: 0, height: 0 },
     shadowRadius: 15,
     shadowColor: '#000',
     shadowOpacity: 0.1,
-    alignSelf: 'center',
     borderRadius: 15,
     backgroundColor: '#fff',
-  };
-}
+  },
+};
