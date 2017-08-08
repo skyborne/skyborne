@@ -66,6 +66,18 @@ class NewTrip extends Component {
       .catch(err => console.log('An error occured', err));
   };
 
+  flipAndLoad = () => {
+    this.fetchResults();
+    // Maybe charge them here.
+    // Flip
+    do {
+      // Animate
+    } while (
+      Object.keys(this.state.results).length === 0 &&
+      this.state.results.constructor === Object
+    );
+  };
+
   devicePlus = () =>
     <View style={{ borderWidth: 0, flex: 1 }}>
       <FluidButton
