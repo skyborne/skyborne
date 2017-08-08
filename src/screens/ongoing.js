@@ -25,7 +25,7 @@ class Ongoing extends Component {
     results: {},
     fade: new Animated.Value(0),
     test_fade: new Animated.Value(0),
-    displayNewTripView: true,
+    displayNewTripView: false,
     blur: false,
     disabled: true,
   };
