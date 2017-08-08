@@ -21,8 +21,6 @@ import { height, width } from '../global';
 
 class Ongoing extends Component {
   state = {
-    id: '',
-    results: {},
     fade: new Animated.Value(0),
     test_fade: new Animated.Value(0),
     displayNewTripView: false,
@@ -35,40 +33,8 @@ class Ongoing extends Component {
   }
 
   componentWillMount() {
-    this.fetchID();
     this.fadeInit();
   }
-
-  copyID = id => {
-    Clipboard.setString(id);
-  };
-
-  fetchID = () => {
-    fetch('http://localhost:8000/v1/keygen')
-      .then(response => response.json())
-      .then(responseJSON => {
-        this.setState({ id: responseJSON.id });
-      })
-      .catch(error => {
-        console.log('Failed to fetch response.', error);
-      });
-  };
-
-  fetchResults = () => {
-    fetch('http://localhost:8000/v1/results?id=' + this.state.id)
-      .then(response => response.json())
-      .then(responseJSON => {
-        this.setState({ results: responseJSON });
-      })
-      .catch(error => {
-        console.log('Failed to fetch response.', error);
-      });
-  };
-
-  // TODO: Ask for Transaction Info
-  // TODO: Flip card into the new trip view.
-  // TODO: Figure out 'edit-trip'
-  // TODO: Save trip, figure out how to display if round trip
 
   fadeInit() {
     Animated.timing(this.state.fade, {
@@ -80,10 +46,6 @@ class Ongoing extends Component {
       }
     });
   }
-
-  /*-------------*
-        CARDS
-  *--------------*/
 
   newTrip() {
     fadeInNewTrip = () => {
@@ -147,10 +109,6 @@ class Ongoing extends Component {
   itinerary() {
     return;
   }
-
-  /*
-    RENDER
-  */
 
   render() {
     return (
