@@ -19,13 +19,13 @@ import NewTrip from './new-trip';
 
 import { height, width } from '../global';
 
-class ActiveTrip extends Component {
+class Ongoing extends Component {
   state = {
     id: '',
     results: {},
     fade: new Animated.Value(0),
     test_fade: new Animated.Value(0),
-    displayNewTripView: false,
+    displayNewTripView: true,
     blur: false,
     disabled: true,
   };
@@ -98,7 +98,11 @@ class ActiveTrip extends Component {
         toValue: 0,
         duration: 250,
       }).start(() => {
-        this.setState({ displayNewTripView: false, blur: false });
+        this.setState({
+          displayNewTripView: false,
+          blur: false,
+          test_fade: new Animated.Value(0),
+        });
       });
     };
 
@@ -110,11 +114,11 @@ class ActiveTrip extends Component {
         <FluidCard
           height={height * 0.7}
           style={{
-            alignItems: 'center',
+            borderWidth: 0,
           }}>
           <TouchableOpacity
             onPress={() => {
-              this.setState({ displayNewTripView: false, blur: false });
+              fadeOutNewTrip();
             }}
             style={{
               alignSelf: 'flex-start',
@@ -144,13 +148,19 @@ class ActiveTrip extends Component {
     return;
   }
 
-  // RENDER
+  /*
+    RENDER
+  */
 
   render() {
     return (
       <View style={{ flex: 1 }}>
         <FluidHeader>Ongoing</FluidHeader>
-        <Animated.View style={{ opacity: this.state.fade }}>
+        <Animated.View
+          style={{
+            alignItems: 'center',
+            opacity: this.state.fade,
+          }}>
           <TouchableOpacity
             disabled={this.state.disabled}
             onPress={() => {
@@ -184,6 +194,10 @@ const styles = {
     right: 0,
   },
 
+  initCard: {
+    alignItems: 'center',
+  },
+
   centerView: {
     position: 'absolute',
     top: 0,
@@ -203,4 +217,4 @@ const styles = {
   },
 };
 
-export default ActiveTrip;
+export default Ongoing;

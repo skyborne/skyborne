@@ -1,8 +1,8 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 
-import ActiveTrip from '../screens/active-trip';
-import PastTrips from '../screens/past-trips';
+import Ongoing from '../screens/ongoing';
+import Timeline from '../screens/timeline';
 import Profile from '../screens/profile';
 
 import { height, width } from '../global';
@@ -11,16 +11,16 @@ import Icon from '../resources/icon';
 
 export const Tabs = TabNavigator(
   {
-    PastTrips: {
-      screen: PastTrips,
+    Timeline: {
+      screen: Timeline,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
           <Icon name="List-2" size={30} color={tintColor} />,
       },
     },
 
-    ActiveTrip: {
-      screen: ActiveTrip,
+    Ongoing: {
+      screen: Ongoing,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) =>
           <Icon name="Hot-Air-Balloon" size={30} color={tintColor} />,
@@ -49,6 +49,6 @@ export const Tabs = TabNavigator(
         shadowOffset: { width: 0, height: -1 },
       },
     },
-    initialRouteName: 'ActiveTrip',
+    initialRouteName: 'Ongoing',
   },
 );
