@@ -72,10 +72,7 @@ class NewTrip extends Component {
     // Flip
     do {
       // Animate
-    } while (
-      Object.keys(this.state.results).length === 0 &&
-      this.state.results.constructor === Object
-    );
+    } while (Object.keys(this.state.results).length === 0);
   };
 
   devicePlus = () =>
