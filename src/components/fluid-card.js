@@ -4,10 +4,9 @@ import { Animated, View, Button, TouchableOpacity, Text } from 'react-native';
 import { height, width } from '../global';
 
 export const FluidCard = props =>
-  <Animated.View style={[styles.cardStyle, { height: props.height }]}>
-    <View style={[{ flex: 1 }, props.style]}>
-      {props.children}
-    </View>
+  <Animated.View
+    style={[styles.cardStyle, props.style, { height: props.height }]}>
+    {props.children}
   </Animated.View>;
 
 const styles = {
