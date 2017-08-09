@@ -23,7 +23,7 @@ class Ongoing extends Component {
   state = {
     fade: new Animated.Value(0),
     test_fade: new Animated.Value(0),
-    displayNewTripView: false,
+    displayNewTripView: true,
     blur: false,
     disabled: true,
   };

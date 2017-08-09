@@ -118,7 +118,7 @@ class NewTrip extends Component {
 
       <FluidButton
         alignSelf="center"
-        style={{ marginTop: height * 0.7 * 0.07 }}>
+        style={{ marginTop: height * 0.7 * 0.075 }}>
         Next
       </FluidButton>
     </View>;
