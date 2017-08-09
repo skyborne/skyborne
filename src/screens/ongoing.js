@@ -21,8 +21,8 @@ import { height, width } from '../global';
 
 class Ongoing extends Component {
   state = {
-    fade: new Animated.Value(0),
-    test_fade: new Animated.Value(0),
+    onStartFade: new Animated.Value(0),
+    newTripFade: new Animated.Value(0),
     displayNewTripView: false,
     blur: false,
     disabled: true,
@@ -37,7 +37,7 @@ class Ongoing extends Component {
   }
 
   fadeInit() {
-    Animated.timing(this.state.fade, {
+    Animated.timing(this.state.onStartFade, {
       toValue: 1,
       duration: 2000,
     }).start(animation => {
@@ -49,21 +49,21 @@ class Ongoing extends Component {
 
   newTrip() {
     fadeInNewTrip = () => {
-      Animated.timing(this.state.test_fade, {
+      Animated.timing(this.state.newTripFade, {
         toValue: 1,
         duration: 250,
       }).start();
     };
 
     fadeOutNewTrip = () => {
-      Animated.timing(this.state.test_fade, {
+      Animated.timing(this.state.newTripFade, {
         toValue: 0,
         duration: 250,
       }).start(() => {
         this.setState({
           displayNewTripView: false,
           blur: false,
-          test_fade: new Animated.Value(0),
+          newTripFade: new Animated.Value(0),
         });
       });
     };
@@ -72,7 +72,7 @@ class Ongoing extends Component {
 
     return (
       <Animated.View
-        style={[styles.centerView, { opacity: this.state.test_fade }]}>
+        style={[styles.centerView, { opacity: this.state.newTripFade }]}>
         <FluidCard
           height={height * 0.7}
           style={{
@@ -117,7 +117,7 @@ class Ongoing extends Component {
         <Animated.View
           style={{
             alignItems: 'center',
-            opacity: this.state.fade,
+            opacity: this.state.onStartFade,
           }}>
           <TouchableOpacity
             disabled={this.state.disabled}
