@@ -76,7 +76,7 @@ class NewTrip extends Component {
   };
 
   devicePlus = () =>
-    <View style={{ borderWidth: 0, flex: 1 }}>
+    <View style={{ borderWidth: 0, flex: 0 }}>
       <FluidButton
         style={styles.idStyle}
         alignSelf="center"
@@ -115,12 +115,6 @@ class NewTrip extends Component {
       <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.04 }]}>
         {'Come back and hit next\nwhen ready'}.
       </Text>
-
-      <FluidButton
-        alignSelf="center"
-        style={{ marginTop: height * 0.7 * 0.075 }}>
-        Next
-      </FluidButton>
     </View>;
 
   deviceStd = () =>
@@ -163,12 +157,6 @@ class NewTrip extends Component {
       <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
         {'Come back and hit next\nwhen ready'}.
       </Text>
-
-      <FluidButton
-        alignSelf="center"
-        style={{ marginTop: height * 0.7 * 0.0475 }}>
-        Next
-      </FluidButton>
     </View>;
 
   deviceSmall = () =>
@@ -212,18 +200,10 @@ class NewTrip extends Component {
       <Text style={[styles.smallTextStyle, { marginTop: height * 0.7 * 0.03 }]}>
         {'Come back and hit next\nwhen ready'}.
       </Text>
-
-      <FluidButton
-        alignSelf="center"
-        style={{ marginTop: height * 0.7 * 0.03 }}>
-        Next
-      </FluidButton>
     </View>;
 
   isPlus = () => {
     const PLUS = Device.getModel().indexOf('Plus') >= 0;
-
-    console.log(PLUS ? true : false);
 
     return PLUS ? true : false;
   };
@@ -232,16 +212,12 @@ class NewTrip extends Component {
     const SIX = Device.getModel().indexOf('6') >= 0;
     const SEVEN = Device.getModel().indexOf('7') >= 0;
 
-    console.log(SIX || SEVEN ? true : false);
-
     return SIX || SEVEN ? true : false;
   };
 
   isSmall = () => {
     const SE = Device.getModel().indexOf('SE') >= 0;
     const FIVE = Device.getModel().indexOf('5') >= 0;
-
-    console.log(SE || FIVE ? true : false);
 
     return SE || FIVE ? true : false;
   };

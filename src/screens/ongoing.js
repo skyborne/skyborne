@@ -23,7 +23,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
-    displayNewTripView: false,
+    displayNewTripView: true,
     blur: false,
     disabled: true,
   };
@@ -34,6 +34,7 @@ class Ongoing extends Component {
 
   componentWillMount() {
     this.fadeInit();
+    this.setFlip();
   }
 
   fadeInit() {
@@ -47,7 +48,50 @@ class Ongoing extends Component {
     });
   }
 
+  setFlip() {
+    this.flipValue = new Animated.Value(0);
+    this.flipValueListener = 0;
+
+    this.flipValue.addListener(({ value }) => {
+      this.flipValueListener = value;
+    });
+
+    this.frontInterpolate = this.flipValue.interpolate({
+      inputRange: [0, 180],
+      outputRange: ['0deg', '180deg'],
+    });
+    this.backInterpolate = this.flipValue.interpolate({
+      inputRange: [0, 180],
+      outputRange: ['180deg', '360deg'],
+    });
+  }
+
+  flipCard() {
+    if (this.flipValueListener >= 90) {
+      Animated.spring(this.flipValue, {
+        toValue: 0,
+        friction: 8,
+        tension: 10,
+      }).start();
+    } else {
+      Animated.spring(this.flipValue, {
+        toValue: 180,
+        friction: 8,
+        tension: 10,
+      }).start();
+    }
+  }
+
   newTrip() {
+    const frontAnimatedStyle = {
+      transform: [{ rotateY: this.frontInterpolate }],
+      backfaceVisibility: 'hidden',
+    };
+    const backAnimatedStyle = {
+      transform: [{ rotateY: this.backInterpolate }],
+      backfaceVisibility: 'hidden',
+    };
+
     fadeInNewTrip = () => {
       Animated.timing(this.state.newTripFade, {
         toValue: 1,
@@ -73,11 +117,13 @@ class Ongoing extends Component {
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.newTripFade }]}>
+        <FluidCard height={height * 0.7} style={[backAnimatedStyle]} />
         <FluidCard
           height={height * 0.7}
-          style={{
-            borderWidth: 0,
-          }}>
+          style={[
+            { borderWidth: 0, position: 'absolute' },
+            frontAnimatedStyle,
+          ]}>
           <TouchableOpacity
             onPress={() => {
               fadeOutNewTrip();
@@ -97,6 +143,14 @@ class Ongoing extends Component {
             />
           </TouchableOpacity>
           <NewTrip />
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <FluidButton
+              alignSelf="center"
+              style={{ bottom: 5 }}
+              onPress={() => this.flipCard()}>
+              Next
+            </FluidButton>
+          </View>
         </FluidCard>
       </Animated.View>
     );
