@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Linking,
   Button,
   Clipboard,
@@ -64,15 +65,24 @@ class NewTrip extends Component {
       .catch(err => console.log('An error occured', err));
   };
 
-  flipAndLoad = () => {
+  setResults = async results => {
+    try {
+      await AsyncStorage.setItem('Results', JSON.stringify(results));
+    } catch (error) {
+      console.log('There was an error saving the results', error);
+    }
+  };
+
+  flipAndLoad = async () => {
     this.fetchResults()
-      .then(results => this.setState({ results: results }))
+      .then(results => this.setResults(results))
       .catch(reason => console.log(reason.message));
+    let data = await AsyncStorage.getItem('Results');
     // Maybe charge them here.
     // Flip
     do {
       // Animate
-    } while (Object.keys(this.state.results).length === 0);
+    } while (data === null);
   };
 
   devicePlus = () =>
