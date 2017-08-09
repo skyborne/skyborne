@@ -42,15 +42,13 @@ class NewTrip extends Component {
       });
   };
 
-  fetchResults = () => {
-    fetch('http://localhost:8000/v1/results?id=' + this.state.id)
-      .then(response => response.json())
-      .then(responseJSON => {
-        this.setState({ results: responseJSON });
-      })
-      .catch(error => {
-        console.log('Failed to fetch response.', error);
-      });
+  fetchResults = async () => {
+    let response = await fetch(
+      'http://localhost:8000/v1/results?id=' + this.state.id,
+    );
+    let results = await response.json();
+
+    return results;
   };
 
   openMailApp = () => {
@@ -67,7 +65,9 @@ class NewTrip extends Component {
   };
 
   flipAndLoad = () => {
-    this.fetchResults();
+    this.fetchResults()
+      .then(results => this.setState({ results: results }))
+      .catch(reason => console.log(reason.message));
     // Maybe charge them here.
     // Flip
     do {
