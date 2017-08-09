@@ -45,7 +45,7 @@ export const Tabs = TabNavigator(
         backgroundColor: '#fff',
         borderTopWidth: 0,
         shadowColor: '#000',
-        shadowOpacity: 0.1,
+        shadowOpacity: 0.05,
         shadowOffset: { width: 0, height: -1 },
       },
     },
