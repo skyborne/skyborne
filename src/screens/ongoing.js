@@ -26,6 +26,7 @@ class Ongoing extends Component {
     displayNewTripView: true,
     blur: false,
     disabled: true,
+    visible: true,
   };
 
   constructor(props) {
@@ -108,6 +109,7 @@ class Ongoing extends Component {
           displayNewTripView: false,
           blur: false,
           newTripFade: new Animated.Value(0),
+          visible: true,
         });
       });
     };
@@ -173,20 +175,22 @@ class Ongoing extends Component {
             alignItems: 'center',
             opacity: this.state.onStartFade,
           }}>
-          <TouchableOpacity
-            disabled={this.state.disabled}
-            onPress={() => {
-              this.setState({ displayNewTripView: true, blur: true });
-            }}>
-            <FluidCard
-              height={height * 0.52}
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
+          {this.state.visible &&
+            <TouchableOpacity
+              disabled={this.state.disabled}
+              onPress={() => {
+                this.setState({ displayNewTripView: true, blur: true });
+                this.setState({ visible: false });
               }}>
-              <Text style={styles.textStyle}>Tap to add a new trip.</Text>
-            </FluidCard>
-          </TouchableOpacity>
+              <FluidCard
+                height={height * 0.52}
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Text style={styles.textStyle}>Tap to add a new trip.</Text>
+              </FluidCard>
+            </TouchableOpacity>}
         </Animated.View>
         {this.state.blur
           ? <BlurView blurType="light" style={styles.absolute} />
