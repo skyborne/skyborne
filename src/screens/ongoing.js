@@ -118,9 +118,10 @@ class Ongoing extends Component {
 
     this.state.displayLoadingBar ? pause() : null;
 
-    GetItem('RESULTS').then(results =>
-      this.setState({ results: JSON.parse(results) }),
-    );
+    GetItem('RESULTS').then(results => {
+      this.setState({ results: JSON.parse(results) });
+      this.state.displayLoadingBar ? pause() : null;
+    })
   };
 
   newTrip() {
