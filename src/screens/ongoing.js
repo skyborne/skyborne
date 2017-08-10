@@ -109,7 +109,9 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    this.loading.play();
+    setTimeout(() => {
+      this.loading.play();
+    }, 500);
 
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
@@ -152,7 +154,12 @@ class Ongoing extends Component {
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.newTripFade }]}>
-        <FluidCard height={height * 0.7} style={[backAnimatedStyle, { borderWidth: 0, justifyContent: 'center' }]}>
+        <FluidCard
+          height={height * 0.7}
+          style={[
+            backAnimatedStyle,
+            { borderWidth: 0, justifyContent: 'center' },
+          ]}>
           <View style={{ flex: 0, borderWidth: 0 }}>
             <Animation
               ref={animation => {
