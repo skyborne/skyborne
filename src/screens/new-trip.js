@@ -11,7 +11,7 @@ import {
 import Device from 'react-native-device-info';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-import { SetItem, GetItem } from '../persistence/db-helper';
+import { SetItem, GetItem, RemoveItem } from '../persistence/db-helper';
 import Icon from '../resources/icon';
 
 import { width, height } from '../global';
@@ -39,6 +39,7 @@ class NewTrip extends Component {
         SetItem('ID', responseJSON.id);
       })
       .catch(error => {
+        RemoveItem('ID');
         console.log('Failed to fetch response.', error);
       });
   };
@@ -70,25 +71,30 @@ class NewTrip extends Component {
           name="Up-Chevron"
           size={14}
           color="#2B2B2B"
-          style={[{ textAlign: 'center', marginTop: height * 0.7 * 0.02, marginBottom: height * 0.7 * 0.02 }]}
+          style={[
+            {
+              textAlign: 'center',
+              marginTop: height * 0.7 * 0.02,
+              marginBottom: height * 0.7 * 0.02,
+            },
+          ]}
         />
 
-        <Text style={[styles.textStyle]}>
-          Tap that to copy.
-        </Text>
+        <Text style={[styles.textStyle]}>Tap that to copy.</Text>
       </View>
 
       <FluidButton
         alignSelf="center"
-        style={{ marginTop: height * 0.7 * 0.04, marginBottom: height * 0.7 * 0.04 }}
+        style={{
+          marginTop: height * 0.7 * 0.04,
+          marginBottom: height * 0.7 * 0.04,
+        }}
         onPress={this.openMailApp}>
         Go to your mailbox
       </FluidButton>
 
       <View style={{ borderWidth: 0 }}>
-        <Text style={[styles.textStyle]}>
-          Forward your ticket to
-        </Text>
+        <Text style={[styles.textStyle]}>Forward your ticket to</Text>
         <Text style={[styles.textStyle, styles.emailStyle]}>
           reservations@skyborne.co
         </Text>
@@ -254,25 +260,30 @@ class NewTrip extends Component {
             name="Up-Chevron"
             size={14}
             color="#2B2B2B"
-            style={[{ textAlign: 'center', marginTop: height * 0.7 * 0.02, marginBottom: height * 0.7 * 0.02 }]}
+            style={[
+              {
+                textAlign: 'center',
+                marginTop: height * 0.7 * 0.02,
+                marginBottom: height * 0.7 * 0.02,
+              },
+            ]}
           />
 
-          <Text style={[styles.textStyle]}>
-            Tap that to copy.
-          </Text>
+          <Text style={[styles.textStyle]}>Tap that to copy.</Text>
         </View>
 
         <FluidButton
           alignSelf="center"
-          style={{ marginTop: height * 0.7 * 0.04, marginBottom: height * 0.7 * 0.04 }}
+          style={{
+            marginTop: height * 0.7 * 0.04,
+            marginBottom: height * 0.7 * 0.04,
+          }}
           onPress={this.openMailApp}>
           Go to your mailbox
         </FluidButton>
 
         <View style={{ borderWidth: 0 }}>
-          <Text style={[styles.textStyle]}>
-            Forward your ticket to
-          </Text>
+          <Text style={[styles.textStyle]}>Forward your ticket to</Text>
           <Text style={[styles.textStyle, styles.emailStyle]}>
             reservations@skyborne.co
           </Text>
@@ -284,7 +295,8 @@ class NewTrip extends Component {
         <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
           {'Come back and hit next\nwhen ready'}.
         </Text>
-      </View>);
+      </View>
+    );
   }
 }
 
