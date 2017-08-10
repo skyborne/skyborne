@@ -109,9 +109,7 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    setTimeout(() => {
-      this.loading.play();
-    }, 2000);
+    this.loading.play();
 
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
@@ -175,7 +173,7 @@ class Ongoing extends Component {
             { borderWidth: 0, position: 'absolute', justifyContent: 'center' },
             frontAnimatedStyle,
           ]}>
-          <View style={{ borderWidth: 0, top: 5 }}>
+          <View style={{ borderWidth: 0, top: 4 }}>
             <NewTrip />
             <View style={{ flex: 0, justifyContent: 'center', borderWidth: 0 }}>
               <FluidButton
@@ -192,7 +190,8 @@ class Ongoing extends Component {
             }}
             style={{
               position: 'absolute',
-              top: 0, bottom: 0, left: 0, right: 0,
+              top: 0,
+              borderWidth: 0,
             }}>
             <Icon
               name="X"
