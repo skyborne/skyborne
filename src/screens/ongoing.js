@@ -12,9 +12,8 @@ import {
 import { BlurView } from 'react-native-blur';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-
+import { GetItem, SetItem } from '../persistence/db-helper';
 import Icon from '../resources/icon';
-
 import NewTrip from './new-trip';
 
 import { height, width } from '../global';
@@ -25,6 +24,8 @@ class Ongoing extends Component {
     newTripFade: new Animated.Value(0),
     displayNewTripView: true,
     blur: false,
+    id: '',
+    results: {},
     disabled: true,
     visible: true,
   };
@@ -36,6 +37,10 @@ class Ongoing extends Component {
   componentWillMount() {
     this.fadeInit();
     this.setFlip();
+  }
+
+  componentDidMount() {
+    GetItem('ID').then(id => this.setState({ id: id }));
   }
 
   fadeInit() {
@@ -81,7 +86,29 @@ class Ongoing extends Component {
         tension: 10,
       }).start();
     }
+    // Need to make a state var holding isFlipped and Remove the reverse animation
   }
+
+  fetchResults = async () => {
+    let response = await fetch(
+      'http://localhost:8000/v1/results?id=' + this.state.id,
+    );
+    let results = await response.json();
+
+    return results;
+  };
+
+  flipAndLoad = () => {
+    this.fetchResults()
+      .then(results => SetItem('RESULTS', JSON.stringify(results)))
+      .catch(reason => console.log(reason.message));
+
+    this.flipCard();
+
+    GetItem('RESULTS').then(results =>
+      this.setState({ results: JSON.parse(results) }),
+    );
+  };
 
   newTrip() {
     const frontAnimatedStyle = {
@@ -149,7 +176,7 @@ class Ongoing extends Component {
             <FluidButton
               alignSelf="center"
               style={{ bottom: 5 }}
-              onPress={() => this.flipCard()}>
+              onPress={() => this.flipAndLoad()}>
               Next
             </FluidButton>
           </View>

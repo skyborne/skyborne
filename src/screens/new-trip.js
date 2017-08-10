@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AsyncStorage,
   Linking,
   Button,
   Clipboard,
@@ -12,20 +11,21 @@ import {
 import Device from 'react-native-device-info';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
+import { SetItem, GetItem } from '../persistence/db-helper';
+import Icon from '../resources/icon';
 
 import { width, height } from '../global';
 
-import Icon from '../resources/icon';
-
 class NewTrip extends Component {
-  state = { id: '', results: {} };
+  state = { id: '' };
 
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchID();
+    GetItem('ID').then(id => this.setState({ id: id }));
   }
 
   copyID = id => {
@@ -36,20 +36,11 @@ class NewTrip extends Component {
     fetch('http://localhost:8000/v1/keygen')
       .then(response => response.json())
       .then(responseJSON => {
-        this.setState({ id: responseJSON.id });
+        SetItem('ID', responseJSON.id);
       })
       .catch(error => {
         console.log('Failed to fetch response.', error);
       });
-  };
-
-  fetchResults = async () => {
-    let response = await fetch(
-      'http://localhost:8000/v1/results?id=' + this.state.id,
-    );
-    let results = await response.json();
-
-    return results;
   };
 
   openMailApp = () => {
@@ -63,26 +54,6 @@ class NewTrip extends Component {
         }
       })
       .catch(err => console.log('An error occured', err));
-  };
-
-  setResults = async results => {
-    try {
-      await AsyncStorage.setItem('Results', JSON.stringify(results));
-    } catch (error) {
-      console.log('There was an error saving the results', error);
-    }
-  };
-
-  flipAndLoad = async () => {
-    this.fetchResults()
-      .then(results => this.setResults(results))
-      .catch(reason => console.log(reason.message));
-    let data = await AsyncStorage.getItem('Results');
-    // Maybe charge them here.
-    // Flip
-    do {
-      // Animate
-    } while (data === null);
   };
 
   devicePlus = () =>
