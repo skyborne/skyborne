@@ -172,10 +172,10 @@ class Ongoing extends Component {
             />
           </TouchableOpacity>
           <NewTrip />
-          <View style={{ flex: 1, justifyContent: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', borderWidth: 0 }}>
             <FluidButton
               alignSelf="center"
-              style={{ bottom: 5 }}
+              style={{ marginBottom: height * 0.7 * 0.02 }}
               onPress={() => this.flipAndLoad()}>
               Next
             </FluidButton>
