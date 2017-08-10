@@ -9,10 +9,14 @@ import {
   Linking,
 } from 'react-native';
 
+import Animation from 'lottie-react-native';
 import { BlurView } from 'react-native-blur';
+
+import loader from '../animation/loader.json';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 import { GetItem, SetItem } from '../persistence/db-helper';
+
 import Icon from '../resources/icon';
 import NewTrip from './new-trip';
 
@@ -22,7 +26,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
-    displayNewTripView: true,
+    displayNewTripView: false,
     blur: false,
     id: '',
     results: {},
@@ -105,6 +109,8 @@ class Ongoing extends Component {
 
     this.flipCard();
 
+    this.loading.play();
+
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
     );
@@ -146,7 +152,21 @@ class Ongoing extends Component {
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.newTripFade }]}>
-        <FluidCard height={height * 0.7} style={[backAnimatedStyle]} />
+        <FluidCard height={height * 0.7} style={[backAnimatedStyle]}>
+          <View>
+            <Animation
+              ref={animation => {
+                this.loading = animation;
+              }}
+              style={{
+                width: 80,
+                height: 80,
+              }}
+              loop={true}
+              source={loader}
+            />
+          </View>
+        </FluidCard>
         <FluidCard
           height={height * 0.7}
           style={[
