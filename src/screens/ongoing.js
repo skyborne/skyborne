@@ -173,7 +173,7 @@ class Ongoing extends Component {
             { borderWidth: 0, position: 'absolute', justifyContent: 'center' },
             frontAnimatedStyle,
           ]}>
-          <View style={{ borderWidth: 0, top: 4 }}>
+          <View style={{ borderWidth: 0 }}>
             <NewTrip />
             <View style={{ flex: 0, justifyContent: 'center', borderWidth: 0 }}>
               <FluidButton
