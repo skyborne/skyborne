@@ -56,4 +56,4 @@ fastlane/screenshots
 
 assets/fonts/edge-icon/*
 
-.eslintrc.json
+*eslintrc*
