@@ -26,7 +26,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
-    displayNewTripView: true,
+    displayNewTripView: false,
     displayLoadingBar: true,
     blur: false,
     id: '',
@@ -113,7 +113,7 @@ class Ongoing extends Component {
     pause = () => {
         setTimeout(() => {
           this.loading.play();
-        }, 500);
+        }, 750);
     }
 
     this.state.displayLoadingBar ? pause() : null;
