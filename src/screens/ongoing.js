@@ -26,7 +26,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
-    displayNewTripView: true,
+    displayNewTripView: false,
     blur: false,
     id: '',
     results: {},
@@ -111,7 +111,7 @@ class Ongoing extends Component {
 
     setTimeout(() => {
       this.loading.play();
-    }, 500);
+    }, 750);
 
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
