@@ -109,7 +109,9 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    this.loading.play();
+    setTimeout(() => {
+      this.loading.play();
+    }, 2000);
 
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
