@@ -27,6 +27,7 @@ class Ongoing extends Component {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
     displayNewTripView: true,
+    displayLoadingBar: true,
     blur: false,
     id: '',
     results: {},
@@ -109,9 +110,13 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    setTimeout(() => {
-      this.loading.play();
-    }, 500);
+    pause = () => {
+        setTimeout(() => {
+          this.loading.play();
+        }, 500);
+    }
+
+    this.state.displayLoadingBar ? pause() : null;
 
     GetItem('RESULTS').then(results =>
       this.setState({ results: JSON.parse(results) }),
@@ -149,6 +154,19 @@ class Ongoing extends Component {
       });
     };
 
+    loadingBar = () =>
+      <Animation
+        ref={animation => {
+          this.loading = animation;
+        }}
+        style={{
+          width: width * 0.8,
+          height: width * 0.8,
+        }}
+        loop={true}
+        source={loader}
+      />;
+
     fadeInNewTrip();
 
     return (
@@ -161,17 +179,7 @@ class Ongoing extends Component {
             { borderWidth: 0, justifyContent: 'center' },
           ]}>
           <View style={{ flex: 0, borderWidth: 0 }}>
-            <Animation
-              ref={animation => {
-                this.loading = animation;
-              }}
-              style={{
-                width: width * 0.8,
-                height: width * 0.8,
-              }}
-              loop={true}
-              source={loader}
-            />
+            {this.state.displayLoadingBar ? loadingBar() : null}
           </View>
         </FluidCard>
         <FluidCard
