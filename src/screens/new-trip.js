@@ -281,7 +281,7 @@ class NewTrip extends Component {
           </Text>
         </View>
 
-        <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.05 }]}>
+        <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
           {'Come back and hit next\nwhen ready'}.
         </Text>
       </View>);

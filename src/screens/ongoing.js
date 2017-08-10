@@ -26,7 +26,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
-    displayNewTripView: false,
+    displayNewTripView: true,
     blur: false,
     id: '',
     results: {},
@@ -152,15 +152,15 @@ class Ongoing extends Component {
     return (
       <Animated.View
         style={[styles.centerView, { opacity: this.state.newTripFade }]}>
-        <FluidCard height={height * 0.7} style={[backAnimatedStyle]}>
-          <View>
+        <FluidCard height={height * 0.7} style={[backAnimatedStyle, { borderWidth: 0, justifyContent: 'center' }]}>
+          <View style={{ flex: 0, borderWidth: 0 }}>
             <Animation
               ref={animation => {
                 this.loading = animation;
               }}
               style={{
-                width: 80,
-                height: 80,
+                width: width * 0.8,
+                height: width * 0.8,
               }}
               loop={true}
               source={loader}
@@ -170,36 +170,40 @@ class Ongoing extends Component {
         <FluidCard
           height={height * 0.7}
           style={[
-            { borderWidth: 0, position: 'absolute' },
+            { borderWidth: 0, position: 'absolute', justifyContent: 'center' },
             frontAnimatedStyle,
           ]}>
+          <View style={{ borderWidth: 0, top: 5 }}>
+            <NewTrip />
+            <View style={{ flex: 0, justifyContent: 'center', borderWidth: 0 }}>
+              <FluidButton
+                alignSelf="center"
+                style={{ marginTop: height * 0.7 * 0.06 }}
+                onPress={() => this.flipAndLoad()}>
+                Next
+              </FluidButton>
+            </View>
+          </View>
           <TouchableOpacity
             onPress={() => {
               fadeOutNewTrip();
             }}
             style={{
-              alignSelf: 'flex-start',
+              position: 'absolute',
+              top: 0, bottom: 0, left: 0, right: 0,
             }}>
             <Icon
               name="X"
               size={15}
               color="#2B2B2B"
               style={{
+                borderWidth: 0,
                 marginLeft: height * 0.7 * 0.04,
                 marginTop: height * 0.7 * 0.04,
                 marginBottom: height * 0.7 * 0.04,
               }}
             />
           </TouchableOpacity>
-          <NewTrip />
-          <View style={{ flex: 1, justifyContent: 'center', borderWidth: 0 }}>
-            <FluidButton
-              alignSelf="center"
-              style={{ marginBottom: height * 0.7 * 0.02 }}
-              onPress={() => this.flipAndLoad()}>
-              Next
-            </FluidButton>
-          </View>
         </FluidCard>
       </Animated.View>
     );
