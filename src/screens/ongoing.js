@@ -103,14 +103,14 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    let start = () => {
+    let load = () => {
       Animated.timing(this.state.loadingFade, {
         toValue: 1,
         duration: 1000,
       }).start(() => this.loading.play());
     };
 
-    if (this.state.displayLoadingBar) start();
+    if (this.state.displayLoadingBar) load();
 
     let asyncLoop = options => {
       let i = -1;
@@ -267,10 +267,6 @@ class Ongoing extends Component {
         </Text>
       </View>
     );
-  }
-
-  itinerary() {
-    return;
   }
 
   render() {
