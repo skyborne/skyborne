@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Button, TouchableOpacity, Text } from 'react-native';
-
-import Device from 'react-native-device-info';
+import { View, TouchableOpacity, Text } from 'react-native';
 
 export const FluidButton = props => {
   props.alignSelf
@@ -21,7 +19,7 @@ export const FluidButton = props => {
   );
 };
 
-var styles = {
+const styles = {
   viewStyle: {
     backgroundColor: '#fff',
     paddingRight: 20,
