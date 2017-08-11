@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
-import {
-  Linking,
-  Button,
-  Clipboard,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import { Linking, Clipboard, Text, View } from 'react-native';
 
 import Device from 'react-native-device-info';
 
-import { FluidCard, FluidHeader, FluidButton } from '../components';
+import { FluidButton } from '../components';
 import { SetItem, GetItem } from '../persistence/db-helper';
 import Icon from '../resources/icon';
 
-import { width, height } from '../global';
+import { height } from '../global';
 
 class NewTrip extends Component {
   state = { id: '' };

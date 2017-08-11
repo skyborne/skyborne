@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Animated,
-  Button,
-  Clipboard,
-  Text,
-  TouchableOpacity,
-  View,
-  Linking,
-} from 'react-native';
+import { Animated, Text, TouchableOpacity, View } from 'react-native';
 
 import Animation from 'lottie-react-native';
 import { BlurView } from 'react-native-blur';
@@ -98,9 +90,8 @@ class Ongoing extends Component {
     let response = await fetch(
       'http://localhost:8000/v1/results?id=' + this.state.id,
     );
-    let results = await response.json();
 
-    return results;
+    return await response.json();
   };
 
   flipAndLoad = () => {
@@ -111,17 +102,17 @@ class Ongoing extends Component {
     this.flipCard();
 
     pause = () => {
-        setTimeout(() => {
-          this.loading.play();
-        }, 750);
-    }
+      setTimeout(() => {
+        this.loading.play();
+      }, 750);
+    };
 
     this.state.displayLoadingBar ? pause() : null;
 
     GetItem('RESULTS').then(results => {
       this.setState({ results: JSON.parse(results) });
       this.state.displayLoadingBar ? pause() : null;
-    })
+    });
   };
 
   newTrip() {
