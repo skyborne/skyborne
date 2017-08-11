@@ -144,7 +144,7 @@ class Ongoing extends Component {
         if (parent.state.results !== null)
           Animated.timing(this.state.loadingFade, {
             toValue: 0,
-            duration: 1500,
+            duration: 2000,
           }).start(() =>
             this.setState({ displayLoadingBar: false, displayEditTrip: true }),
           );
