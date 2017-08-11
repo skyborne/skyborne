@@ -16,6 +16,8 @@ class NewTrip extends Component {
     super(props);
   }
 
+  componentWillMount() {}
+
   componentDidMount() {
     this.fetchID();
     GetItem('ID').then(id => this.setState({ id: id }));
@@ -46,163 +48,14 @@ class NewTrip extends Component {
           return Linking.openURL(url);
         }
       })
-      .catch(err => console.log('An error occured', err));
-  };
-
-  devicePlus = () =>
-    <View style={{ borderWidth: 0, flex: 0, justifyContent: 'flex-start' }}>
-      <View style={{ borderWidth: 0 }}>
-        <FluidButton
-          style={styles.idStyle}
-          alignSelf="center"
-          onPress={() => this.copyID(this.state.id)}>
-          {this.state.id}
-        </FluidButton>
-
-        <Icon
-          name="Up-Chevron"
-          size={14}
-          color="#2B2B2B"
-          style={[
-            {
-              textAlign: 'center',
-              marginTop: height * 0.7 * 0.02,
-              marginBottom: height * 0.7 * 0.02,
-            },
-          ]}
-        />
-
-        <Text style={[styles.textStyle]}>Tap that to copy.</Text>
-      </View>
-
-      <FluidButton
-        alignSelf="center"
-        style={{
-          marginTop: height * 0.7 * 0.04,
-          marginBottom: height * 0.7 * 0.04,
-        }}
-        onPress={this.openMailApp}>
-        Go to your mailbox
-      </FluidButton>
-
-      <View style={{ borderWidth: 0 }}>
-        <Text style={[styles.textStyle]}>Forward your ticket to</Text>
-        <Text style={[styles.textStyle, styles.emailStyle]}>
-          reservations@skyborne.co
-        </Text>
-        <Text style={styles.textStyle}>
-          {'with the copied ID as\nthe subject line.'}
-        </Text>
-      </View>
-
-      <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.05 }]}>
-        {'Come back and hit next\nwhen ready'}.
-      </Text>
-    </View>;
-
-  deviceStd = () =>
-    <View style={{ borderWidth: 0, flex: 1 }}>
-      <FluidButton
-        style={styles.idStyle}
-        alignSelf="center"
-        onPress={() => this.copyID(this.state.id)}>
-        {this.state.id}
-      </FluidButton>
-
-      <Icon
-        name="Up-Chevron"
-        size={15}
-        color="#2B2B2B"
-        style={[{ textAlign: 'center' }, { marginTop: height * 0.7 * 0.03 }]}
-      />
-
-      <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.02 }]}>
-        Tap that to copy.
-      </Text>
-
-      <FluidButton
-        alignSelf="center"
-        style={[{ marginTop: height * 0.7 * 0.05 }]}
-        onPress={this.openMailApp}>
-        Go to your mailbox
-      </FluidButton>
-
-      <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.05 }]}>
-        Forward your ticket to
-      </Text>
-      <Text style={[styles.textStyle, styles.emailStyle]}>
-        reservations@skyborne.co
-      </Text>
-      <Text style={styles.textStyle}>
-        {'with the copied ID as\nthe subject line.'}
-      </Text>
-
-      <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
-        {'Come back and hit next\nwhen ready'}.
-      </Text>
-    </View>;
-
-  deviceSmall = () =>
-    <View>
-      <FluidButton
-        style={styles.idStyle}
-        textStyle={{ fontSize: 12 }}
-        alignSelf="center"
-        onPress={() => this.copyID(this.state.id)}>
-        {this.state.id}
-      </FluidButton>
-
-      <Icon
-        name="Up-Chevron"
-        size={15}
-        color="#2B2B2B"
-        style={[{ textAlign: 'center' }, { marginTop: height * 0.7 * 0.03 }]}
-      />
-
-      <Text style={[styles.smallTextStyle, { marginTop: height * 0.7 * 0.02 }]}>
-        Tap that to copy.
-      </Text>
-
-      <FluidButton
-        alignSelf="center"
-        style={[{ marginTop: height * 0.7 * 0.04 }]}
-        onPress={this.openMailApp}>
-        Go to your mailbox
-      </FluidButton>
-
-      <Text style={[styles.smallTextStyle, { marginTop: height * 0.7 * 0.04 }]}>
-        Forward your ticket to
-      </Text>
-      <Text style={[styles.smallTextStyle, styles.emailStyle]}>
-        reservations@skyborne.co
-      </Text>
-      <Text style={styles.smallTextStyle}>
-        {'with the copied ID as\nthe subject line.'}
-      </Text>
-
-      <Text style={[styles.smallTextStyle, { marginTop: height * 0.7 * 0.03 }]}>
-        {'Come back and hit next\nwhen ready'}.
-      </Text>
-    </View>;
-
-  isPlus = () => {
-    const PLUS = Device.getModel().indexOf('Plus') >= 0;
-
-    return PLUS ? true : false;
-  };
-
-  isStd = () => {
-    const SIX = Device.getModel().indexOf('6') >= 0;
-    const SEVEN = Device.getModel().indexOf('7') >= 0;
-
-    return SIX || SEVEN ? true : false;
+      .catch(err => console.log('An error occurred', err));
   };
 
   isSmall = () => {
     const SE = Device.getModel().indexOf('SE') >= 0;
     const FIVE = Device.getModel().indexOf('5') >= 0;
 
-    return SE || FIVE ? true : false;
+    return SE || FIVE;
   };
 
   adjustFontSize() {
@@ -239,7 +92,13 @@ class NewTrip extends Component {
     };
 
     return (
-      <View style={{ top: 5, borderWidth: 0, flex: 0, justifyContent: 'flex-start' }}>
+      <View
+        style={{
+          top: 5,
+          borderWidth: 0,
+          flex: 0,
+          justifyContent: 'flex-start',
+        }}>
         <View style={{ borderWidth: 0 }}>
           <FluidButton
             style={styles.idStyle}
