@@ -18,6 +18,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
+    loadingFade: new Animated.Value(0),
     displayNewTripView: false,
     displayLoadingBar: true,
     displayEditTrip: false,
@@ -102,13 +103,14 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    let pause = () => {
-      setTimeout(() => {
-        this.loading.play();
-      }, 750);
+    let start = () => {
+      Animated.timing(this.state.loadingFade, {
+        toValue: 1,
+        duration: 1000,
+      }).start(() => this.loading.play());
     };
 
-    if (this.state.displayLoadingBar) pause();
+    if (this.state.displayLoadingBar) start();
 
     let asyncLoop = options => {
       let i = -1;
@@ -140,7 +142,12 @@ class Ongoing extends Component {
       },
       callback: parent => {
         if (parent.state.results !== null)
-          this.setState({ displayLoadingBar: false, displayEditTrip: true });
+          Animated.timing(this.state.loadingFade, {
+            toValue: 0,
+            duration: 750,
+          }).start(() =>
+            this.setState({ displayLoadingBar: false, displayEditTrip: true }),
+          );
       },
     });
   };
@@ -177,17 +184,19 @@ class Ongoing extends Component {
     };
 
     loadingBar = () =>
-      <Animation
-        ref={animation => {
-          this.loading = animation;
-        }}
-        style={{
-          width: width * 0.8,
-          height: width * 0.8,
-        }}
-        loop={true}
-        source={loader}
-      />;
+      <Animated.View style={{ opacity: this.state.loadingFade }}>
+        <Animation
+          ref={animation => {
+            this.loading = animation;
+          }}
+          style={{
+            width: width * 0.8,
+            height: width * 0.8,
+          }}
+          loop={true}
+          source={loader}
+        />
+      </Animated.View>;
 
     fadeInNewTrip();
 
