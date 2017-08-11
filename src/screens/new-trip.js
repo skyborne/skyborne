@@ -239,7 +239,13 @@ class NewTrip extends Component {
     };
 
     return (
-      <View style={{ top: 5, borderWidth: 0, flex: 0, justifyContent: 'flex-start' }}>
+      <View
+        style={{
+          top: 5,
+          borderWidth: 0,
+          flex: 0,
+          justifyContent: 'flex-start',
+        }}>
         <View style={{ borderWidth: 0 }}>
           <FluidButton
             style={styles.idStyle}

@@ -40,7 +40,7 @@ class Ongoing extends Component {
   componentDidMount() {
     GetItem('ID').then(id => this.setState({ id: id }));
     RemoveItem('RESULTS');
-    console.log("THIS IS FIRST BOOT " + JSON.stringify(GetItem('RESULTS')));
+    console.log('THIS IS FIRST BOOT ' + JSON.stringify(GetItem('RESULTS')));
     // GetItem('RESULTS').then(() => {
     //
     // });
@@ -118,16 +118,19 @@ class Ongoing extends Component {
     // this shit be so weird...
 
     var asyncLoop = o => {
-      let i=-1;
+      let i = -1;
       let results = null;
 
       let loop = () => {
-          i++;
-          if(i==o.length){o.callback(this); return;}
-          o.functionToLoop(loop, i);
-      }
-      loop();//init
-    }
+        i++;
+        if (i == o.length) {
+          o.callback(this);
+          return;
+        }
+        o.functionToLoop(loop, i);
+      };
+      loop(); //init
+    };
 
     // it's a bumblefuck I KNOW
 
@@ -137,21 +140,26 @@ class Ongoing extends Component {
       length: 10,
       functionToLoop: (loop, i) => {
         setTimeout(() => {
-            GetItem('RESULTS')
-              .then(results => {
-                console.log("ASYNC RESULT YO " + results);
-                console.log("ASYNC RESULT JSON STRINGIFIED YO " + JSON.stringify(results));
-                if (results !== null) {
-                  console.log("THIS IS THE FUCKING RESULT " + results);
-                  mySetState({results: JSON.parse(results)});
-                }
-              })
-              .catch(error => console.log('here is the error u dumfuck: ' + error));
-            loop();
-        },1000);
+          GetItem('RESULTS')
+            .then(results => {
+              console.log('ASYNC RESULT YO ' + results);
+              console.log(
+                'ASYNC RESULT JSON STRINGIFIED YO ' + JSON.stringify(results),
+              );
+              if (results !== null) {
+                console.log('THIS IS THE FUCKING RESULT ' + results);
+                mySetState({ results: JSON.parse(results) });
+              }
+            })
+            .catch(error =>
+              console.log('here is the error u dumfuck: ' + error),
+            );
+          loop();
+        }, 1000);
       },
-      callback: (parent) => {
-        if (parent.state.results !== null) mySetState({ displayLoadingBar: false, displayEditTrip: true });
+      callback: parent => {
+        if (parent.state.results !== null)
+          mySetState({ displayLoadingBar: false, displayEditTrip: true });
       },
     });
   };
@@ -264,7 +272,9 @@ class Ongoing extends Component {
   editTrip() {
     return (
       <View>
-        <Text>{ JSON.stringify(this.state.results) }</Text>
+        <Text>
+          {JSON.stringify(this.state.results)}
+        </Text>
       </View>
     );
   }
