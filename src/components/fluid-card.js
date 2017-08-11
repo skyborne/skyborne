@@ -1,7 +1,7 @@
 import React from 'react';
-import { Animated, View, Button, TouchableOpacity, Text } from 'react-native';
+import { Animated } from 'react-native';
 
-import { height, width } from '../global';
+import { width } from '../global';
 
 export const FluidCard = props =>
   <Animated.View

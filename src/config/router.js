@@ -5,7 +5,7 @@ import Ongoing from '../screens/ongoing';
 import Timeline from '../screens/timeline';
 import Profile from '../screens/profile';
 
-import { height, width } from '../global';
+import { height } from '../global';
 
 import Icon from '../resources/icon';
 
