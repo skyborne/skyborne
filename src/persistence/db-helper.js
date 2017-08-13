@@ -1,5 +1,9 @@
 import { AsyncStorage } from 'react-native';
 
+export async function ClearItems() {
+  await AsyncStorage.clear();
+}
+
 export async function GetItem(key) {
   try {
     return await AsyncStorage.getItem(key);

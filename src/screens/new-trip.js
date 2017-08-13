@@ -4,7 +4,7 @@ import { Linking, Clipboard, Text, View } from 'react-native';
 import Device from 'react-native-device-info';
 
 import { FluidButton } from '../components';
-import { SetItem, GetItem } from '../persistence/db-helper';
+import { SetItem, GetItem, ClearItems } from '../persistence/db-helper';
 import Icon from '../resources/icon';
 
 import { height } from '../global';
@@ -16,11 +16,12 @@ class NewTrip extends Component {
     super(props);
   }
 
-  componentWillMount() {}
-
   componentDidMount() {
     this.fetchID();
-    GetItem('ID').then(id => this.setState({ id: id }));
+  }
+
+  componentWillUnmount() {
+    ClearItems();
   }
 
   copyID = id => {
@@ -31,7 +32,9 @@ class NewTrip extends Component {
     fetch('http://localhost:8000/v1/keygen')
       .then(response => response.json())
       .then(responseJSON => {
-        SetItem('ID', responseJSON.id);
+        SetItem('ID', responseJSON.id).then(
+          GetItem('ID').then(id => this.setState({ id: id })),
+        );
       })
       .catch(error => {
         console.log('Failed to fetch response.', error);
