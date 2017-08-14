@@ -40,7 +40,6 @@ class Ongoing extends Component {
 
   componentDidMount() {
     GetItem('ID').then(id => this.setState({ id: id }));
-    // console.log("mounted");
   }
 
   fadeInit() {
@@ -90,18 +89,10 @@ class Ongoing extends Component {
   }
 
   fetchResults = async () => {
-    let response = await fetch(
-      'http://localhost:8000/v1/results?id=' + this.state.id,
-    );
-
-    return response;
+    return await fetch('http://localhost:8000/v1/results?id=' + this.state.id);
   };
 
   flipAndLoad = async () => {
-    // this.fetchResults()
-    //   .then(results => SetItem('RESULTS', JSON.stringify(results)))
-    //   .catch(reason => console.log(reason.message));
-
     let load = () => {
       Animated.timing(this.state.loadingFade, {
         toValue: 1,
@@ -115,59 +106,19 @@ class Ongoing extends Component {
 
     try {
       let results = await this.fetchResults();
-      console.log('got results', results);
-      jsonResults = await results.json();
-      console.log('got jsonResults', jsonResults);
-      SetItem('RESULTS', JSON.stringify(jsonResults));
-      console.log('did the setItem');
-      gotItem = await GetItem('RESULTS');
-      console.log('gotItem', JSON.parse(gotItem));
-      this.setState({ results: JSON.parse(gotItem), displayLoadingBar: false, displayEditTrip: true });
+      let resultsJSON = await results.json();
+
+      SetItem('RESULTS', JSON.stringify(resultsJSON));
+
+      let resultsItem = await GetItem('RESULTS');
+      this.setState({
+        results: JSON.parse(resultsItem),
+        displayLoadingBar: false,
+        displayEditTrip: true,
+      });
     } catch (error) {
       console.log(error);
     }
-
-    // let asyncLoop = options => {
-    //   let i = -1;
-    //
-    //   let loop = () => {
-    //     i++;
-    //     if (i === options.length) {
-    //       options.callback(this);
-    //       return;
-    //     }
-    //     options.functionToLoop(loop, i);
-    //   };
-    //   loop();
-    // };
-
-    // asyncLoop({
-    //   length: 10,
-    //   functionToLoop: loop => {
-    //     setTimeout(() => {
-    //       GetItem('RESULTS')
-    //         .then(results => {
-    //           if (results !== null) {
-    //             this.setState({ results: JSON.parse(results) });
-    //           }
-    //         })
-    //         .catch(error => console.log('An error occurred: ' + error));
-    //       loop();
-    //     }, 1000);
-    //   },
-    //   callback: parent => {
-    //     if (parent.state.results !== null) {
-    //       Animated.timing(this.state.loadingFade, {
-    //         toValue: 0,
-    //         duration: 2000,
-    //       }).start(() =>
-    //         this.setState({ displayLoadingBar: false, displayEditTrip: true }),
-    //       );
-    //     } else {
-    //       console.log('something happened');
-    //     }
-    //   },
-    // });
   };
 
   newTrip() {
@@ -180,14 +131,14 @@ class Ongoing extends Component {
       backfaceVisibility: 'hidden',
     };
 
-    fadeInNewTrip = () => {
+    let fadeInNewTrip = () => {
       Animated.timing(this.state.newTripFade, {
         toValue: 1,
         duration: 250,
       }).start();
     };
 
-    fadeOutNewTrip = () => {
+    let fadeOutNewTrip = () => {
       Animated.timing(this.state.newTripFade, {
         toValue: 0,
         duration: 250,
@@ -203,7 +154,7 @@ class Ongoing extends Component {
       });
     };
 
-    loadingBar = () =>
+    let loadingBar = () =>
       <Animated.View style={{ opacity: this.state.loadingFade }}>
         <Animation
           ref={animation => {

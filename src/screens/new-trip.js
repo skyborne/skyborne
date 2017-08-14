@@ -16,13 +16,8 @@ class NewTrip extends Component {
 
   componentDidMount() {
     this.fetchID();
-    console.log("mounted");
     ClearItems();
   }
-
-  // componentWillUnmount() {
-  //   ClearItems();
-  // }
 
   copyID = id => {
     Clipboard.setString(id);
