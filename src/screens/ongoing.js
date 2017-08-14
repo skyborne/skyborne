@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Animated, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Animated,
+  Clipboard,
+  Linking,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import Animation from 'lottie-react-native';
 import { BlurView } from 'react-native-blur';
@@ -7,10 +14,8 @@ import { BlurView } from 'react-native-blur';
 import loader from '../animation/loader.json';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-import { GetItem, SetItem, ClearItems } from '../persistence/db-helper';
 
 import Icon from '../resources/icon';
-import NewTrip from './new-trip';
 
 import { height, width, isSmall } from '../global';
 
@@ -131,7 +136,7 @@ class Ongoing extends Component {
       .catch(error => {
         console.log('Failed to fetch response.', error);
       });
-  }
+  };
 
   openMailApp() {
     const url = 'message://';
@@ -277,7 +282,8 @@ class Ongoing extends Component {
                 </Text>
               </View>
 
-              <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
+              <Text
+                style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
                 {'Come back and hit next\nwhen ready'}.
               </Text>
             </View>
