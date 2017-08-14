@@ -7,6 +7,7 @@
         "react-native-device-info": "^0.11.0",
         "react-native-vector-icons": "^4.2.0",
         "react-navigation": "^1.0.0-beta.11",
+        "realm": "^1.10.1",
         "stripe": "^4.23.2"
     },
     "devDependencies": {
