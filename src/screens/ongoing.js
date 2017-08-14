@@ -40,7 +40,6 @@ class Ongoing extends Component {
 
   componentDidMount() {
     GetItem('ID').then(id => this.setState({ id: id }));
-    // console.log("mounted");
   }
 
   fadeInit() {
@@ -90,18 +89,10 @@ class Ongoing extends Component {
   }
 
   fetchResults = async () => {
-    let response = await fetch(
-      'http://localhost:8000/v1/results?id=' + this.state.id,
-    );
-
-    return response;
+    return await fetch('http://localhost:8000/v1/results?id=' + this.state.id);
   };
 
   flipAndLoad = async () => {
-    // this.fetchResults()
-    //   .then(results => SetItem('RESULTS', JSON.stringify(results)))
-    //   .catch(reason => console.log(reason.message));
-
     let load = () => {
       Animated.timing(this.state.loadingFade, {
         toValue: 1,
@@ -115,14 +106,18 @@ class Ongoing extends Component {
 
     try {
       let results = await this.fetchResults();
-      console.log('got results', results);
-      jsonResults = await results.json();
-      console.log('got jsonResults', jsonResults);
-      SetItem('RESULTS', JSON.stringify(jsonResults));
-      console.log('did the setItem');
-      gotItem = await GetItem('RESULTS');
-      console.log('gotItem', JSON.parse(gotItem));
-      this.setState({ results: JSON.parse(gotItem), displayLoadingBar: false, displayEditTrip: true });
+
+      let resultsJSON = await results.json();
+
+      SetItem('RESULTS', JSON.stringify(resultsJSON));
+
+      let item = await GetItem('RESULTS');
+
+      this.setState({
+        results: JSON.parse(item),
+        displayLoadingBar: false,
+        displayEditTrip: true,
+      });
     } catch (error) {
       console.log(error);
     }
