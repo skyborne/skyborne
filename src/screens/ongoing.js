@@ -7,7 +7,7 @@ import { BlurView } from 'react-native-blur';
 import loader from '../animation/loader.json';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-import { GetItem, SetItem } from '../persistence/db-helper';
+import { GetItem, SetItem, ClearItems } from '../persistence/db-helper';
 
 import Icon from '../resources/icon';
 import NewTrip from './new-trip';
@@ -40,6 +40,7 @@ class Ongoing extends Component {
 
   componentDidMount() {
     GetItem('ID').then(id => this.setState({ id: id }));
+    // console.log("mounted");
   }
 
   fadeInit() {
@@ -93,15 +94,13 @@ class Ongoing extends Component {
       'http://localhost:8000/v1/results?id=' + this.state.id,
     );
 
-    return await response.json();
+    return response;
   };
 
-  flipAndLoad = () => {
-    this.fetchResults()
-      .then(results => SetItem('RESULTS', JSON.stringify(results)))
-      .catch(reason => console.log(reason.message));
-
-    this.flipCard();
+  flipAndLoad = async () => {
+    // this.fetchResults()
+    //   .then(results => SetItem('RESULTS', JSON.stringify(results)))
+    //   .catch(reason => console.log(reason.message));
 
     let load = () => {
       Animated.timing(this.state.loadingFade, {
@@ -110,46 +109,65 @@ class Ongoing extends Component {
       }).start(() => this.loading.play());
     };
 
+    this.flipCard();
+
     if (this.state.displayLoadingBar) load();
 
-    let asyncLoop = options => {
-      let i = -1;
+    try {
+      let results = await this.fetchResults();
+      console.log('got results', results);
+      jsonResults = await results.json();
+      console.log('got jsonResults', jsonResults);
+      SetItem('RESULTS', JSON.stringify(jsonResults));
+      console.log('did the setItem');
+      gotItem = await GetItem('RESULTS');
+      console.log('gotItem', JSON.parse(gotItem));
+      this.setState({ results: JSON.parse(gotItem), displayLoadingBar: false, displayEditTrip: true });
+    } catch (error) {
+      console.log(error);
+    }
 
-      let loop = () => {
-        i++;
-        if (i === options.length) {
-          options.callback(this);
-          return;
-        }
-        options.functionToLoop(loop, i);
-      };
-      loop();
-    };
+    // let asyncLoop = options => {
+    //   let i = -1;
+    //
+    //   let loop = () => {
+    //     i++;
+    //     if (i === options.length) {
+    //       options.callback(this);
+    //       return;
+    //     }
+    //     options.functionToLoop(loop, i);
+    //   };
+    //   loop();
+    // };
 
-    asyncLoop({
-      length: 10,
-      functionToLoop: loop => {
-        setTimeout(() => {
-          GetItem('RESULTS')
-            .then(results => {
-              if (results !== null) {
-                this.setState({ results: JSON.parse(results) });
-              }
-            })
-            .catch(error => console.log('An error occurred: ' + error));
-          loop();
-        }, 1000);
-      },
-      callback: parent => {
-        if (parent.state.results !== null)
-          Animated.timing(this.state.loadingFade, {
-            toValue: 0,
-            duration: 2000,
-          }).start(() =>
-            this.setState({ displayLoadingBar: false, displayEditTrip: true }),
-          );
-      },
-    });
+    // asyncLoop({
+    //   length: 10,
+    //   functionToLoop: loop => {
+    //     setTimeout(() => {
+    //       GetItem('RESULTS')
+    //         .then(results => {
+    //           if (results !== null) {
+    //             this.setState({ results: JSON.parse(results) });
+    //           }
+    //         })
+    //         .catch(error => console.log('An error occurred: ' + error));
+    //       loop();
+    //     }, 1000);
+    //   },
+    //   callback: parent => {
+    //     if (parent.state.results !== null) {
+    //       Animated.timing(this.state.loadingFade, {
+    //         toValue: 0,
+    //         duration: 2000,
+    //       }).start(() =>
+    //         this.setState({ displayLoadingBar: false, displayEditTrip: true }),
+    //       );
+    //     } else {
+    //       console.log('something happened');
+    //     }
+    //   },
+    // });
   };
 
   newTrip() {
@@ -179,6 +197,8 @@ class Ongoing extends Component {
           blur: false,
           newTripFade: new Animated.Value(0),
           visible: true,
+          displayLoadingBar: true,
+          displayEditTrip: false,
         });
       });
     };
