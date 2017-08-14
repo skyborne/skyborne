@@ -131,14 +131,14 @@ class Ongoing extends Component {
       backfaceVisibility: 'hidden',
     };
 
-    fadeInNewTrip = () => {
+    let fadeInNewTrip = () => {
       Animated.timing(this.state.newTripFade, {
         toValue: 1,
         duration: 250,
       }).start();
     };
 
-    fadeOutNewTrip = () => {
+    let fadeOutNewTrip = () => {
       Animated.timing(this.state.newTripFade, {
         toValue: 0,
         duration: 250,
@@ -154,7 +154,7 @@ class Ongoing extends Component {
       });
     };
 
-    loadingBar = () =>
+    let loadingBar = () =>
       <Animated.View style={{ opacity: this.state.loadingFade }}>
         <Animation
           ref={animation => {
