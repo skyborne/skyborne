@@ -121,48 +121,6 @@ class Ongoing extends Component {
     } catch (error) {
       console.log(error);
     }
-
-    // let asyncLoop = options => {
-    //   let i = -1;
-    //
-    //   let loop = () => {
-    //     i++;
-    //     if (i === options.length) {
-    //       options.callback(this);
-    //       return;
-    //     }
-    //     options.functionToLoop(loop, i);
-    //   };
-    //   loop();
-    // };
-
-    // asyncLoop({
-    //   length: 10,
-    //   functionToLoop: loop => {
-    //     setTimeout(() => {
-    //       GetItem('RESULTS')
-    //         .then(results => {
-    //           if (results !== null) {
-    //             this.setState({ results: JSON.parse(results) });
-    //           }
-    //         })
-    //         .catch(error => console.log('An error occurred: ' + error));
-    //       loop();
-    //     }, 1000);
-    //   },
-    //   callback: parent => {
-    //     if (parent.state.results !== null) {
-    //       Animated.timing(this.state.loadingFade, {
-    //         toValue: 0,
-    //         duration: 2000,
-    //       }).start(() =>
-    //         this.setState({ displayLoadingBar: false, displayEditTrip: true }),
-    //       );
-    //     } else {
-    //       console.log('something happened');
-    //     }
-    //   },
-    // });
   };
 
   newTrip() {
