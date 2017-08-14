@@ -12,7 +12,7 @@ import { GetItem, SetItem, ClearItems } from '../persistence/db-helper';
 import Icon from '../resources/icon';
 import NewTrip from './new-trip';
 
-import { height, width } from '../global';
+import { height, width, isSmall } from '../global';
 
 class Ongoing extends Component {
   state = {
@@ -249,7 +249,8 @@ class Ongoing extends Component {
               <FluidButton
                 alignSelf="center"
                 style={{ marginTop: height * 0.7 * 0.06 }}
-                onPress={() => this.flipAndLoad()}>
+                onPress={() => this.flipAndLoad()}
+                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
                 Next
               </FluidButton>
             </View>

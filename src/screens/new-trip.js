@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Linking, Clipboard, Text, View } from 'react-native';
 
-import Device from 'react-native-device-info';
-
 import { FluidButton } from '../components';
 import { SetItem, GetItem, ClearItems } from '../persistence/db-helper';
 import Icon from '../resources/icon';
 
-import { height } from '../global';
+import { height, isSmall } from '../global';
 
 class NewTrip extends Component {
   state = { id: '' };
@@ -56,31 +54,11 @@ class NewTrip extends Component {
       .catch(err => console.log('An error occurred', err));
   };
 
-  isSmall = () => {
-    const SE = Device.getModel().indexOf('SE') >= 0;
-    const FIVE = Device.getModel().indexOf('5') >= 0;
-
-    return SE || FIVE;
-  };
-
-  adjustFontSize() {
-    if (() => this.isSmall()) return 16;
-    else return 18;
-  }
-
   render() {
-    let size = this.adjustFontSize();
     const styles = {
       textStyle: {
         fontFamily: 'Rubik',
-        fontSize: size,
-        fontWeight: '300',
-        textAlign: 'center',
-      },
-
-      smallTextStyle: {
-        fontFamily: 'Rubik',
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: '300',
         textAlign: 'center',
       },
@@ -96,6 +74,10 @@ class NewTrip extends Component {
       },
     };
 
+    if (isSmall()) {
+      styles.textStyle.fontSize = 16;
+    }
+
     return (
       <View
         style={{
@@ -108,8 +90,9 @@ class NewTrip extends Component {
           <FluidButton
             style={styles.idStyle}
             alignSelf="center"
-            onPress={() => this.copyID(this.state.id)}>
-            {this.state.id}
+            onPress={() => this.copyID(this.state.id)}
+            textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
+            47575757575757575757
           </FluidButton>
 
           <Icon
@@ -134,7 +117,8 @@ class NewTrip extends Component {
             marginTop: height * 0.7 * 0.04,
             marginBottom: height * 0.7 * 0.04,
           }}
-          onPress={this.openMailApp}>
+          onPress={this.openMailApp}
+          textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
           Go to your mailbox
         </FluidButton>
 
