@@ -7,7 +7,7 @@ import { BlurView } from 'react-native-blur';
 import loader from '../animation/loader.json';
 
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-import { GetItem, SetItem, RemoveItem } from '../persistence/db-helper';
+import { GetItem, SetItem } from '../persistence/db-helper';
 
 import Icon from '../resources/icon';
 import NewTrip from './new-trip';
@@ -18,6 +18,7 @@ class Ongoing extends Component {
   state = {
     onStartFade: new Animated.Value(0),
     newTripFade: new Animated.Value(0),
+    loadingFade: new Animated.Value(0),
     displayNewTripView: false,
     displayLoadingBar: true,
     displayEditTrip: false,
@@ -39,11 +40,6 @@ class Ongoing extends Component {
 
   componentDidMount() {
     GetItem('ID').then(id => this.setState({ id: id }));
-    RemoveItem('RESULTS');
-    console.log('THIS IS FIRST BOOT ' + JSON.stringify(GetItem('RESULTS')));
-    // GetItem('RESULTS').then(() => {
-    //
-    // });
   }
 
   fadeInit() {
@@ -107,59 +103,51 @@ class Ongoing extends Component {
 
     this.flipCard();
 
-    pause = () => {
-      setTimeout(() => {
-        this.loading.play();
-      }, 750);
+    let load = () => {
+      Animated.timing(this.state.loadingFade, {
+        toValue: 1,
+        duration: 1000,
+      }).start(() => this.loading.play());
     };
 
-    if (this.state.displayLoadingBar) pause();
+    if (this.state.displayLoadingBar) load();
 
-    // this shit be so weird...
-
-    var asyncLoop = o => {
+    let asyncLoop = options => {
       let i = -1;
-      let results = null;
 
       let loop = () => {
         i++;
-        if (i == o.length) {
-          o.callback(this);
+        if (i === options.length) {
+          options.callback(this);
           return;
         }
-        o.functionToLoop(loop, i);
+        options.functionToLoop(loop, i);
       };
-      loop(); //init
+      loop();
     };
-
-    // it's a bumblefuck I KNOW
-
-    let mySetState = state => this.setState(state);
 
     asyncLoop({
       length: 10,
-      functionToLoop: (loop, i) => {
+      functionToLoop: loop => {
         setTimeout(() => {
           GetItem('RESULTS')
             .then(results => {
-              console.log('ASYNC RESULT YO ' + results);
-              console.log(
-                'ASYNC RESULT JSON STRINGIFIED YO ' + JSON.stringify(results),
-              );
               if (results !== null) {
-                console.log('THIS IS THE FUCKING RESULT ' + results);
-                mySetState({ results: JSON.parse(results) });
+                this.setState({ results: JSON.parse(results) });
               }
             })
-            .catch(error =>
-              console.log('here is the error u dumfuck: ' + error),
-            );
+            .catch(error => console.log('An error occurred: ' + error));
           loop();
         }, 1000);
       },
       callback: parent => {
         if (parent.state.results !== null)
-          mySetState({ displayLoadingBar: false, displayEditTrip: true });
+          Animated.timing(this.state.loadingFade, {
+            toValue: 0,
+            duration: 2000,
+          }).start(() =>
+            this.setState({ displayLoadingBar: false, displayEditTrip: true }),
+          );
       },
     });
   };
@@ -196,17 +184,20 @@ class Ongoing extends Component {
     };
 
     loadingBar = () =>
-      <Animation
-        ref={animation => {
-          this.loading = animation;
-        }}
-        style={{
-          width: width * 0.8,
-          height: width * 0.8,
-        }}
-        loop={true}
-        source={loader}
-      />;
+      <Animated.View style={{ opacity: this.state.loadingFade }}>
+        <Animation
+          ref={animation => {
+            this.loading = animation;
+          }}
+          style={{
+            width: width * 0.8,
+            height: width * 0.8,
+          }}
+          loop={true}
+          speed={0.5}
+          source={loader}
+        />
+      </Animated.View>;
 
     fadeInNewTrip();
 
@@ -277,10 +268,6 @@ class Ongoing extends Component {
         </Text>
       </View>
     );
-  }
-
-  itinerary() {
-    return;
   }
 
   render() {
