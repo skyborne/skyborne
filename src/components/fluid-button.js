@@ -9,7 +9,8 @@ export const FluidButton = props => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      style={[styles.viewStyle, props.style]}>
+      style={[styles.viewStyle, props.style]}
+      disabled={props.disabled}>
       <View>
         <Text style={[styles.textStyle, props.textStyle]}>
           {props.children}

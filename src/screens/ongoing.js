@@ -32,6 +32,7 @@ class Ongoing extends Component {
     results: {},
     disabled: true,
     visible: true,
+    buttonDisabled: false,
   };
 
   constructor(props) {
@@ -106,6 +107,8 @@ class Ongoing extends Component {
     };
 
     this.flipCard();
+
+    this.setState({ buttonDisabled: true });
 
     if (this.state.displayLoadingBar) load();
 
@@ -241,8 +244,9 @@ class Ongoing extends Component {
                   style={styles.idStyle}
                   alignSelf="center"
                   onPress={() => this.copyID(this.state.id)}
-                  textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
-                  47575757575757575757
+                  textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                  disabled={this.state.buttonDisabled}>
+                  {this.state.id}
                 </FluidButton>
 
                 <Icon
@@ -268,7 +272,8 @@ class Ongoing extends Component {
                   marginBottom: height * 0.7 * 0.04,
                 }}
                 onPress={this.openMailApp}
-                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
+                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                disabled={this.state.buttonDisabled}>
                 Go to your mailbox
               </FluidButton>
 
@@ -292,7 +297,8 @@ class Ongoing extends Component {
                 alignSelf="center"
                 style={{ marginTop: height * 0.7 * 0.06 }}
                 onPress={() => this.flipAndLoad()}
-                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
+                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                disabled={this.state.buttonDisabled}>
                 Next
               </FluidButton>
             </View>
@@ -305,7 +311,8 @@ class Ongoing extends Component {
               position: 'absolute',
               top: 0,
               borderWidth: 0,
-            }}>
+            }}
+            disabled={this.state.buttonDisabled}>
             <Icon
               name="X"
               size={15}
