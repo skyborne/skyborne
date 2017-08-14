@@ -106,15 +106,13 @@ class Ongoing extends Component {
 
     try {
       let results = await this.fetchResults();
-
       let resultsJSON = await results.json();
 
       SetItem('RESULTS', JSON.stringify(resultsJSON));
 
-      let item = await GetItem('RESULTS');
-
+      let resultsItem = await GetItem('RESULTS');
       this.setState({
-        results: JSON.parse(item),
+        results: JSON.parse(resultsItem),
         displayLoadingBar: false,
         displayEditTrip: true,
       });
