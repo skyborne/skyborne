@@ -30,7 +30,7 @@ class Ongoing extends Component {
     blur: false,
     id: '',
     results: {},
-    disabled: true,
+    newTripCardDisabled: true,
     visible: true,
     buttonDisabled: false,
   };
@@ -54,7 +54,7 @@ class Ongoing extends Component {
       duration: 2000,
     }).start(animation => {
       if (animation.finished) {
-        this.setState({ disabled: false });
+        this.setState({ newTripCardDisabled: false });
       }
     });
   }
@@ -351,7 +351,7 @@ class Ongoing extends Component {
           }}>
           {this.state.visible &&
             <TouchableOpacity
-              disabled={this.state.disabled}
+              disabled={this.state.newTripCardDisabled}
               onPress={() => {
                 this.setState({ displayNewTripView: true, blur: true });
                 this.setState({ visible: false });
