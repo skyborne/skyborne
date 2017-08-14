@@ -39,7 +39,7 @@ class Ongoing extends Component {
   }
 
   componentDidMount() {
-    GetItem('ID').then(id => this.setState({ id: id }));
+    this.fetchID();
   }
 
   fadeInit() {
@@ -88,11 +88,11 @@ class Ongoing extends Component {
     // Need to make a state var holding isFlipped and Remove the reverse animation
   }
 
-  fetchResults = async () => {
+  async fetchResults() {
     return await fetch('http://localhost:8000/v1/results?id=' + this.state.id);
-  };
+  }
 
-  flipAndLoad = async () => {
+  async flipAndLoad() {
     let load = () => {
       Animated.timing(this.state.loadingFade, {
         toValue: 1,
@@ -108,18 +108,43 @@ class Ongoing extends Component {
       let results = await this.fetchResults();
       let resultsJSON = await results.json();
 
-      SetItem('RESULTS', JSON.stringify(resultsJSON));
-
-      let resultsItem = await GetItem('RESULTS');
       this.setState({
-        results: JSON.parse(resultsItem),
+        results: resultsJSON,
         displayLoadingBar: false,
         displayEditTrip: true,
       });
     } catch (error) {
       console.log(error);
     }
-  };
+  }
+
+  copyID(id) {
+    Clipboard.setString(id);
+  }
+
+  fetchID = () => {
+    fetch('http://localhost:8000/v1/keygen')
+      .then(response => response.json())
+      .then(responseJSON => {
+        this.setState({ id: responseJSON.id });
+      })
+      .catch(error => {
+        console.log('Failed to fetch response.', error);
+      });
+  }
+
+  openMailApp() {
+    const url = 'message://';
+    Linking.canOpenURL(url)
+      .then(supported => {
+        if (!supported) {
+          console.log("Can't handle url: " + url);
+        } else {
+          return Linking.openURL(url);
+        }
+      })
+      .catch(err => console.log('An error occurred', err));
+  }
 
   newTrip() {
     const frontAnimatedStyle = {
@@ -170,6 +195,10 @@ class Ongoing extends Component {
         />
       </Animated.View>;
 
+    if (isSmall()) {
+      styles.textStyle.fontSize = 16;
+    }
+
     fadeInNewTrip();
 
     return (
@@ -195,7 +224,63 @@ class Ongoing extends Component {
             frontAnimatedStyle,
           ]}>
           <View style={{ borderWidth: 0 }}>
-            <NewTrip />
+            <View
+              style={{
+                top: 5,
+                borderWidth: 0,
+                flex: 0,
+                justifyContent: 'flex-start',
+              }}>
+              <View style={{ borderWidth: 0 }}>
+                <FluidButton
+                  style={styles.idStyle}
+                  alignSelf="center"
+                  onPress={() => this.copyID(this.state.id)}
+                  textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
+                  47575757575757575757
+                </FluidButton>
+
+                <Icon
+                  name="Up-Chevron"
+                  size={14}
+                  color="#2B2B2B"
+                  style={[
+                    {
+                      textAlign: 'center',
+                      marginTop: height * 0.7 * 0.02,
+                      marginBottom: height * 0.7 * 0.02,
+                    },
+                  ]}
+                />
+
+                <Text style={[styles.textStyle]}>Tap that to copy.</Text>
+              </View>
+
+              <FluidButton
+                alignSelf="center"
+                style={{
+                  marginTop: height * 0.7 * 0.04,
+                  marginBottom: height * 0.7 * 0.04,
+                }}
+                onPress={this.openMailApp}
+                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}>
+                Go to your mailbox
+              </FluidButton>
+
+              <View style={{ borderWidth: 0 }}>
+                <Text style={[styles.textStyle]}>Forward your ticket to</Text>
+                <Text style={[styles.textStyle, styles.emailStyle]}>
+                  reservations@skyborne.co
+                </Text>
+                <Text style={styles.textStyle}>
+                  {'with the copied ID as\nthe subject line.'}
+                </Text>
+              </View>
+
+              <Text style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
+                {'Come back and hit next\nwhen ready'}.
+              </Text>
+            </View>
             <View style={{ flex: 0, justifyContent: 'center', borderWidth: 0 }}>
               <FluidButton
                 alignSelf="center"
@@ -277,7 +362,7 @@ class Ongoing extends Component {
   }
 }
 
-const styles = {
+let styles = {
   absolute: {
     position: 'absolute',
     top: 0,
@@ -306,6 +391,16 @@ const styles = {
     fontSize: 18,
     fontWeight: '200',
     textAlign: 'center',
+  },
+
+  idStyle: {
+    shadowOpacity: 0,
+    backgroundColor: '#E8E8E8',
+    borderRadius: 20,
+  },
+
+  emailStyle: {
+    color: '#8C8C8C',
   },
 };
 
