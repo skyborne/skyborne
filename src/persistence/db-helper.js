@@ -1,25 +1,20 @@
-import { AsyncStorage } from 'react-native';
+import Realm from 'realm';
 
-export async function ClearItems() {
-  await AsyncStorage.clear();
+import { TripSchema } from './schema';
+
+const realm = new Realm({ schema: [TripSchema] });
+
+export function AddTrip(properties) {
+  realm.create('Trip', properties);
 }
 
-export async function GetItem(key) {
+export function ClearTrips() {
   try {
-    return await AsyncStorage.getItem(key);
+    realm.write(() => {
+      let trips = realm.objects('Trip');
+      realm.delete(trips);
+    });
   } catch (error) {
     console.log(error);
-  }
-}
-
-export async function RemoveItem(key) {
-  await AsyncStorage.removeItem(key);
-}
-
-export async function SetItem(key, value) {
-  try {
-    await AsyncStorage.setItem(key, value);
-  } catch (error) {
-    console.log('There was an error saving the value', error);
   }
 }
