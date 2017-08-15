@@ -91,7 +91,6 @@ class Ongoing extends Component {
         tension: 10,
       }).start();
     }
-    // Need to make a state var holding isFlipped and Remove the reverse animation
   }
 
   async fetchResults() {
