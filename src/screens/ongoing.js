@@ -115,6 +115,11 @@ class Ongoing extends Component {
       let results = await this.fetchResults();
       let resultsJSON = await results.json();
 
+      Animated.timing(this.state.loadingFade, {
+        toValue: 0,
+        duration: 2000,
+      });
+
       this.setState({
         results: resultsJSON,
         displayLoadingBar: false,
