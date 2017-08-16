@@ -1,9 +1,13 @@
+import Realm from 'realm';
+
+class Trip extends Realm.Object {}
 const TripSchema = {
   name: 'Trip',
   primaryKey: 'id',
   properties: {
     id: 'string',
 
+    airlineCode: 'string',
     flightNumber: 'int',
 
     departureTime: 'date',
@@ -11,8 +15,6 @@ const TripSchema = {
 
     depatureAirportCode: 'string',
     arrivalAirportCode: 'string',
-
-    airlineCode: 'string',
   },
 };
 

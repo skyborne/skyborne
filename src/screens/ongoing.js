@@ -17,6 +17,8 @@ import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import Icon from '../resources/icon';
 
+import { AddTrip } from '../persistence/db-helper';
+
 import { height, width, isSmall } from '../global';
 
 class Ongoing extends Component {
@@ -137,7 +139,21 @@ class Ongoing extends Component {
 
   parseAndSet() {
     if (!this.resultsError()) {
-      // Results were returned, proceed to parse and set into database,
+      let tripProps = {
+        id: this.state.results.reservationNumber,
+
+        airlineCode: this.state.results.reservationFor.airline.iataCode,
+        flightNumber: this.state.results.reservationFor.flightNumber,
+
+        departureTime: this.state.results.reservationFor.departureTime,
+        arrivalTime: this.state.results.reservationFor.arrivalTime,
+
+        depatureAirportCode: this.state.results.reservationFor.depatureAirport
+          .iataCode,
+        arrivalAirportCode: this.state.results.reservationFor.arrivalAirport
+          .iataCode,
+      };
+      AddTrip(tripProps);
       // Then ask user to edit if necessary.
     } else {
       // Results failed to return, proceed to try again or manually enter.
