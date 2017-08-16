@@ -55,3 +55,71 @@ export function UpdateTrip(properties) {
     console.log(error);
   }
 }
+
+export function UpdateTripFlightNumber(id, flightNumber) {
+  try {
+    realm.write(() => {
+      realm.create('Trip', { id: id, flightNumber: flightNumber }, true);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function UpdateTripDepartureTime(id, departureTime) {
+  try {
+    realm.write(() => {
+      realm.create('Trip', { id: id, departureTime: departureTime }, true);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function UpdateTripArrivalTime(id, arrivalTime) {
+  try {
+    realm.write(() => {
+      realm.create('Trip', { id: id, arrivalTime: arrivalTime }, true);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function UpdateTripDepartureAirportCode(id, depatureAirportCode) {
+  try {
+    realm.write(() => {
+      realm.create(
+        'Trip',
+        { id: id, depatureAirportCode: depatureAirportCode },
+        true,
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function UpdateTripArrivalAirportCode(id, arrivalAirportCode) {
+  try {
+    realm.write(() => {
+      realm.create(
+        'Trip',
+        { id: id, arrivalAirportCode: arrivalAirportCode },
+        true,
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export function UpdateTripAirlineCode(id, airlineCode) {
+  try {
+    realm.write(() => {
+      realm.create('Trip', { id: id, airlineCode: airlineCode }, true);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}

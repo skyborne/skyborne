@@ -2,17 +2,17 @@ const TripSchema = {
   name: 'Trip',
   primaryKey: 'id',
   properties: {
-    id = 'string'
+    id: 'string',
 
-    flightNumber = 'string'
+    flightNumber: 'int',
 
-    departureTime = 'date'
-    arrivalTime = 'date'
+    departureTime: 'date',
+    arrivalTime: 'date',
 
-    depatureAirportCode = 'string'
-    arrivalAirportCode = 'string'
+    depatureAirportCode: 'string',
+    arrivalAirportCode: 'string',
 
-    airlineCode = 'string'
+    airlineCode: 'string',
   },
 };
 
