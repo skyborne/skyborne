@@ -45,3 +45,13 @@ export function RemoveTrips() {
     console.log(error);
   }
 }
+
+export function UpdateTrip(properties) {
+  try {
+    realm.write(() => {
+      realm.create('Trip', properties, true);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
