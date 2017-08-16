@@ -130,6 +130,20 @@ class Ongoing extends Component {
     }
   }
 
+  resultsError() {
+    let error = { error: 'invalid' };
+    return JSON.stringify(this.state.results) === JSON.stringify(error);
+  }
+
+  parseAndSet() {
+    if (!this.resultsError()) {
+      // Results were returned, proceed to parse and set into database,
+      // Then ask user to edit if necessary.
+    } else {
+      // Results failed to return, proceed to try again or manually enter.
+    }
+  }
+
   copyID(id) {
     Clipboard.setString(id);
   }
