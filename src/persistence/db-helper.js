@@ -1,6 +1,6 @@
 import Realm from 'realm';
 
-import TripSchema from './schema';
+import TripSchema from './schemas/trip';
 
 const realm = new Realm({ schema: [TripSchema] });
 
