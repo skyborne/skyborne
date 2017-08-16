@@ -15,7 +15,7 @@ export function AddTrip(properties) {
 }
 
 export function GetTrip(id) {
-  let trip = realm.objects('Trip').filtered('id = ' + id);
+  let trip = realm.objects('Trip').filtered(`id = "${id}"`);
   return trip;
 }
 
@@ -27,7 +27,7 @@ export function GetTrips() {
 export function RemoveTrip(id) {
   try {
     realm.write(() => {
-      let trip = realm.objects('Trip').filtered('id = ' + id);
+      let trip = realm.objects('Trip').filtered(`id = "${id}"`);
       realm.delete(trip);
     });
   } catch (error) {
