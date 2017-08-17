@@ -1,20 +1,14 @@
-import Realm from 'realm';
-
-class Trip extends Realm.Object {}
 const TripSchema = {
   name: 'Trip',
   primaryKey: 'id',
   properties: {
-    id: 'string',
+    id: { type: 'string' },
 
-    airlineCode: 'string',
-    flightNumber: 'int',
+    departureTime: { type: 'date' },
+    arrivalTime: { type: 'date' },
 
-    departureTime: 'date',
-    arrivalTime: 'date',
-
-    depatureAirportCode: 'string',
-    arrivalAirportCode: 'string',
+    depatureAirportCode: { type: 'string' },
+    arrivalAirportCode: { type: 'string' },
   },
 };
 
