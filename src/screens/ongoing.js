@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Realm from 'realm';
 import {
   Animated,
   Clipboard,
@@ -16,8 +17,6 @@ import loader from '../animation/loader.json';
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import Icon from '../resources/icon';
-
-import { AddTrip } from '../persistence/db-helper';
 
 import { height, width, isSmall } from '../global';
 
@@ -138,25 +137,32 @@ class Ongoing extends Component {
   }
 
   parseAndSet() {
-    if (!this.resultsError()) {
-      let tripProps = {
-        id: this.state.results.reservationNumber,
-
-        airlineCode: this.state.results.reservationFor.airline.iataCode,
-        flightNumber: this.state.results.reservationFor.flightNumber,
-
-        departureTime: this.state.results.reservationFor.departureTime,
-        arrivalTime: this.state.results.reservationFor.arrivalTime,
-
-        depatureAirportCode: this.state.results.reservationFor.depatureAirport
-          .iataCode,
-        arrivalAirportCode: this.state.results.reservationFor.arrivalAirport
-          .iataCode,
-      };
-      AddTrip(tripProps);
-      // Then ask user to edit if necessary.
+    if (this.resultsError()) {
+      // TBD
     } else {
-      // Results failed to return, proceed to try again or manually enter.
+      Realm.open({ schema: [TripSchema] }).then(realm => {
+        realm.write(() => {
+          const trip = realm.create('Trip', {
+            id: JSON.stringify(this.state.results.result.reservationNumber),
+
+            departureTime: new Date(
+              this.state.results.result.flight.reservationFor[0].departureTime,
+            ),
+            arrivalTime: new Date(
+              this.state.results.result.flight.reservationFor[0].arrivalTime,
+            ),
+
+            depatureAirportCode: JSON.stringify(
+              this.state.results.result.flight.reservationFor[0].depatureAirport
+                .iataCode,
+            ),
+            arrivalAirportCode: JSON.stringify(
+              this.state.results.result.flight.reservationFor[0].arrivalAirport
+                .iataCode,
+            ),
+          });
+        });
+      });
     }
   }
 
@@ -367,9 +373,7 @@ class Ongoing extends Component {
   editTrip() {
     return (
       <View>
-        <Text>
-          {JSON.stringify(this.state.results)}
-        </Text>
+        <Text />
       </View>
     );
   }
