@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Realm from 'realm';
 import {
   Animated,
   Clipboard,
@@ -17,6 +16,8 @@ import loader from '../animation/loader.json';
 import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import Icon from '../resources/icon';
+
+import { AddTrip } from '../persistence/db-helper';
 
 import { height, width, isSmall } from '../global';
 
@@ -136,32 +137,26 @@ class Ongoing extends Component {
     return JSON.stringify(this.state.results) === JSON.stringify(error);
   }
 
-  parseAndSet() {
+  createTripFromResults(results) {
     if (this.resultsError()) {
-      // TBD
+      // Email parsing failed, ask for manual entry or re-try.
     } else {
-      Realm.open({ schema: [TripSchema] }).then(realm => {
-        realm.write(() => {
-          const trip = realm.create('Trip', {
-            id: JSON.stringify(this.state.results.result.reservationNumber),
+      AddTrip({
+        id: JSON.stringify(results.result.reservationID),
 
-            departureTime: new Date(
-              this.state.results.result.flight.reservationFor[0].departureTime,
-            ),
-            arrivalTime: new Date(
-              this.state.results.result.flight.reservationFor[0].arrivalTime,
-            ),
+        departureTime: new Date(
+          results.result.flight.reservationFor[0].departureTime,
+        ),
+        arrivalTime: new Date(
+          results.result.flight.reservationFor[0].arrivalTime,
+        ),
 
-            depatureAirportCode: JSON.stringify(
-              this.state.results.result.flight.reservationFor[0].depatureAirport
-                .iataCode,
-            ),
-            arrivalAirportCode: JSON.stringify(
-              this.state.results.result.flight.reservationFor[0].arrivalAirport
-                .iataCode,
-            ),
-          });
-        });
+        depatureAirportCode: JSON.stringify(
+          results.result.flight.reservationFor[0].depatureAirport.iataCode,
+        ),
+        arrivalAirportCode: JSON.stringify(
+          results.result.flight.reservationFor[0].arrivalAirport.iataCode,
+        ),
       });
     }
   }
