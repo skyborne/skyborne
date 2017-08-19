@@ -17,7 +17,7 @@ import { FluidCard, FluidHeader, FluidButton } from '../components';
 
 import Icon from '../resources/icon';
 
-import { AddTrip } from '../persistence/db-helper';
+import { AddTrip, GetTrips } from '../persistence/db-helper';
 
 import { height, width, isSmall } from '../global';
 
@@ -145,10 +145,10 @@ class Ongoing extends Component {
         id: JSON.stringify(results.result.reservationID),
 
         departureTime: new Date(
-          results.result.flight.reservationFor[0].departureTime,
+          JSON.stringify(results.result.flight.reservationFor[0].departureTime),
         ),
         arrivalTime: new Date(
-          results.result.flight.reservationFor[0].arrivalTime,
+          JSON.stringify(results.result.flight.reservationFor[0].arrivalTime),
         ),
 
         depatureAirportCode: JSON.stringify(
@@ -159,6 +159,7 @@ class Ongoing extends Component {
         ),
       });
     }
+    console.log(GetTrips());
   }
 
   copyID(id) {
