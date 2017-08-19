@@ -1,4 +1,7 @@
-const TripSchema = {
+import Realm from 'realm';
+
+class Trip extends Realm.Object {}
+Trip.schema = {
   name: 'Trip',
   primaryKey: 'id',
   properties: {
@@ -12,4 +15,4 @@ const TripSchema = {
   },
 };
 
-export default TripSchema;
+export default new Realm({ schema: [Trip] });

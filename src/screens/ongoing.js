@@ -152,15 +152,15 @@ class Ongoing extends Component {
           JSON.stringify(results.result.flight.reservationFor[0].arrivalTime),
         ),
 
-        depatureAirportCode: JSON.stringify(
-          results.result.flight.reservationFor[0].depatureAirport.iataCode,
+        departureAirportCode: JSON.stringify(
+          results.result.flight.reservationFor[0].departureAirport.iataCode,
         ),
         arrivalAirportCode: JSON.stringify(
           results.result.flight.reservationFor[0].arrivalAirport.iataCode,
         ),
       });
     }
-    console.log(GetTrips());
+    console.log(GetTrips()[0].departureAirportCode);
   }
 
   copyID(id) {
