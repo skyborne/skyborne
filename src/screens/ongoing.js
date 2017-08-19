@@ -127,7 +127,8 @@ class Ongoing extends Component {
         displayLoadingBar: false,
         displayEditTrip: true,
       });
-      createTripFromResults();
+
+      this.createTripFromResults();
     } catch (error) {
       console.log(error);
     }
@@ -370,7 +371,11 @@ class Ongoing extends Component {
   editTrip() {
     return (
       <View>
-        <Text />
+        <Text>
+          {JSON.stringify(
+            results.result.flight.reservationFor[0].departureAirport.iataCode,
+          )}
+        </Text>
       </View>
     );
   }
