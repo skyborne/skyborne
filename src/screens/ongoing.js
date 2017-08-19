@@ -127,6 +127,7 @@ class Ongoing extends Component {
         displayLoadingBar: false,
         displayEditTrip: true,
       });
+      createTripFromResults();
     } catch (error) {
       console.log(error);
     }
