@@ -10,7 +10,7 @@ Trip.schema = {
     departureTime: { type: 'date' },
     arrivalTime: { type: 'date' },
 
-    depatureAirportCode: { type: 'string' },
+    departureAirportCode: { type: 'string' },
     arrivalAirportCode: { type: 'string' },
   },
 };

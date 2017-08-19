@@ -11,13 +11,11 @@ export function AddTrip(properties) {
 }
 
 export function GetTrip(id) {
-  let trip = realm.objectForPrimaryKey('Trip', id);
-  return trip;
+  return realm.objectForPrimaryKey('Trip', id);
 }
 
 export function GetTrips() {
-  let trips = realm.objects('Trip');
-  return trips;
+  return realm.objects('Trip');
 }
 
 export function RemoveTrip(id) {
@@ -87,7 +85,7 @@ export function UpdateTripDepartureAirportCode(id, depatureAirportCode) {
     realm.write(() => {
       realm.create(
         'Trip',
-        { id: id, depatureAirportCode: depatureAirportCode },
+        { id: id, departureAirportCode: depatureAirportCode },
         true,
       );
     });
