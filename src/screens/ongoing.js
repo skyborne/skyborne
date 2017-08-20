@@ -161,7 +161,6 @@ class Ongoing extends Component {
         ),
       });
     }
-    console.log(GetTrips()[0].departureAirportCode);
   }
 
   copyID(id) {
@@ -371,12 +370,7 @@ class Ongoing extends Component {
   editTrip() {
     return (
       <View>
-        <Text>
-          {JSON.stringify(
-            this.state.results.result.flight.reservationFor[0].departureAirport
-              .iataCode,
-          )}
-        </Text>
+        <Text />
       </View>
     );
   }
