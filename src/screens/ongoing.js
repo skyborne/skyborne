@@ -128,7 +128,7 @@ class Ongoing extends Component {
         displayEditTrip: true,
       });
 
-      this.createTripFromResults();
+      this.createTripFromResults(this.state.results);
     } catch (error) {
       console.log(error);
     }
