@@ -373,7 +373,8 @@ class Ongoing extends Component {
       <View>
         <Text>
           {JSON.stringify(
-            results.result.flight.reservationFor[0].departureAirport.iataCode,
+            this.state.results.result.flight.reservationFor[0].departureAirport
+              .iataCode,
           )}
         </Text>
       </View>
