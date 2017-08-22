@@ -20,6 +20,7 @@
         "eslint-plugin-react-native": "^3.0.1",
         "jest": "20.0.4",
         "prettier": "^1.5.3",
+        "react-devtools": "^2.5.0",
         "react-test-renderer": "16.0.0-alpha.12"
     },
     "jest": {
@@ -38,6 +39,7 @@
         "link": "node node_modules/react-native/local-cli/cli.js link",
         "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
         "android": "node node_modules/react-native/local-cli/cli.js run-android",
+        "inspect": "node_modules/.bin/react-devtools",
         "test": "jest"
     },
     "version": "0.0.1"
