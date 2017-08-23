@@ -40,6 +40,7 @@
         "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
         "android": "node node_modules/react-native/local-cli/cli.js run-android",
         "inspect": "node_modules/.bin/react-devtools",
+        "lint": "node_modules/.bin/eslint --fix .",
         "test": "jest"
     },
     "version": "0.0.1"
