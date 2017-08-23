@@ -370,7 +370,9 @@ class Ongoing extends Component {
   editTrip() {
     return (
       <View>
-        <Text />
+        <Text>
+          {JSON.stringify(GetTrips().length)}
+        </Text>
       </View>
     );
   }
