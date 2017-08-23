@@ -36,11 +36,12 @@
     },
     "scripts": {
         "start": "node node_modules/react-native/local-cli/cli.js start",
-        "link": "node node_modules/react-native/local-cli/cli.js link",
         "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
         "android": "node node_modules/react-native/local-cli/cli.js run-android",
         "inspect": "node_modules/.bin/react-devtools",
-        "lint": "node_modules/.bin/eslint --fix .",
+        "lint": "node_modules/.bin/eslint .",
+        "fix": "node_modules/.bin/eslint --fix .",
+        "link": "node node_modules/react-native/local-cli/cli.js link",
         "test": "jest"
     },
     "version": "0.0.1"
