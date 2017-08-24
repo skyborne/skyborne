@@ -144,21 +144,19 @@ class Ongoing extends Component {
       // Email parsing failed, ask for manual entry or re-try.
     } else {
       AddTrip({
-        id: JSON.stringify(results.result.reservationID),
+        id: results.result.flight.reservationId,
 
         departureTime: new Date(
-          JSON.stringify(results.result.flight.reservationFor[0].departureTime),
+          results.result.flight.reservationFor[0].departureTime,
         ),
         arrivalTime: new Date(
-          JSON.stringify(results.result.flight.reservationFor[0].arrivalTime),
+          results.result.flight.reservationFor[0].arrivalTime,
         ),
 
-        departureAirportCode: JSON.stringify(
+        departureAirportCode:
           results.result.flight.reservationFor[0].departureAirport.iataCode,
-        ),
-        arrivalAirportCode: JSON.stringify(
+        arrivalAirportCode:
           results.result.flight.reservationFor[0].arrivalAirport.iataCode,
-        ),
       });
     }
   }
