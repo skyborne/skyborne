@@ -166,7 +166,7 @@ class Ongoing extends Component {
     Clipboard.setString(id);
   }
 
-  fetchID = () => {
+  fetchID() {
     fetch('http://localhost:8000/v1/keygen')
       .then(response => response.json())
       .then(responseJSON => {
@@ -175,7 +175,7 @@ class Ongoing extends Component {
       .catch(error => {
         console.log('Failed to fetch response.', error);
       });
-  };
+  }
 
   openMailApp() {
     const url = 'message://';
