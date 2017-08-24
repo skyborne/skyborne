@@ -5,7 +5,7 @@ import Ongoing from '../screens/ongoing';
 import Timeline from '../screens/timeline';
 import Profile from '../screens/profile';
 
-import { height } from '../global';
+import { HEIGHT } from '../global';
 
 import Icon from '../resources/icon';
 
@@ -40,8 +40,8 @@ export const Tabs = TabNavigator(
       showLabel: false,
       activeTintColor: '#000',
       style: {
-        paddingTop: height * 0.04,
-        paddingBottom: height * 0.04,
+        paddingTop: HEIGHT * 0.04,
+        paddingBottom: HEIGHT * 0.04,
         backgroundColor: '#fff',
         borderTopWidth: 0,
         shadowColor: '#000',

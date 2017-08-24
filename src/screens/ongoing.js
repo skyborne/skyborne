@@ -11,16 +11,13 @@ import {
 import Animation from 'lottie-react-native';
 import { BlurView } from 'react-native-blur';
 
-import { FluidCard, FluidHeader, FluidButton } from '../components';
 import Icon from '../resources/icon';
+import { FluidCard, FluidHeader, FluidButton } from '../components';
+import { AddTrip } from '../persistence/db-helper';
 
-import { AddTrip, GetTrips } from '../persistence/db-helper';
+import { HEIGHT, WIDTH, SMALL } from '../global';
 
 import loader from '../animation/loader.json';
-
-import { height, width, isSmall } from '../global';
-
-import { keys } from '../config/keys';
 
 class Ongoing extends Component {
   state = {
@@ -230,8 +227,8 @@ class Ongoing extends Component {
             this.loading = animation;
           }}
           style={{
-            width: width * 0.8,
-            height: width * 0.8,
+            width: WIDTH * 0.8,
+            height: WIDTH * 0.8,
           }}
           loop={true}
           speed={0.5}
@@ -239,7 +236,7 @@ class Ongoing extends Component {
         />
       </Animated.View>;
 
-    if (isSmall()) {
+    if (SMALL()) {
       styles.textStyle.fontSize = 16;
     }
 
@@ -249,7 +246,7 @@ class Ongoing extends Component {
       <Animated.View
         style={[styles.centerView, { opacity: this.state.newTripFade }]}>
         <FluidCard
-          height={height * 0.7}
+          height={HEIGHT * 0.7}
           style={[
             backAnimatedStyle,
             { borderWidth: 0, justifyContent: 'center' },
@@ -262,7 +259,7 @@ class Ongoing extends Component {
           </View>
         </FluidCard>
         <FluidCard
-          height={height * 0.7}
+          height={HEIGHT * 0.7}
           style={[
             { borderWidth: 0, position: 'absolute', justifyContent: 'center' },
             frontAnimatedStyle,
@@ -280,7 +277,7 @@ class Ongoing extends Component {
                   style={styles.idStyle}
                   alignSelf="center"
                   onPress={() => this.copyID(this.state.id)}
-                  textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                  textStyle={SMALL() ? { fontSize: 12 } : { fontSize: 14 }}
                   disabled={this.state.buttonDisabled}>
                   {this.state.id}
                 </FluidButton>
@@ -292,8 +289,8 @@ class Ongoing extends Component {
                   style={[
                     {
                       textAlign: 'center',
-                      marginTop: height * 0.7 * 0.02,
-                      marginBottom: height * 0.7 * 0.02,
+                      marginTop: HEIGHT * 0.7 * 0.02,
+                      marginBottom: HEIGHT * 0.7 * 0.02,
                     },
                   ]}
                 />
@@ -304,11 +301,11 @@ class Ongoing extends Component {
               <FluidButton
                 alignSelf="center"
                 style={{
-                  marginTop: height * 0.7 * 0.04,
-                  marginBottom: height * 0.7 * 0.04,
+                  marginTop: HEIGHT * 0.7 * 0.04,
+                  marginBottom: HEIGHT * 0.7 * 0.04,
                 }}
                 onPress={this.openMailApp}
-                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                textStyle={SMALL() ? { fontSize: 12 } : { fontSize: 14 }}
                 disabled={this.state.buttonDisabled}>
                 Go to your mailbox
               </FluidButton>
@@ -324,16 +321,16 @@ class Ongoing extends Component {
               </View>
 
               <Text
-                style={[styles.textStyle, { marginTop: height * 0.7 * 0.03 }]}>
+                style={[styles.textStyle, { marginTop: HEIGHT * 0.7 * 0.03 }]}>
                 {'Come back and hit next\nwhen ready'}.
               </Text>
             </View>
             <View style={{ flex: 0, justifyContent: 'center', borderWidth: 0 }}>
               <FluidButton
                 alignSelf="center"
-                style={{ marginTop: height * 0.7 * 0.06 }}
+                style={{ marginTop: HEIGHT * 0.7 * 0.06 }}
                 onPress={() => this.flipAndLoad()}
-                textStyle={isSmall() ? { fontSize: 12 } : { fontSize: 14 }}
+                textStyle={SMALL() ? { fontSize: 12 } : { fontSize: 14 }}
                 disabled={this.state.buttonDisabled}>
                 Next
               </FluidButton>
@@ -355,9 +352,9 @@ class Ongoing extends Component {
               color="#2B2B2B"
               style={{
                 borderWidth: 0,
-                marginLeft: height * 0.7 * 0.04,
-                marginTop: height * 0.7 * 0.04,
-                marginBottom: height * 0.7 * 0.04,
+                marginLeft: HEIGHT * 0.7 * 0.04,
+                marginTop: HEIGHT * 0.7 * 0.04,
+                marginBottom: HEIGHT * 0.7 * 0.04,
               }}
             />
           </TouchableOpacity>
@@ -391,7 +388,7 @@ class Ongoing extends Component {
                 this.setState({ visible: false });
               }}>
               <FluidCard
-                height={height * 0.52}
+                height={HEIGHT * 0.52}
                 style={{
                   justifyContent: 'center',
                   alignItems: 'center',

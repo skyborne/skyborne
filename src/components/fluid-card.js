@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated } from 'react-native';
 
-import { width } from '../global';
+import { WIDTH } from '../global';
 
 export const FluidCard = props =>
   <Animated.View
@@ -11,7 +11,7 @@ export const FluidCard = props =>
 
 const styles = {
   cardStyle: {
-    width: width * 0.8,
+    width: WIDTH * 0.8,
     shadowOffset: { width: 0, height: 0 },
     shadowRadius: 15,
     shadowColor: '#000',

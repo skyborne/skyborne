@@ -1,22 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { height, width } from '../global';
+import { HEIGHT, WIDTH } from '../global';
 
 export const FluidHeader = props => {
   const styles = {
     ViewStyle: {
-      height: height * 0.18,
+      height: HEIGHT * 0.18,
       justifyContent: 'flex-end',
       alignItems: 'flex-end',
       borderColor: '#000',
-      marginBottom: height * 0.08,
+      marginBottom: HEIGHT * 0.08,
     },
 
     TextStyle: {
       fontFamily: 'Rubik',
       fontSize: 40,
-      marginRight: width * 0.1,
+      marginRight: WIDTH * 0.1,
       fontWeight: '500',
     },
   };
