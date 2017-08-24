@@ -53,5 +53,6 @@ fastlane/Preview.html
 fastlane/screenshots
 
 .keys/
+src/config/keys.js
 
 assets/fonts/edge-icon/*

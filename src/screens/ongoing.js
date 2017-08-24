@@ -11,15 +11,16 @@ import {
 import Animation from 'lottie-react-native';
 import { BlurView } from 'react-native-blur';
 
-import loader from '../animation/loader.json';
-
 import { FluidCard, FluidHeader, FluidButton } from '../components';
-
 import Icon from '../resources/icon';
 
 import { AddTrip, GetTrips } from '../persistence/db-helper';
 
+import loader from '../animation/loader.json';
+
 import { height, width, isSmall } from '../global';
+
+import { keys } from '../config/keys';
 
 class Ongoing extends Component {
   state = {
