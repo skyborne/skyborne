@@ -14,24 +14,27 @@ export const Tabs = TabNavigator(
     Timeline: {
       screen: Timeline,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-          <Icon name="List-2" size={30} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="List-2" size={30} color={tintColor} />
+        ),
       },
     },
 
     Ongoing: {
       screen: Ongoing,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-          <Icon name="Hot-Air-Balloon" size={30} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="Hot-Air-Balloon" size={30} color={tintColor} />
+        ),
       },
     },
 
     Profile: {
       screen: Profile,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) =>
-          <Icon name="User" size={30} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="User" size={30} color={tintColor} />
+        ),
       },
     },
   },

@@ -3,11 +3,12 @@ import { Animated } from 'react-native';
 
 import { WIDTH } from '../global';
 
-export const FluidCard = props =>
+export const FluidCard = props => (
   <Animated.View
     style={[styles.cardStyle, props.style, { height: props.height }]}>
     {props.children}
-  </Animated.View>;
+  </Animated.View>
+);
 
 const styles = {
   cardStyle: {

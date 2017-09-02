@@ -16,6 +16,7 @@ import { FluidCard, FluidHeader, FluidButton } from '../components';
 import { AddTrip } from '../persistence/db-helper';
 
 import { HEIGHT, WIDTH, SMALL } from '../global';
+import { KEYS } from '../config/keys';
 
 import loader from '../animation/loader.json';
 
@@ -163,6 +164,41 @@ class Ongoing extends Component {
     Clipboard.setString(id);
   }
 
+  airlineForCode(code) {
+    fetch(
+      `https://iatacodes.org/api/v6/airlines?api_key=${KEYS.IATA_CODES_API}&code=${code}`,
+    )
+      .then(response => response.json())
+      .then(responseJSON => {
+        return responseJSON.response.name;
+      })
+      .catch(error => {
+        console.log('Failed to fetch response.', error);
+      });
+  }
+
+  airportForCode(code) {
+    fetch(
+      `https://iatacodes.org/api/v6/airports?api_key=${KEYS.IATA_CODES_API}&code=${code}`,
+    )
+      .then(response => response.json())
+      .then(responseJSON => {
+        return responseJSON.response.name;
+      })
+      .catch(error => {
+        console.log('Failed to fetch response.', error);
+      });
+  }
+
+  cityForCode(code) {
+    let airports = require('../persistence/internal/airports.json');
+    for (i = 0; i < airports.length; i++) {
+      if (airports[i].code === code) {
+        return airports[i].city;
+      }
+    }
+  }
+
   fetchID() {
     fetch('http://localhost:8000/v1/keygen')
       .then(response => response.json())
@@ -220,7 +256,7 @@ class Ongoing extends Component {
       });
     };
 
-    let loadingBar = () =>
+    let loadingBar = () => (
       <Animated.View style={{ opacity: this.state.loadingFade }}>
         <Animation
           ref={animation => {
@@ -234,7 +270,8 @@ class Ongoing extends Component {
           speed={0.5}
           source={loader}
         />
-      </Animated.View>;
+      </Animated.View>
+    );
 
     if (SMALL()) {
       styles.textStyle.fontSize = 16;
@@ -254,9 +291,7 @@ class Ongoing extends Component {
           <View style={{ flex: 0, borderWidth: 0 }}>
             {this.state.displayLoadingBar ? loadingBar() : null}
           </View>
-          <View>
-            {this.state.displayEditTrip ? this.editTrip() : null}
-          </View>
+          <View>{this.state.displayEditTrip ? this.editTrip() : null}</View>
         </FluidCard>
         <FluidCard
           height={HEIGHT * 0.7}
@@ -380,7 +415,7 @@ class Ongoing extends Component {
             alignItems: 'center',
             opacity: this.state.onStartFade,
           }}>
-          {this.state.visible &&
+          {this.state.visible && (
             <TouchableOpacity
               disabled={this.state.newTripCardDisabled}
               onPress={() => {
@@ -395,11 +430,12 @@ class Ongoing extends Component {
                 }}>
                 <Text style={styles.textStyle}>Tap to add a new trip.</Text>
               </FluidCard>
-            </TouchableOpacity>}
+            </TouchableOpacity>
+          )}
         </Animated.View>
-        {this.state.blur
-          ? <BlurView blurType="light" style={styles.absolute} />
-          : null}
+        {this.state.blur ? (
+          <BlurView blurType="light" style={styles.absolute} />
+        ) : null}
         {this.state.displayNewTripView ? this.newTrip() : null}
       </View>
     );

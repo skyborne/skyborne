@@ -22,9 +22,7 @@ export const FluidHeader = props => {
   };
   return (
     <View style={styles.ViewStyle}>
-      <Text style={styles.TextStyle}>
-        {props.children}
-      </Text>
+      <Text style={styles.TextStyle}>{props.children}</Text>
     </View>
   );
 };
