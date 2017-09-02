@@ -164,9 +164,9 @@ class Ongoing extends Component {
     Clipboard.setString(id);
   }
 
-  airlineForCode(code) {
+  airlineForCode(iata) {
     fetch(
-      `https://iatacodes.org/api/v6/airlines?api_key=${KEYS.IATA_CODES_API}&code=${code}`,
+      `https://iatacodes.org/api/v6/airlines?api_key=${KEYS.IATA_CODES_API}&code=${iata}`,
     )
       .then(response => response.json())
       .then(responseJSON => {
@@ -177,9 +177,9 @@ class Ongoing extends Component {
       });
   }
 
-  airportForCode(code) {
+  airportForCode(iata) {
     fetch(
-      `https://iatacodes.org/api/v6/airports?api_key=${KEYS.IATA_CODES_API}&code=${code}`,
+      `https://iatacodes.org/api/v6/airports?api_key=${KEYS.IATA_CODES_API}&code=${iata}`,
     )
       .then(response => response.json())
       .then(responseJSON => {
@@ -190,11 +190,11 @@ class Ongoing extends Component {
       });
   }
 
-  cityForCode(code) {
+  cityForCode(iata) {
     let airports = require('../persistence/internal/airports.json');
-    for (i = 0; i < airports.length; i++) {
-      if (airports[i].code === code) {
-        return airports[i].city;
+    for (icao in airports) {
+      if (airports[icao].iata === iata) {
+        return airports[icao].city;
       }
     }
   }
