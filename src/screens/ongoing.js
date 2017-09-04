@@ -145,6 +145,14 @@ class Ongoing extends Component {
       AddTrip({
         id: results.result.flight.reservationId,
 
+        airlineCode: results.result.flight.reservationFor[0].flightNumber.substring(
+          0,
+          2,
+        ),
+        flightNumber: results.result.flight.reservationFor[0].flightNumber.substring(
+          2,
+        ),
+
         departureTime: new Date(
           results.result.flight.reservationFor[0].departureTime,
         ),

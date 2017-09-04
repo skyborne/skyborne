@@ -7,6 +7,9 @@ Trip.schema = {
   properties: {
     id: { type: 'string' },
 
+    airlineCode: { type: 'string' },
+    flightNumber: { type: 'string' },
+
     departureTime: { type: 'date' },
     arrivalTime: { type: 'date' },
 
